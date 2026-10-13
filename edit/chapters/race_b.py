@@ -12,6 +12,8 @@ from engine.shots import ken, split, memorial
 from engine import music as M
 from chapters import race_art as A
 from chapters.race_a import ST as ST_A, TICKER as TICKER_A
+from chapters.gaze import _scope
+from assets import CACHE, find, resolve
 
 SPACE = starfield(33, 700, (0.01, 0.012, 0.02))
 _c = {}
@@ -174,10 +176,27 @@ def s_jwst(c):
     return post(f, c.fi, grain=0.02)
 
 
+TG_C = (465, 383)              # WM-01 里站体的亮度质心
+
+
 def s_tiangong(c):
-    f = ink_card(c, image("CN-05", "01", 2400)[int(0.13 * 1728):int(0.86 * 1728)], 1240, 560, 1150,
-                 clamp01(c.lb / 0.8))
-    caption(f, c, 0.2, [("天宫空间站", "big"), ("建成", "mid")], color=INK, scrim=0.0)
+    """天宫：巴西天文爱好者 2023-05-23 用 203mm 望远镜拍到的实拍（WM-01，CC BY-SA 4.0）。
+    放进与"仰望"章伽利略同款的铜边圆形视野，水墨晕染入画；对焦由虚到实，带一点跟踪抖动。"""
+    ph = image("WM-01", "01", 1000)
+    s = lerp(2.6, 3.1, ease_io(c.k))
+    jx, jy = 3 * np.sin(c.lsec * 7.0), 2 * np.cos(c.lsec * 5.3)
+    m = np.float32([[s, 0, 1250 + jx - s * TG_C[0]], [0, s, 540 + jy - s * TG_C[1]]])
+    view = cv2.warpAffine(ph, m, (W, H), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_CONSTANT,
+                          borderValue=(0.027, 0.027, 0.027))
+    blur = 6 * (1 - ease_out(clamp01(c.lb / 0.9), 2))
+    if blur > 0.3:
+        view = cv2.GaussianBlur(view, (0, 0), blur)
+    view = np.clip(view * 1.2, 0, 1)
+    scope = _scope(PAPER.copy(), view, 1250, 540, 400)
+    draw_text(scope, "203mm · 2023.05.23", "mono", 20, (0.75, 0.75, 0.72), 1250, 880, 0.9, anchor="c", tracking=2)
+    rev = ink_reveal(clamp01(c.lb / 0.6), 0)
+    f = PAPER * (1 - rev) + scope * rev
+    caption(f, c, 0.2, [("天宫空间站", "big"), ("建成 · 地面望远镜实拍", "mid")], color=INK, scrim=0.0)
     return post(f, c.fi, grain=0.025)
 
 
@@ -204,12 +223,66 @@ def s_chandrayaan(c):
     return post(f, c.fi, grain=0.025)
 
 
+C6_Y, C6_H = 32710, 2848       # NA-32/02 条带中着陆器所在行；取以它为中心的 16:9 工作区（全宽 5064）
+C6_LANDER = (2499, C6_H // 2)
+_C6 = None
+
+
+def _change6_pyr():
+    """NA-32/02：LRO 窄角相机观测 M1472410644LC 的 PDS 浏览图（公有领域，2024-06-07）。
+    整条 5064×52224 太大，只裁一次工作区缓存到 .cache，再做金字塔，推近时按缩放选层。"""
+    global _C6
+    if _C6 is None:
+        p = CACHE / "na32_change6_work.png"
+        if not p.exists():
+            from PIL import Image as PILImage
+            PILImage.MAX_IMAGE_PIXELS = None
+            t = PILImage.open(resolve(find("NA-32", "02")))
+            t.seek(0)
+            y0 = C6_Y - C6_H // 2
+            crop = t.crop((0, y0, t.size[0], y0 + C6_H)).convert("L")
+            tmp = p.with_name(p.stem + ".tmp.png")
+            crop.save(tmp)
+            tmp.replace(p)
+        pyr = [cv2.imread(str(p), cv2.IMREAD_GRAYSCALE)]
+        for _ in range(3):
+            pyr.append(cv2.pyrDown(pyr[-1]))
+        _C6 = pyr
+    return _C6
+
+
+def _moon_view(cx, cy, s):
+    pyr = _change6_pyr()
+    lvl = int(np.clip(np.floor(np.log2(1 / s)), 0, len(pyr) - 1)) if s < 1 else 0
+    f = 2 ** lvl
+    ss = s * f
+    m = np.float32([[ss, 0, W / 2 - ss * cx / f], [0, ss, H / 2 - ss * cy / f]])
+    g = cv2.warpAffine(pyr[lvl], m, (W, H), flags=cv2.INTER_CUBIC if ss > 1 else cv2.INTER_LINEAR,
+                       borderMode=cv2.BORDER_REFLECT).astype(np.float32) / 255
+    g = np.clip((g - 0.06) * 1.45, 0, 1) ** 0.9
+    return g[..., None] * np.array([1.0, 0.985, 0.95], np.float32)
+
+
 def s_change6(c):
-    if c.lb < 3:
-        f = ink_card(c, image("CN-06", "01", 1400), 1250, 560, 1000, clamp01(c.lb / 0.8))
-    else:
-        f = ink_card(c, image("CN-06", "02", 1400), 1250, 560, 1000, clamp01((c.lb - 3) / 0.8))
-    caption(f, c, 0.3, [("嫦娥六号", "big"), ("第一次带回月球背面的样本", "mid")], color=INK, scrim=0.0)
+    """嫦娥六号：从整条月面一路推近到月背着陆器（LRO 2024-06-07 实拍，着陆器周围是发动机吹亮的一圈）。"""
+    pyr = _change6_pyr()
+    s0, s1 = W / pyr[0].shape[1], 2.4
+    k = ease_io(clamp01((c.lb - 0.4) / (c.beats - 1.6)))
+    s = s0 * (s1 / s0) ** k
+    cx = lerp(pyr[0].shape[1] / 2, C6_LANDER[0], ease_out(k, 2))
+    f = _moon_view(cx, C6_LANDER[1], s)
+    rev = ink_reveal(clamp01(c.lb / 0.7), 1)
+    f = PAPER * (1 - rev) + f * rev
+    lock = ease_out(clamp01((c.lb - (c.beats - 1.8)) / 0.5), 3)
+    if lock > 0:
+        f = hud(f, lock, "41.64°S  206.01°E")
+        r = int(lerp(220, 90, lock))
+        col = np.array([0.95, 0.85, 0.55], np.float32)
+        for dx, dy in ((-1, -1), (1, -1), (-1, 1), (1, 1)):
+            x, y = W // 2 + dx * r, H // 2 + dy * r
+            f[min(y, y - dy * 26):max(y, y - dy * 26), x - 1:x + 2] = col
+            f[y - 1:y + 2, min(x, x - dx * 26):max(x, x - dx * 26)] = col
+    caption(f, c, 0.3, [("嫦娥六号", "big"), ("第一次带回月球背面的样本", "mid"), ("从月球轨道上看到的着陆器", "small")])
     return post(f * (1 - clamp01((c.lb - (c.beats - 0.5)) * 2)), c.fi, grain=0.025)
 
 
