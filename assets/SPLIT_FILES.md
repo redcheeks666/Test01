@@ -26,3 +26,4 @@ shasum -a 256 -c example.mp4.sha256
 | assets/SX/SX-01/SX-01_12_flight14_liftoff_cut01_spacex.mp4 | 180911537 | 2 | 02dbccbbae88d6a8b15f4abd6747db0b21a8a1903a5c1c4fd26526e49e4e1949 |
 | assets/SX/SX-03/SX-03_11_flight14_earth_limb_cut01_spacex.mp4 | 148443361 | 2 | cdc3035359bf139cbd7f87bcd6379acda6bc062edba53a80827b14bb3f0e5718 |
 | assets/SX/SX-03/SX-03_12_flight14_deployment_cut02_spacex.mp4 | 264166797 | 3 | 92d509328d1e232f28c43a082ac0f010c71e90ee700becefe665364a88a40bfa |
+| assets/PD/PD-10/PD-10_02_lilienthal_gliding_plate_1895_loc.tif | 270003290 | 3 | 23887f7da371e9a5458515a56cc0755b6929468dea2414ae6196ba79b65f2043 |
