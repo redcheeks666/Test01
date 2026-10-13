@@ -428,7 +428,12 @@ def music(sc, ch):
         else:
             sc.add("bgm", M.choir(notes, d, 0.6), T(b0), gain)
 
-    # 章节卡：盖印 + 底鼓进场 + 军鼓滚奏
+    # 章节卡：静音一拍后随重音落下（定音鼓 + 铜管大三和弦 + 低频冲击），再盖印 + 底鼓进场 + 军鼓滚奏
+    sc.add("bgm", M.timpani(38, 2.4, 1.3), T(0), 0.9)
+    sc.add("bgm", M.brass_stab([62, 66, 69, 74, 50], 1.2), T(0), 0.65)
+    sc.add("bgm", M.cymbal(2.5), T(0), 0.2)
+    sc.add("sfx", M.real("FX/FX-11/FX-11_02_cinematic_low_hit_pixabay.mp3"), T(0), 0.6)
+    sc.level(T(1.5), T(4), -6, -2)                     # 重音之后的铺底别被自动电平抬满
     sc.add("sfx", M.stamp(), T(2.5), 0.7)
     sc.add("bgm", M.pad([38, 45, 50], t(8)), T(0), 0.2)
     drums(4, 7, 0.7, hats=False, snare_on=False)
