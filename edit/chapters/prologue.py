@@ -131,11 +131,12 @@ _MOON = None
 def _moon():
     global _MOON
     if _MOON is None:
-        m = image("NA-01", "01", 2400)                     # 2400×1350，月面半径约 0.47 高
+        m = image("NA-01", "01", 2400)                     # 2400×1350，实测月面半径 0.462 高
         h, w = m.shape[:2]
-        r = 0.47 * h
+        r = 0.462 * h
         yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
-        a = np.clip((r - np.sqrt((xx - w / 2) ** 2 + (yy - h / 2) ** 2)) / 2 + 0.5, 0, 1)
+        # 蒙版收进月缘 1%，软边，避免带出原图的黑底描边
+        a = np.clip((r * 0.99 - np.sqrt((xx - w / 2) ** 2 + (yy - h / 2) ** 2)) / 5 + 0.5, 0, 1)
         _MOON = (m, a, r)
     return _MOON
 

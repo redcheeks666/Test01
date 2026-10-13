@@ -57,8 +57,12 @@ def s_voyager(c):
         f = STARS.copy()
         f = f + glow(W / 2, H / 2 - 40, 6, (1, 1, 1), 0.9)
         km = 25_600_000_000 + int(300_000_000 * clamp01((c.lb - 3) / 3))
-        draw_text(f, f"{km:,} 公里".replace(" 公里", ""), "mono", 64, CREAM, W / 2, H / 2 + 90, 1.0, anchor="c", tracking=4)
-        draw_text(f, "距离地球", "serif", 30, (0.8, 0.78, 0.72), W / 2, H / 2 + 170, 1.0, anchor="c")
+        num = f"{km:,}"
+        nw, uw, gap = text_width(num, "mono", 64, 4), text_width("公里", "serif", 40), 18
+        x0 = W / 2 - (nw + gap + uw) / 2                      # 数字 + 单位整体居中
+        draw_text(f, num, "mono", 64, CREAM, x0 + nw / 2, H / 2 + 90, 1.0, anchor="c", tracking=4)
+        draw_text(f, "公里", "serif", 40, CREAM, x0 + nw + gap + uw / 2, H / 2 + 94, 1.0, anchor="c")
+        draw_text(f, "距离地球", "serif", 34, (0.8, 0.78, 0.72), W / 2, H / 2 + 175, 1.0, anchor="c")
     caption(f, c, 0.4, [("旅行者 1 号", "big"), ("2026 年 11 月，它将距离地球一光日", "mid")])
     return post(f, c.fi, grain=0.025)
 
