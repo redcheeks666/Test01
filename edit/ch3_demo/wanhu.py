@@ -57,7 +57,11 @@ def _p(pts):
     return [(x * S, y * S) for x, y in pts]
 
 
+NOZZLES = []
+
+
 def _rocket(d, x, yb, L, w=13):
+    NOZZLES.append((x, yb + 7))
     nose = w * 1.6
     d.rectangle(_p([(x - w / 2, yb - L + nose), (x + w / 2, yb)]), fill=SIL, outline=EDGE, width=S)
     d.polygon(_p([(x - w / 2, yb - L + nose), (x + w / 2, yb - L + nose), (x, yb - L)]), fill=SIL, outline=EDGE)
@@ -68,7 +72,10 @@ def _rocket(d, x, yb, L, w=13):
 
 
 def silhouette():
-    im = Image.new("RGBA", (W * S, H * S), (0, 0, 0, 0))
+    NOZZLES.clear()
+    ground_im = Image.new("RGBA", (W * S, H * S), (0, 0, 0, 0))
+    im = Image.new("RGBA", (W * S, H * S), (0, 0, 0, 0))   # 会飞走的部分：椅子、人物、火箭、风筝
+    dg = ImageDraw.Draw(ground_im)
     d = ImageDraw.Draw(im)
     rockets_bottom = []
 
@@ -79,10 +86,10 @@ def silhouette():
 
     # 远处的山丘与发射台
     hill = [(0, 1080), (0, 990), (300, 965), (620, 940), (900, 922), (1250, 902), (1600, 925), (1920, 958), (1920, 1080)]
-    d.polygon(_p(hill), fill=SIL)
-    d.rectangle(_p([(1070, 862), (1500, 880)]), fill=SIL, outline=EDGE, width=S)
+    dg.polygon(_p(hill), fill=SIL)
+    dg.rectangle(_p([(1070, 862), (1500, 880)]), fill=SIL, outline=EDGE, width=S)
     for x in (1090, 1280, 1480):
-        d.rectangle(_p([(x - 6, 880), (x + 6, 905)]), fill=SIL)
+        dg.rectangle(_p([(x - 6, 880), (x + 6, 905)]), fill=SIL)
 
     # 椅背后方与上方、椅下、右侧的火箭（先画，在人物和椅子后面）
     cluster([1340 + i * 15 for i in range(7)], 598, 118)      # 椅背后上排 7
@@ -130,12 +137,13 @@ def silhouette():
             tx, ty = kx - 10 - i * 14, ky + ks * 0.9 + 18 + i * 20
             d.polygon(_p([(tx - 7, ty - 5), (tx + 7, ty + 5), (tx + 7, ty - 5), (tx - 7, ty + 5)]), fill=SIL)
 
-    im = im.resize((W, H), Image.LANCZOS)
-    arr = np.asarray(im, np.float32) / 255.0
+    fly = np.asarray(im.resize((W, H), Image.LANCZOS), np.float32) / 255.0
+    gnd = np.asarray(ground_im.resize((W, H), Image.LANCZOS), np.float32) / 255.0
     fuse_main = [(860, 930), (980, 916), (1100, 884), (1240, 878)]
-    return arr[..., :3], arr[..., 3:], fuse_main, rockets_bottom
+    return fly, gnd, fuse_main, rockets_bottom, list(NOZZLES)
 
 
 def build():
-    rgb, a, fuse_main, branches = silhouette()
-    return {"sky": sky(), "rgb": rgb, "a": a, "fuse": fuse_main, "branches": branches}
+    fly, gnd, fuse_main, branches, nozzles = silhouette()
+    return {"sky": sky(), "fly_rgb": fly[..., :3], "fly_a": fly[..., 3:], "gnd_rgb": gnd[..., :3],
+            "gnd_a": gnd[..., 3:], "fuse": fuse_main, "branches": branches, "nozzles": nozzles}

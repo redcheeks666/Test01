@@ -7,9 +7,10 @@ from pathlib import Path
 
 import numpy as np
 from scipy.io import wavfile
+from scipy.ndimage import maximum_filter1d, uniform_filter1d
 from scipy.signal import butter, fftconvolve, sosfilt
 
-from timeline import DURATION, SR, t
+from timeline import DURATION, SR, t, t_real
 
 OUT = Path(__file__).resolve().parent / "out"
 ASSETS = Path(__file__).resolve().parents[2] / "assets"
@@ -306,6 +307,83 @@ def stab(b, gain=0.5):
     add(music, brass_stab([m + 12 for m in TRIADS[ch]] + [ROOTS[ch] + 12]), t(b), gain)
 
 
+def real_loudest(rel, dur):
+    """取音频原件里最响的一段（按 0.5 秒窗口的 RMS）。"""
+    x = real(rel, fade=0.0)
+    if x is None:
+        return None
+    win = int(0.5 * SR)
+    e = uniform_filter1d(x ** 2, win)
+    n = int(dur * SR)
+    if len(x) <= n:
+        return x
+    k = int(np.argmax(uniform_filter1d(e, n)[n // 2: len(x) - n // 2])) if len(x) > n else 0
+    seg = x[k:k + n].copy()
+    f = int(0.05 * SR)
+    seg[:f] *= np.linspace(0, 1, f)
+    return seg / (np.abs(seg).max() + 1e-9)
+
+
+def ostinato_real(r0, r1, ch, gain=0.35):
+    """按实际拍号写的固定音型（万户段第 16—20 拍用）。"""
+    r = r0
+    root = ROOTS[ch]
+    pattern = [0, 0, 7, 0, 12, 0, 7, 10 if QUALITY[ch] == 3 else 9]
+    while r < r1 - 1e-6:
+        m = root + pattern[int(round((r % 4) * 2)) % 8]
+        dur = (t_real(r + 0.5) - t_real(r)) * 0.8
+        add(music, strings_short(m, dur), t_real(r), gain * (1.2 if r % 1 == 0 else 0.9), pan=-0.25)
+        add(music, strings_short(m + 12, dur), t_real(r), gain * 0.4, pan=0.3)
+        r += 0.5
+
+
+def ignition(r_fire, r_end):
+    """万户点火起飞：真实发射轰鸣 + 定音鼓与铜管重音 + 属和弦固定音型 + 小军鼓滚奏推到下一小节。"""
+    t0, t1 = t_real(r_fire), t_real(r_end)
+    roar = real_loudest("FX/FX-02/FX-02_01_falcon9_pad_mics_nasa.wav", t1 - t0 + 1.0)
+    if roar is not None:
+        x = np.arange(len(roar)) / SR
+        shape = np.clip(x / 0.08, 0, 1) * (0.75 + 0.25 * np.clip(x / 1.5, 0, 1))
+        shape *= np.clip((t1 - t0 + 0.6 - x) / 0.8, 0, 1)                    # 飞出画面后渐远
+        add(dry, filt(roar, "low", 6000) * shape, t0, 0.8)
+    add(dry, boom(1.6, 48, 30, 0.2), t0, 0.35)                                # 点火瞬间的低频
+    lh = real("FX/FX-11/FX-11_02_cinematic_low_hit_pixabay.mp3")
+    if lh is not None:
+        add(dry, lh, t0, 0.5)
+    add(music, timpani(33, vel=1.3), t0, 0.9)
+    add(music, brass_stab([69, 73, 76, 81, 57], 0.9), t0, 0.6)
+    add(music, cymbal(2.0), t0, 0.22)
+    ostinato_real(r_fire, r_end, "A", 0.38)
+    add(music, pad([45, 52, 57, 61, 64], t1 - t0 + 0.3), t0, 0.45)
+    for k, m in enumerate([69, 71, 73, 76]):          # 圆号逐拍上行，把起飞推上去
+        rr = r_fire + 1 + k * 0.75
+        add(music, horn(m, t_real(rr + 0.75) - t_real(rr)), t_real(rr), 0.35, pan=0.15)
+    r = r_fire + 2.5
+    while r < r_end - 0.1:
+        k = (r - r_fire - 2.5) / (r_end - r_fire - 2.5)
+        add(music, snare(0.3 + 0.7 * k), t_real(r), 0.32)
+        r += 0.25 if r < r_end - 0.75 else 0.125
+    up = real("FX/FX-11/FX-11_01_short_whoosh_pixabay.mp3")
+    add(dry, pick(up, whoosh(0.6, 400, 5000)), t_real(19.2), 0.5)
+
+
+def bgm_leveler(x, target_db=-1.6, floor_db=-40.0):
+    """BGM 自动电平：按 0.4 秒窗口的峰值把配乐推到目标电平附近（保持在 0 到 −6 dBFS 之间），
+    低于 floor_db 的地方（刻意的静音、抽空）不提升。"""
+    mono = np.abs(x).max(axis=1)
+    hop = int(0.05 * SR)
+    n = len(mono) // hop
+    pk = mono[: n * hop].reshape(n, hop).max(axis=1)
+    pk = maximum_filter1d(pk, 6)                       # 0.3 秒
+    target = 10 ** (target_db / 20)
+    floor = 10 ** (floor_db / 20)
+    gain = np.where(pk > floor, target / np.maximum(pk, 1e-9), 1.0)
+    gain = np.clip(gain, 0.02, 40.0)
+    gain = uniform_filter1d(gain, 3)                   # 0.15 秒平滑
+    g = np.interp(np.arange(len(mono)), np.arange(n) * hop + hop / 2, gain)
+    return x * g[:, None]
+
+
 def main():
     # 3-01 章节卡（0—8）：低音铺底 + 定音鼓滚奏渐强 + 盖章
     add(music, pad([38, 45, 50], bl(0, 8) + 0.2), t(0), 0.18)
@@ -317,19 +395,18 @@ def main():
     add(dry, stamp(), t(6), 0.8)
     add(dry, pick(real("FX/FX-11/FX-11_01_short_whoosh_pixabay.mp3"), whoosh(bl(7.5, 8) + 0.05, 500, 5000)), t(7.5), 0.45)
 
-    # 3-02 万户（8—16）：固定音型进入，引信嘶嘶，第 15.5 拍抽空
+    # 3-02 万户（实际 8—20 拍）：固定音型进入，引信嘶嘶，第 15.5 拍抽空；
+    # 第 16 拍点火——真实火箭发射轰鸣 + 定音鼓 + 铜管，属和弦持续推高；第 17 拍离地，第 19.4 拍飞出画面
     ostinato(8, 15.5)
     pads(8, 15.5, 0.16)
     timp_pattern(8, 15.5)
-    add(dry, pick(real("FX/FX-08/FX-08_01_fuse_burning_pixabay.mp3", bl(8, 15.5)), fuse(bl(8, 15.5))), t(8), 0.3, pan=0.2)
+    add(dry, pick(real("FX/FX-08/FX-08_01_fuse_burning_pixabay.mp3", t_real(13) - t_real(8)), fuse(t_real(13) - t_real(8))),
+        t_real(8), 0.3, pan=0.2)
+    add(dry, fuse(t_real(15.5) - t_real(13)) * 0.6, t_real(13), 0.25, pan=0.3)   # 喷口零星的火星
     stab(8, 0.45)
+    ignition(16, 20)
 
-    # 3-03 热气球（16—24）：爆炸 + 全编制 + 旋律
-    add(dry, boom(3.5, 70, 30, 1.2), t(16), 0.75)
-    ex = real("FX/FX-08/FX-08_02_distant_explosion_pixabay.mp3")
-    if ex is not None:
-        add(dry, ex, t(16), 0.6)
-    add(music, cymbal(), t(16), 0.25)
+    # 3-03 热气球（逻辑 16—24）：全编制 + 旋律
     stab(16, 0.6)
     add(music, timpani(38, vel=1.2), t(16), 0.9)
     ostinato(16, 44)
@@ -381,7 +458,6 @@ def main():
     lh = real("FX/FX-11/FX-11_02_cinematic_low_hit_pixabay.mp3")
     if lh is not None:
         add(dry, lh, t(50), 0.7)
-        add(dry, lh, t(16), 0.5)
     add(music, timpani(38, vel=1.3), t(50), 0.9)
     add(music, cymbal(2.0), t(50), 0.3)
     stab(50, 0.7)
@@ -397,7 +473,8 @@ def main():
     ir[:, 0], ir[:, 1] = filt(ir[:, 0], "low", 5000), filt(ir[:, 1], "low", 5000)
     wet = np.stack([fftconvolve(music[:, c], ir[:, c])[:N] for c in range(2)], axis=1)
     wet *= 0.9 / (np.abs(wet).max() + 1e-9) * np.abs(music).max()
-    mix = music + wet * 0.35 + dry
+    bgm = music + wet * 0.35
+    sfx = dry.copy()
 
     # 第 15.5 拍"吸气"：把混响尾音压下去，让爆炸前真正空一下
     g0, g1 = int(t(15.5) * SR), int(t(16) * SR) - int(0.004 * SR)
@@ -405,13 +482,15 @@ def main():
     gate = np.ones(N)
     gate[g0:g1] = 0.08
     gate[g0:g0 + ramp] = np.linspace(1, 0.08, ramp)
-    mix *= gate[:, None]
+    bgm *= gate[:, None]
+    sfx *= gate[:, None]
 
     # 第 52 拍起一拍完全静音，之后只有斯普特尼克信号和极弱的短波底噪
     i52, i53 = int(t(52) * SR), int(t(53) * SR)
     fade = int(0.012 * SR)
-    mix[i52 - fade:i52] *= np.linspace(1, 0, fade)[:, None]
-    mix[i52:] = 0
+    for bus in (bgm, sfx):
+        bus[i52 - fade:i52] *= np.linspace(1, 0, fade)[:, None]
+        bus[i52:] = 0
     # 第 53 拍：下一章章节卡随重音落下——定音鼓 + 铜管大三和弦 + 低频冲击，弦乐长音收尾；第 55.2 拍盖印
     tail = np.zeros((N, 2))
     tail_music = np.zeros((N, 2))
@@ -425,14 +504,23 @@ def main():
         add(tail, lh, b53, 0.6)
     add(tail, stamp(), t(55.2), 0.7)
     wet2 = np.stack([fftconvolve(tail_music[:, c], ir[:, c])[:N] for c in range(2)], axis=1)
-    tail += tail_music + wet2 * 0.25
+    wet2 *= 0.9 / (np.abs(wet2).max() + 1e-9) * np.abs(tail_music).max()
     n_end = int(DURATION * SR)
     fade_len = int(1.2 * SR)
-    tail[n_end - fade_len:n_end] *= np.linspace(1, 0, fade_len)[:, None]
-    mix = mix + tail
+    end_fade = np.ones(N)
+    end_fade[n_end - fade_len:n_end] = np.linspace(1, 0, fade_len)
+    bgm += (tail_music + wet2 * 0.25) * end_fade[:, None]
+    sfx += tail * end_fade[:, None]
 
-    mix = np.tanh(mix * 0.9) * 0.89
+    # BGM 全程拉到 0 到 −6 dBFS；音效整体按 BGM 配比：最响的音效峰值约 −2 dBFS
+    bgm = bgm_leveler(bgm)
+    sfx *= 10 ** (-2 / 20) / (np.abs(sfx).max() + 1e-9)
+    mix = bgm * 0.9 + sfx
+    # 软限幅，峰值不超过 −0.5 dBFS
+    ceil = 10 ** (-0.5 / 20)
+    mix = np.tanh(mix / ceil) * ceil
     mix = mix[: int(DURATION * SR)]
+    np.save(OUT / "bgm_bus.npy", (bgm * 0.9)[: int(DURATION * SR)].astype(np.float32))
     OUT.mkdir(exist_ok=True)
     wavfile.write(OUT / "music.wav", SR, (mix * 32767).astype(np.int16))
     print("music.wav", round(DURATION, 2), "s, peak", round(float(np.abs(mix).max()), 3))

@@ -11,7 +11,7 @@ import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-from timeline import DURATION, FPS, t, beat_at
+from timeline import DURATION, FPS, WANHU_END, SHIFT, t, t_real, beat_at
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
@@ -432,32 +432,127 @@ def shot_card(b, fi):
     return chapter_card(b, fi, 0, "先驱")
 
 
-def shot_wanhu(b, fi):
-    """3-02 万户（8—16 拍）：月亮前的剪影慢推，引信火花沿线前进，最后分头烧向七组火箭；第 15.5 拍定格抽空。"""
-    frame = WANHU["sky"] * (1 - WANHU["a"]) + WANHU["rgb"] * WANHU["a"]
-    frame = frame.copy()
-    bb = min(b, 15.5)
-    p = np.clip((bb - 8.3) / 6.4, 0, 1)
-    if p < 1:
-        x, y = _along(WANHU["fuse"], p)
-        spark(frame, x, y, fi)
+SMOKE_COL = np.array([0.60, 0.54, 0.48], np.float32)
+FIRE = np.array([1.0, 0.48, 0.12], np.float32)
+NOZ_ALL = np.array(WANHU["nozzles"], np.float32)
+NOZ = NOZ_ALL[NOZ_ALL[:, 1] > 840]          # 只用椅子下方最底一排喷口做推进火焰
+NOZ_CX, NOZ_BOTTOM = float(NOZ[:, 0].mean()), float(NOZ[:, 1].max())
+
+
+def flame_layer(dy, power, fi, subset=1.0):
+    """椅下的推进火焰：底排每个喷口一道向下的焰柱（外焰橙、内核白黄），下方再合成一道推进光柱。"""
+    small = np.zeros((H // 2, W // 2, 3), np.float32)
+    r = np.random.default_rng(fi)
+    for x, y in NOZ:
+        if r.random() > subset:
+            continue
+        L = (120 + 70 * r.random()) * power
+        if L < 2:
+            continue
+        cx, cy = x / 2, (y + dy) / 2 + L / 4
+        wd = max(1, int(7 * power ** 0.5))
+        cv2.ellipse(small, (int(cx), int(cy)), (wd, max(1, int(L / 4))), 0, 0, 360, tuple(map(float, FIRE)), -1)
+        cv2.ellipse(small, (int(cx), int(cy - L / 10)), (max(1, wd // 2), max(1, int(L / 7))), 0, 0, 360, (1.0, 0.92, 0.65), -1)
+    small = cv2.GaussianBlur(small, (0, 0), 2.5)
+    big = cv2.resize(small, (W, H), interpolation=cv2.INTER_LINEAR) * 1.6
+    gy = NOZ_BOTTOM + dy + 50
+    glow = np.exp(-(((xx - NOZ_CX) ** 2) / (2 * 260 ** 2) + ((yy - gy) ** 2) / (2 * 150 ** 2)))[..., None]
+    plume = np.exp(-(((xx - NOZ_CX) ** 2) / (2 * 110 ** 2)) - np.clip(yy - gy, 0, None) / (260 * max(power, 0.05)))
+    plume = (plume * (yy > gy - 40))[..., None]
+    return big + glow * FIRE * 0.55 * min(power, 1.2) + plume * (FIRE * 0.7 + 0.25) * min(power, 1.0)
+
+
+def shift_layer(img, dx, dy):
+    m = np.float32([[1, 0, dx], [0, 1, dy]])
+    return cv2.warpAffine(img, m, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
+
+
+def ground_smoke(level, rise, lit):
+    """地面升起的尾烟：level 为烟层顶部离画面底边的高度，rise 让烟的纹理向上翻滚，lit 为火光照亮程度。"""
+    n = np.roll(SMOKE[0], -int(rise) % H, axis=0) * 0.7 + np.roll(SMOKE[1], -int(rise * 0.6) % H, axis=0) * 0.3
+    top = H - level
+    m = np.clip((yy - top) / 160 + (n - 0.5) * 1.8, 0, 1)[..., None]
+    col = SMOKE_COL + FIRE * 0.45 * lit * np.exp(-((xx - NOZ_CX) ** 2) / (2 * 420 ** 2))[..., None]
+    return m, col
+
+
+def shot_wanhu(r, fi):
+    """3-02 万户（实际第 8—20 拍）：引信 → 喷口冒火星 → 第 16 拍点火，47 支火箭向下喷焰 →
+    第 17 拍起人和椅子一起离地，加速飞出画面 → 尾烟升起盖满画面，转场到热气球。"""
+    rb = min(r, 15.5) if r < 16 else r
+    sky = WANHU["sky"]
+    frame = sky.copy()
+
+    # 会飞走的部分：点火后震动，第 17 拍起加速上升
+    dx = dy = 0.0
+    power = 0.0
+    if r >= 16:
+        power = min(1.0, 0.55 + (t_real(r) - t_real(16)) * 1.2) * (0.9 + 0.1 * np.sin(fi * 3.1))
+        jr = np.random.default_rng(fi)
+        dx, dy = jr.normal(0, 2.5), jr.normal(0, 2.5)
+        if r >= 17:
+            dy += -1500 * ease_in((r - 17) / 2.4, 2.3)
+    fly_rgb, fly_a = WANHU["fly_rgb"], WANHU["fly_a"]
+    if dx or dy:
+        fly_rgb, fly_a = shift_layer(fly_rgb, dx, dy), shift_layer(fly_a[..., 0], dx, dy)[..., None]
+    if power > 0:  # 火光照亮剪影下半部
+        rim = np.exp(-(((xx - NOZ_CX) ** 2) / (2 * 300 ** 2) + ((yy - (NOZ_BOTTOM + dy - 60)) ** 2) / (2 * 140 ** 2)))[..., None]
+        fly_rgb = fly_rgb + rim * FIRE * 0.55 * power
+    frame = frame * (1 - fly_a) + fly_rgb * fly_a
+
+    # 点火前：引信火花 → 分头烧向火箭 → 喷口零星冒火星
+    if r < 16:
+        p = np.clip((rb - 8.3) / 4.5, 0, 1)
+        if p < 1:
+            x, y = _along(WANHU["fuse"], p)
+            spark(frame, x, y, fi)
+        elif rb < 13.6:
+            q = np.clip((rb - 12.8) / 0.8, 0, 1)
+            hub = WANHU["fuse"][-1]
+            for bx, by in WANHU["branches"]:
+                spark(frame, lerp(hub[0], bx, q), lerp(hub[1], by, q), fi, 12, 1.1)
+        else:
+            k = np.clip((rb - 13.6) / 1.9, 0, 1)
+            frame = frame + flame_layer(0, 0.12 + 0.25 * k, fi, subset=0.25 + 0.5 * k)
     else:
-        q = np.clip((bb - 14.7) / 0.8, 0, 1)
-        hub = WANHU["fuse"][-1]
-        for bx, by in WANHU["branches"]:
-            spark(frame, lerp(hub[0], bx, q), lerp(hub[1], by, q), fi, 12, 1.1)
-    zoom = lerp(1.0, 1.12, ease_io((bb - 8) / 8))
-    frame, _ = place(frame, 1262, 600, zoom, 0, W / 2 + 300, H / 2 + 60)
-    frame = np.where(frame.sum(-1, keepdims=True) == 0, WANHU["sky"][-1:, :1], frame)
-    caption(frame, b, 8.5, [("万户", "big"), ("47 支火箭，一把椅子", "mid"),
+        frame = frame + flame_layer(dy, power, fi)
+
+    # 地面与发射台
+    frame = frame * (1 - WANHU["gnd_a"]) + WANHU["gnd_rgb"] * WANHU["gnd_a"]
+
+    # 镜头：点火前慢推；起飞时略微向上跟
+    zoom = lerp(1.0, 1.12, ease_io((rb - 8) / 8)) if r < 16 else 1.12
+    cam_y = 600 + (0.12 * dy if r >= 17 else 0)
+    m = cv2.getRotationMatrix2D((1262.0, float(cam_y)), 0, zoom)
+    m[0, 2] += W / 2 + 300 - 1262
+    m[1, 2] += H / 2 + 60 - cam_y
+    frame = cv2.warpAffine(frame, m, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+
+    caption(frame, r, 8.5, [("万户", "big"), ("47 支火箭，一把椅子", "mid"),
                             ("明朝 · 传说", "small"), ("今天，月球背面有一座以他命名的环形山", "small")], scrim=0.5)
-    if b >= 15.5:
+
+    # 尾烟：点火后从地面升起，第 19.4—20 拍盖满画面，转场
+    if r >= 16:
+        el = t_real(r) - t_real(16)
+        if r < 19.4:
+            level = lerp(60, 380, ease_io((r - 16) / 3.4))
+        else:
+            level = lerp(380, H + 400, ease_in((r - 19.4) / 0.6, 1.6))
+        sm, col = ground_smoke(level, el * 70, power)
+        frame = frame * (1 - sm) + col * sm
+    elif r >= 15.5:
         frame = frame * 0.8
-    return post(frame, fi, grain=0.035)
+
+    shake = (0.0, 0.0)
+    if 16 <= r < 19.4:
+        sr = np.random.default_rng(fi + 99)
+        amp = 9 * (1 - 0.6 * np.clip((r - 17) / 2.4, 0, 1))
+        shake = (sr.normal(0, amp), sr.normal(0, amp))
+    return post(frame, fi, shake=shake, grain=0.035)
 
 
 def shot_balloon(b, fi):
-    """3-03 热气球（16—24 拍）：烟雾散开 → 从气球局部拉出整幅版画。"""
+    """3-03 热气球（逻辑 16—24 拍）：万户的尾烟散开 → 从气球局部拉出整幅版画。"""
     src = DUO["balloon"]
     h, w = src.shape[:2]
     k = ease_io((b - 16) / 8)
@@ -469,14 +564,13 @@ def shot_balloon(b, fi):
     frame = comp(PAPER_DARK.copy() * 1.6, rgb, a, shadow=0.6 * k)
     # 爆炸烟雾：第 16 拍起白烟铺满，1.5 拍内散开
     dt = t(b) - t(16)
-    if dt < 1.2:
-        thr = lerp(-0.2, 0.85, ease_io(dt / 1.2))
+    if dt < 1.3:
+        thr = lerp(-0.2, 0.85, ease_io(dt / 1.3))
         sm = np.clip((SMOKE[0] * 0.7 + SMOKE[1] * 0.3 - thr) * 4, 0, 1)[..., None]
-        frame = frame * (1 - sm) + np.array([0.96, 0.93, 0.86]) * sm
+        frame = frame * (1 - sm) + SMOKE_COL * sm
     caption(frame, b, 17, [("1783.11.21 · PARIS", "date"), ("离开地面", "big"),
                            ("人类第一次乘热气球飞上天空", "mid"), ("孟格菲热气球 · 飞行约 25 分钟", "small")])
-    sh, e = shake_at(b, 16, 22, 0.6)
-    return post(frame, fi, flash=flash_at(b, 16, 2), shake=sh, chroma=6 * e)
+    return post(frame, fi)
 
 
 def shot_lilienthal(b, fi):
@@ -663,13 +757,16 @@ def shot_next(b, fi):
     return chapter_card(b, fi, 53 - 0.3, "竞赛", exit_zoom=False)
 
 
-SHOTS = [(0, 8, shot_card), (8, 16, shot_wanhu), (16, 24, shot_balloon), (24, 28, shot_lilienthal),
+SHOTS = [(0, 8, shot_card), (16, 24, shot_balloon), (24, 28, shot_lilienthal),
          (28, 36, shot_1903), (36, 40, shot_nyt), (40, 44, shot_goddard), (44, 48, shot_v2),
          (48, 52, shot_x1), (52, 53, shot_black), (53, 999, shot_next)]
 
 
 def render_frame(fi):
-    b = beat_at(fi / FPS)
+    r = beat_at(fi / FPS)          # 实际拍号
+    if 8 <= r < WANHU_END:
+        return shot_wanhu(r, fi)
+    b = r if r < 8 else r - SHIFT  # 其余镜头按逻辑拍号编写
     for b0, b1, fn in SHOTS:
         if b0 <= b < b1:
             return fn(b, fi)
