@@ -43,27 +43,56 @@ def _ff(*args):
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *map(str, args)], check=True)
 
 
+HD_V = ["-c:v", "libx264", "-preset", "slow", "-crf", "18", "-maxrate", "12M", "-bufsize", "24M",
+        "-profile:v", "high", "-level", "4.2", "-pix_fmt", "yuv420p", "-g", "60"]
+
+
+def _encode_chapters(film, tag, vargs, two_pass=False):
+    """逐章编码视频（不带音轨）。章节原片没变、参数没变就沿用上次的结果，所以改一章只重编这一章。"""
+    d = OUT / f"enc_{tag}"
+    d.mkdir(exist_ok=True)
+    sig = " ".join(map(str, vargs))
+    files = []
+    for ch in film.chapters:
+        src, dst, stamp = OUT / "chapters" / f"{ch.key}.mp4", d / f"{ch.key}.mp4", d / f"{ch.key}.args"
+        fresh = dst.exists() and stamp.exists() and stamp.read_text() == sig and dst.stat().st_mtime > src.stat().st_mtime
+        if not fresh:
+            if two_pass:
+                log = d / f"{ch.key}_2pass"
+                _ff("-i", src, *vargs, "-passlogfile", log, "-pass", 1, "-an", "-f", "null", "/dev/null")
+                _ff("-i", src, *vargs, "-passlogfile", log, "-pass", 2, "-an", dst)
+                for f in d.glob(f"{ch.key}_2pass*"):
+                    f.unlink()
+            else:
+                _ff("-i", src, *vargs, "-an", dst)
+            stamp.write_text(sig)
+            print("encoded", tag, ch.key, flush=True)
+        files.append(dst)
+    return files
+
+
+def _concat_with_score(files, audio_args, out):
+    """各章视频直接拼接（不重编），配乐整条编码一次再封装；音轨补静音到与画面等长，不丢最后一帧。"""
+    lst = OUT / f"{out.stem}_concat.txt"
+    lst.write_text("".join(f"file '{f}'\n" for f in files))
+    _ff("-f", "concat", "-safe", "0", "-i", lst, "-i", OUT / "score.wav", "-map", "0:v", "-map", "1:a",
+        "-c:v", "copy", *audio_args, "-af", "apad", "-shortest", "-movflags", "+faststart", out)
+    lst.unlink()
+
+
 def deliver(film, what=("hd", "preview")):
     """上传版：1080p H.264 High + AAC 320k，按 90 MiB 分片并附 sha256 入库。
-    预览：整片 720p 两遍编码，单文件低于 95 MB，直接入库。"""
-    master = OUT / "tianwen_master.mp4"
+    预览：720p 两遍编码，整片单文件低于 95 MB，直接入库。两者都按章节编码后拼接。"""
     DELIVERY.mkdir(exist_ok=True)
     if "hd" in what:
         final = DELIVERY / "tianwen_1080p.mp4"
-        _ff("-i", master, "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-maxrate", "12M", "-bufsize", "24M",
-            "-profile:v", "high", "-level", "4.2", "-pix_fmt", "yuv420p", "-g", "60",
-            "-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-movflags", "+faststart", final)
+        _concat_with_score(_encode_chapters(film, "hd", HD_V), ["-c:a", "aac", "-b:a", "320k", "-ar", "48000"], final)
         split_file(final)
     if "preview" in what:
         out = DELIVERY / "tianwen_preview_720p.mp4"
         vb = int((PREVIEW_BYTES * 8 / film.duration - 128_000) * 0.96)
-        log = OUT / "x264_2pass"
-        common = ["-i", master, "-vf", "scale=1280:720", "-c:v", "libx264", "-preset", "medium", "-b:v", vb,
-                  "-passlogfile", log]
-        _ff(*common, "-pass", 1, "-an", "-f", "null", "/dev/null")
-        _ff(*common, "-pass", 2, "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out)
-        for f in OUT.glob("x264_2pass*"):
-            f.unlink()
+        pv = ["-vf", "scale=1280:720", "-c:v", "libx264", "-preset", "medium", "-b:v", vb, "-pix_fmt", "yuv420p"]
+        _concat_with_score(_encode_chapters(film, "preview", pv, two_pass=True), ["-c:a", "aac", "-b:a", "128k"], out)
         print("preview", out, out.stat().st_size, "bytes")
 
 
