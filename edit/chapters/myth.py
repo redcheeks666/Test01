@@ -115,7 +115,7 @@ def s_artemis(c):
     if twin > 0:
         r2 = 255
         sx2 = lerp(1900, 1610, twin)
-        f = _medallion(f, apo, 0.33, 0.50, 0.52 * r2 / 255, sx2, 580, r2, ring_k=twin, alpha=twin)
+        f = _medallion(f, apo, 0.335, 0.465, 0.44 * r2 / 255, sx2, 580, r2, ring_k=twin, alpha=twin)
         f = _sun(f, sx2, 580 - r2 - 95, 44, twin, c.lsec * 0.3)
     caption(f, c, 0.6, [("同一个月亮，在地中海的另一端", "lead"), ("阿尔忒弥斯", "big"),
                         ("希腊神话里的月亮女神", "mid")], y=120, scrim=0.35)
