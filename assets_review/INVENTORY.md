@@ -1,12 +1,12 @@
 # 《天问》阶段一素材清单
 
-实际原素材：**92 个文件，1.382 GB（十进制）**。预览与文档不计入原素材大小。
+实际原素材：**113 个文件，11.345 GB（十进制）**。预览与文档不计入原素材大小。
 
 ## 分类统计
 
 | 类别 | 文件数 | 大小（MB） |
 |---|---:|---:|
-| SX | 4 | 62.401 |
+| SX | 25 | 10025.628 |
 | NA | 45 | 901.524 |
 | SU | 0 | 0.000 |
 | CN | 14 | 38.343 |
@@ -19,36 +19,67 @@
 
 | 门槛 | 文件数 | 合计（MB） |
 |---|---:|---:|
-| >100 MB | 4 | 791.579 |
+| >100 MB | 11 | 10175.801 |
+| ↳ `SX/SX-01/SX-01_01_starship_flight14_full_broadcast_spacex.mp4` |  | 8024.456 |
+| ↳ `SX/SX-01/SX-01_04_flight14_prelaunch_pad_spacex.mp4` |  | 632.821 |
 | ↳ `NA/NA-15/NA-15_01_artemis2_launch_4k_nasa.mp4` |  | 276.763 |
 | ↳ `PD/PD-11/PD-11_01_wright_first_flight_loc.tif` |  | 243.314 |
+| ↳ `SX/SX-01/SX-01_03_flight14_prelaunch_payload_spacex.mp4` |  | 200.435 |
 | ↳ `NA/NA-15/NA-15_02_orion_liftoff_camera_nasa.mp4` |  | 158.709 |
+| ↳ `SX/SX-03/SX-03_07_flight14_deorbit_complete_spacex.mp4` |  | 158.539 |
+| ↳ `SX/SX-03/SX-03_09_flight14_splashdown_spacex.mp4` |  | 152.029 |
+| ↳ `SX/SX-03/SX-03_03_flight14_payload_deploy_start_spacex.mp4` |  | 113.708 |
 | ↳ `NA/NA-04/NA-04_02_iss_view_of_earth_nasa.mp4` |  | 112.793 |
-| >380 MB | 0 | 0.000 |
-| >2 GB | 0 | 0.000 |
+| ↳ `SX/SX-01/SX-01_05_flight14_hot_staging_spacex.mp4` |  | 102.234 |
+| >380 MB | 2 | 8657.277 |
+| ↳ `SX/SX-01/SX-01_01_starship_flight14_full_broadcast_spacex.mp4` |  | 8024.456 |
+| ↳ `SX/SX-01/SX-01_04_flight14_prelaunch_pad_spacex.mp4` |  | 632.821 |
+| >2 GB | 1 | 8024.456 |
+| ↳ `SX/SX-01/SX-01_01_starship_flight14_full_broadcast_spacex.mp4` |  | 8024.456 |
 
 ## 完整清单
 
 | file_path | media_type | width×height | fps | duration | codec | size_mb |
 |---|---|---:|---:|---:|---|---:|
+| SX/SX-01/SX-01_01_starship_flight14_full_broadcast_spacex.mp4 | video | 3840×2160 | 1007819978/33627591 | 03:50:51 | h264 | 8024.456 |
+| SX/SX-01/SX-01_04_flight14_prelaunch_pad_spacex.mp4 | video | 3840×2160 | 24000/1001 | 00:05:48 | h264 | 632.821 |
 | NA/NA-15/NA-15_01_artemis2_launch_4k_nasa.mp4 | video | 3840×2160 | 60000/1001 | 00:02:27 | h264 | 276.763 |
 | PD/PD-11/PD-11_01_wright_first_flight_loc.tif | image | 7500×5406 |  |  | tiff | 243.314 |
+| SX/SX-01/SX-01_03_flight14_prelaunch_payload_spacex.mp4 | video | 3840×2160 | 524125/17488 | 00:02:20 | h264 | 200.435 |
 | NA/NA-15/NA-15_02_orion_liftoff_camera_nasa.mp4 | video | 3840×2160 | 60000/1001 | 00:00:54 | h264 | 158.709 |
+| SX/SX-03/SX-03_07_flight14_deorbit_complete_spacex.mp4 | video | 3840×2160 | 835900/27891 | 00:04:39 | h264 | 158.539 |
+| SX/SX-03/SX-03_09_flight14_splashdown_spacex.mp4 | video | 3840×2160 | 111125/3708 | 00:01:29 | h264 | 152.029 |
+| SX/SX-03/SX-03_03_flight14_payload_deploy_start_spacex.mp4 | video | 3840×2160 | 2035000/67897 | 00:01:08 | h264 | 113.708 |
 | NA/NA-04/NA-04_02_iss_view_of_earth_nasa.mp4 | video | 3840×2160 | 24000/1001 | 00:01:37 | h264 | 112.793 |
+| SX/SX-01/SX-01_05_flight14_hot_staging_spacex.mp4 | video | 3840×2160 | 32700/1091 | 00:01:05 | h264 | 102.234 |
 | NA/NA-04/NA-04_01_iss_earth_observations_nasa.mp4 | video | 3840×2160 | 24000/1001 | 00:01:06 | h264 | 83.963 |
+| SX/SX-03/SX-03_04_flight14_payload_deploy_complete_spacex.mp4 | video | 3840×2160 | 70750/2361 | 00:00:28 | h264 | 77.895 |
 | FX/FX-02/FX-02_01_falcon9_pad_mics_nasa.wav | audio |  |  | 00:04:21 | pcm_s24le | 75.077 |
+| SX/SX-03/SX-03_08_flight14_reentry_spacex.mp4 | video | 3840×2160 | 221750/7399 | 00:00:59 | h264 | 70.406 |
+| SX/SX-01/SX-01_06_flight14_booster_splashdown_spacex.mp4 | video | 3840×2160 | 1253000/41809 | 00:00:42 | h264 | 68.661 |
+| SX/SX-01/SX-01_02_flight14_liftoff_spacex.mp4 | video | 3840×2160 | 172375/5752 | 00:00:46 | h264 | 65.663 |
+| SX/SX-03/SX-03_02_flight14_orbital_insertion_spacex.mp4 | video | 3840×2160 | 1659000/55357 | 00:00:55 | h264 | 57.580 |
 | NA/NA-09/NA-09_01_apollo11_70mm_launch_nasa.mp4 | video | 1812×1812 | 24/1 | 00:01:24 | h264 | 56.745 |
+| SX/SX-03/SX-03_05_flight14_live_orbital_views_spacex.mp4 | video | 3840×2160 | 812500/27113 | 00:00:54 | h264 | 55.617 |
 | SX/SX-05/SX-05_01_starship_flight5_spacex.mp4 | video | 1920×1080 | 37395000/1559683 | 00:03:28 | h264 | 43.970 |
 | NA/NA-30/NA-30_01_webb_first_deep_field_smacs0723_esa.tif | image | 4537×4630 |  |  | tiff | 40.571 |
+| SX/SX-01/SX-01_08_flight14_mission_recap_spacex.mp4 | video | 3840×2160 | 24000/1001 | 00:00:40 | h264 | 37.880 |
+| SX/SX-01/SX-01_09_flight14_hotstaging_angle1_spacex.mp4 | video | 3840×2160 | 1545216/51499 | 00:00:17 | h264 | 32.999 |
+| SX/SX-01/SX-01_07_flight14_ascent_burn_complete_spacex.mp4 | video | 3840×2160 | 779000/25991 | 00:00:26 | h264 | 32.073 |
 | NA/NA-14/NA-14_02_pale_blue_dot_revisited_nasa.tif | image | 5230×5175 |  |  | tiff | 31.303 |
+| SX/SX-01/SX-01_10_flight14_hotstaging_angle2_spacex.mp4 | video | 3840×2160 | 674560/22487 | 00:00:18 | h264 | 26.423 |
 | PD/PD-08/PD-08_01_first_free_balloon_flight_1783_loc.tif | image | 2418×3377 |  |  | tiff | 24.501 |
 | CN/CN-04/CN-04_01_mars_panorama_cnsa.jpg | image | 11736×4000 |  |  | mjpeg | 23.771 |
 | NA/NA-18/NA-18_01_voyager_probe_testing_nasa.tif | image | 3029×2410 |  |  | tiff | 21.637 |
+| SX/SX-03/SX-03_06_flight14_deorbit_preparation_spacex.mp4 | video | 3840×2160 | 63500/2119 | 00:00:21 | h264 | 18.445 |
 | PD/PD-10/PD-10_01_lilienthal_gliding_1895_loc.tif | image | 2688×2204 |  |  | tiff | 17.776 |
 | SX/SX-07/SX-07_01_demo2_liftoff_nasa.jpg | image | 5616×3744 |  |  | mjpeg | 16.527 |
+| SX/SX-03/SX-03_01_flight14_go_for_orbit_spacex.mp4 | video | 3840×2160 | 24250/809 | 00:00:16 | h264 | 15.366 |
 | NA/NA-17/NA-17_01_orion_splashdown_nasa.jpg | image | 3819×5092 |  |  | mjpeg | 15.049 |
 | NA/NA-01/NA-01_01_full_moon_feb2026_nasa.tif | image | 5760×3240 |  |  | tiff | 11.373 |
 | NA/NA-01/NA-01_02_full_moon_sep2026_nasa.tif | image | 5760×3240 |  |  | tiff | 10.975 |
+| SX/SX-03/SX-03_10_flight14_starlink_external_deployment_spacex.mp4 | video | 1920×1080 | 30000/1001 | 00:00:27 | h264 | 10.792 |
+| SX/SX-01/SX-01_11_flight14_hotstaging_angle3_spacex.mp4 | video | 1920×1080 | 8386560/279521 | 00:00:18 | h264 | 9.204 |
 | NA/NA-05/NA-05_01_apollo8_recovery_nasa.jpg | image | 6838×6838 |  |  | mjpeg | 7.825 |
 | NA/NA-13/NA-13_01_voyager_launch_nasa.tif | image | 2355×3000 |  |  | tiff | 7.073 |
 | NA/NA-12/NA-12_01_apollo17_ascent_nasa.jpg | image | 8072×6401 |  |  | mjpeg | 6.240 |
