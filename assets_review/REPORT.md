@@ -307,3 +307,5 @@ HiRISE三份分别531,492,878、523,983,770、495,137,334字节，各拆成6片9
 | 祝融号等比例模型 | [Zhurong rover mockup at CSTM 02](https://commons.wikimedia.org/wiki/File:Zhurong_rover_mockup_at_CSTM_02.jpg) | [原始JPEG](https://upload.wikimedia.org/wikipedia/commons/e/e8/Zhurong_rover_mockup_at_CSTM_02.jpg) | 2400×1600，约1.85 MiB，Shujianyang，2023-06-23，中国科技馆 |
 
 近景转载即使位于IAU、行星协会或Commons，仍按原拍摄者判断来源；如CNSA拍摄的[Yutu-2裁切图](https://commons.wikimedia.org/wiki/File:Yutu-2.jpg)、[行星协会转制嫦娥四号近景](https://www.planetary.org/space-images/view-of-change-4-lander-from)均被排除。没有把平台域名当作非中国拍摄来源证明。
+
+补充检索与状态同步：本次Flickr公开检索未得到额外可同时核验全尺寸实物模型、个人拍摄及开放许可的候选。阶段三天宫的403描述是当时状态；用户随后已换网络取得原件，由Claude核验Commons SHA-1后入库为`WM-01/01`。阶段四清单保留了这份已入库素材，本阶段新增5份观测的统计不含它。
