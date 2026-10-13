@@ -230,7 +230,7 @@
 | 编号/候选 | 文件 | 原尺寸 | 内容与定位 |
 |---|---|---:|---|
 | NA-32/01 | `NA/NA-32/NA-32_01_change6_lander_full_crop_lroc.png` | 1300×1300 | 2024-06-07嫦娥六号；着陆器中心约(651,649)，周围发动机扰动亮区可见。LROC全尺寸裁切原件；网站常见1100版尺寸较小。 |
-| NA-32/02 | `NA/NA-32/NA-32_02_change6_full_nac_pds.tif` | 5064×52224 | 同次观测完整NAC条带及周围环形山；第0层着陆器中心约(2500,32710)，北约向图右91.46°。 |
+| NA-32/02 | `NA/NA-32/NA-32_02_change6_full_nac_pds.tif` | 5064×52224 | 同次观测完整NAC条带及周围环形山；第0层着陆器中心约(2500,32710)，北朝图下方略偏左（阶段四按PDS角点经纬度更正）。 |
 | NA-33/01 | `NA/NA-33/NA-33_01_change4_yutu2_lroc.png` | 1100×1100 | 可选补充：2019-01-31嫦娥四号与玉兔二号；双箭头是官方原图标注，发布者已放大4倍。 |
 | NA-34/01 | `NA/NA-34/NA-34_01_zhurong_lander_rover_hirise.jpg` | 713×657 | 可选补充：2021-06-06祝融号平台与南侧火星车，HiRISE官方增强色细节裁切图。 |
 
@@ -262,3 +262,48 @@ NA-32/02是发布者的9层多分辨率TIFF，最高层完整解码通过。官�
 | [Planetary Society天宫出舱图](https://www.planetary.org/space-images/tiangong-spacewalk)；中国新闻社开放视频检索 | 前者未识别官方用图许可，只推测可非商业转载；后者未找到同时证明真实站体影像与明确开放许可的候选。均不以转载/推测代替许可。 |
 
 原有CN-02载人航天办公室图片与CN-06新华社图片保留为历史采集记录；本阶段替换交接不赋予这些旧图新的许可，也不删除并行剪辑工程。嫦娥六号优先使用NA-32/02的PDS素材；NA-32/01与NA-33/01须遵守已记录的教育用途条款。
+
+## 阶段四：嫦娥四号、祝融号非中国机构来源完整观测（2026-10-14）
+
+本阶段新增 **5份完整观测原件，1,648,772,394字节（1.649 GB）**：三份HiRISE正式彩色PDS产品、两份LROC PDS完整NAC浏览TIFF。它们均为NASA轨道器实拍，没有收录中国相机的表面近景转载。素材交接已完成；本阶段没有修改剪辑或重新渲染影片。
+
+| 编号/候选 | 完整原件（assets/下） | 日期 | 最高层尺寸 | 探测器像素坐标 |
+|---|---|---|---:|---|
+| NA-35/01 | `NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2` | 2021-06-06 | 13100×64337 | 平台约(8980,41079)；祝融号约(9004,41165) |
+| NA-35/02 | `NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2` | 2021-06-11 | 11847×63934 | 平台约(8240,40513)；已移动的祝融号约(8195,40786) |
+| NA-35/03 | `NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2` | 2022-03-11 | 11680×57915 | 后续车辙候选：平台约(7538,28191)；祝融号约(8269,33061) |
+| NA-36/01 | `NA/NA-36/NA-36_01_m1303619844lc_full_nac_pds.tif` | 2019-02-01 | 5064×52224 | 着陆器约(4751,26494)；玉兔二号约(4775,26516) |
+| NA-36/02 | `NA/NA-36/NA-36_02_m1305967189rc_full_nac_pds.tif` | 2019-02-28 | 5064×52224 | 着陆器约(1536,24751)；玉兔二号约(1612,24768) |
+
+坐标以入库原件的最高分辨率第0层为准，左上角(0,0)，x向右/y向下，是剪辑推近的近似中心，不是航天测量坐标。HiRISE三张均为等距圆柱地图投影，**北在图上方**。LROC两张实际TIFF用官方北向上的参考图配准核验，**北朝图下方、略偏右**，北向单位矢量约(+0.08,+1.00)；需要北向上时，在工作副本中旋转，保留原件。
+
+每份文件的来源和许可原文：
+
+- **NA-35/01**：[ESP_069665_2055观测页](https://www.uahirise.org/ESP_069665_2055)。页面JP2项下的IRB color正式地图投影`COLOR.JP2`，全观测长度；该页USAGE POLICY明确图像属公有领域。
+- **NA-35/02**：[ESP_069731_2055观测页](https://www.uahirise.org/ESP_069731_2055)。同类正式`COLOR.JP2`，页内USAGE POLICY为同一公有领域声明。比6月6日更靠南的车位在本观测的原生坐标中单独定位，不复用前一张图的坐标。
+- **NA-35/03**：[ESP_073225_2055观测页](https://www.uahirise.org/ESP_073225_2055)。官方说明可沿轮痕追踪火星车行程，已向南行进约1.5km；页内USAGE POLICY同样明确公有领域。平台定位先跨观测匹配地形，再对照原图亮点/阴影微调，平台近似中心约±10像素。
+- 上述三份署名均为 **NASA/JPL-Caltech/University of Arizona**。三份伴随原始PDS `.LBL` 标签同目录交接，包含投影、像素尺度与位深；不作为额外图像计数。[官方彩色产品技术说明](https://www.uahirise.org/pdf/color-products.pdf)解释正式PDS RDR是校准并投影后的无损JP2。所收三份为**16位、3波段IR/RED/BG、0.25米/像素**，彩色条带覆盖完整观测长度，边缘零值为数据边界；不是缩略JPEG，不是自然色，也不是生相机EDR。先取到的MRGB Extras仅0.5米/像素，未作为本阶段正式原件入库。
+- **NA-36/01**：[M1303619844LC观测及下载页](https://data.lroc.im-ldi.com/lroc/view_lroc/LRO-L-LROC-3-CDR-V1.0/M1303619844LC)、[PDS许可原文§1](https://lroc.im-ldi.com/about/terms)。使用Download CDR PTIF原件，直接来自PDS `LROLRC_1038B/EXTRAS/BROWSE/2019032/`。其观测接近天底、像素尺度约0.836米/像素；[官方说明](https://lroc.im-ldi.com/images/1092)确认较1月31日观测更清晰，玉兔二号在着陆器西北约29米。
+- **NA-36/02**：[M1305967189RC观测及下载页](https://data.lroc.im-ldi.com/lroc/view_lroc/LRO-L-LROC-3-CDR-V1.0/M1305967189RC)、[PDS许可原文§1](https://lroc.im-ldi.com/about/terms)。来自PDS `LROLRC_1038C/EXTRAS/BROWSE/2019059/`，约0.837米/像素；太阳入射角81.67°，距水平面的太阳高度约8.33°，探测器长阴影明显。[2月28日官方说明](https://lroc.im-ldi.com/images/1096)确认玉兔二号该月向西移动、离着陆器约69米。
+- LROC两份均为**公有领域PDS产品**，署名 **NASA/GSFC/Arizona State University**。与阶段三NA-33的有版权Featured Image不同，未把Featured Images中的箭头、四宫格或加工裁切作为本阶段原件。PDS PTIF发布者注明多分辨率、有损压缩；本次原字节保存，未转码，不冒称无损科学CDR `.IMG`。
+
+已调查2019-01-31的`M1303570617L/R`；含着陆区的是右侧NAC，分辨率约2.236米/像素、斜视约61°，原生条带纵横比例畸变明显。本阶段优先交接能满足推近需求的2月1日及2月28日完整观测；1月31日参考原件留在临时研究目录，不计入manifest或仓库。
+
+### 入库与核验
+
+HiRISE三份分别531,492,878、523,983,770、495,137,334字节，各拆成6片90 MiB二进制分片，共18片，附原件SHA-256和[恢复说明](../assets/SPLIT_FILES.md)。LROC两份42,268,309及55,890,103字节，直接入库。分片重组字节与下载原件逐字节/哈希一致，原始大文件路径加入`.gitignore`，没有超过95 MB的单个Git文件。
+
+全部原生像素分块解码核验；JP2保留16位DN，没有为入库降到8位。坐标先由官方投影/角点估计，再与官方细节图做几何配准并目视回读：两次HiRISE主观测分别76/223个配准内点，2022车位263个内点；LROC分别158/37个内点。配准拟合残差不能当作绝对定位精度，目标坐标仍按近似中心使用。审阅预览对JP2每波段作百分位亮度拉伸，原件不变；各原件都有全图预览和目标局部核验图，预览长边不超过1280像素、单个小于1 MB。完整核验结果见`PHASE4_VALIDATION.json`。
+
+另更正阶段三NA-32/02的北向文字：原报告误写成“图右”。按PDS上下角点纬度和左右角点经度核对，实际完整TIFF北朝**图下方略偏左**；已同步更正manifest及阶段三报告表格，着陆器坐标(2500,32710)不变。这项朝向更正不更改原图字节。
+
+### B：展览实物模型照片
+
+已逐个打开下列Commons文件页，核验作者、Own work、全尺寸等比例实物模型说明、相机EXIF与许可框。两张都由个人Shujianyang拍摄，**CC BY-SA 4.0（署名-相同方式共享）**，署名`Shujianyang / Wikimedia Commons, CC BY-SA 4.0`。它们是展览现场照片，不是电脑三维渲染；若手动入库，description应写“展览模型，非实拍（月面/火星表面）”。本机原件下载均403，未计入manifest。按任务约定留下原件直链，供用户换网络手动下载。
+
+| 内容 | 核验过的文件页及许可原文 | 原件直链 | 全尺寸与作者 |
+|---|---|---|---|
+| 嫦娥四号着陆器与玉兔二号等比例模型 | [Chang'e 4 mockup at CSTM 01](https://commons.wikimedia.org/wiki/File:Chang%27e_4_mockup_at_CSTM_01.jpg) | [原始JPEG](https://upload.wikimedia.org/wikipedia/commons/c/cf/Chang%27e_4_mockup_at_CSTM_01.jpg) | 2400×1600，1,889,484字节，Shujianyang，2023-06-23，中国科技馆；Commons SHA-1 `ded8d3e1fb537fb56dfa585a2487fc2cb54b8461` |
+| 祝融号等比例模型 | [Zhurong rover mockup at CSTM 02](https://commons.wikimedia.org/wiki/File:Zhurong_rover_mockup_at_CSTM_02.jpg) | [原始JPEG](https://upload.wikimedia.org/wikipedia/commons/e/e8/Zhurong_rover_mockup_at_CSTM_02.jpg) | 2400×1600，约1.85 MiB，Shujianyang，2023-06-23，中国科技馆 |
+
+近景转载即使位于IAU、行星协会或Commons，仍按原拍摄者判断来源；如CNSA拍摄的[Yutu-2裁切图](https://commons.wikimedia.org/wiki/File:Yutu-2.jpg)、[行星协会转制嫦娥四号近景](https://www.planetary.org/space-images/view-of-change-4-lander-from)均被排除。没有把平台域名当作非中国拍摄来源证明。

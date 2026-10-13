@@ -1,0 +1,339 @@
+{
+  "stage": 4,
+  "date": "2026-10-14",
+  "new_files": [
+    {
+      "file_path": "NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2",
+      "name": "mars_0606",
+      "bytes": 531492878,
+      "sha256": "8217ea28197bbbc225c1f27ebdf9ba37ebcb8963fe2f72dab71bf3e5e6d113e7",
+      "parts": [
+        "assets/NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2.part00",
+        "assets/NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2.part01",
+        "assets/NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2.part02",
+        "assets/NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2.part03",
+        "assets/NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2.part04",
+        "assets/NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2.part05"
+      ],
+      "width": 13100,
+      "height": 64337,
+      "locations": {
+        "name": "mars_0606",
+        "lander": [
+          8980.011840820312,
+          41079.418212890625
+        ],
+        "rover": [
+          9004.35498046875,
+          41164.6904296875
+        ],
+        "north": "up",
+        "map_scale": 0.25,
+        "inliers": 76,
+        "median_residual_px": 0.3804953694343567,
+        "reference": "mars_0606_ESP_069665_2055-1.jpg",
+        "homography": [
+          [
+            1.1898651194351597,
+            0.1542341142036946,
+            1308.656090672116
+          ],
+          [
+            -0.14885098189972315,
+            1.165369214529554,
+            2099.0016463873308
+          ],
+          [
+            1.7866183714392306e-06,
+            1.838564489888517e-06,
+            0.9999999999999999
+          ]
+        ],
+        "roi": [
+          7203,
+          38682,
+          10803,
+          42282
+        ]
+      },
+      "preview_bytes": 30688
+    },
+    {
+      "file_path": "NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2",
+      "name": "mars_0611",
+      "bytes": 523983770,
+      "sha256": "b615790575a193aef343fb18d77c9bb8b633c381e964c0fc7b08c14b3eec4db4",
+      "parts": [
+        "assets/NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2.part00",
+        "assets/NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2.part01",
+        "assets/NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2.part02",
+        "assets/NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2.part03",
+        "assets/NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2.part04",
+        "assets/NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2.part05"
+      ],
+      "width": 11847,
+      "height": 63934,
+      "locations": {
+        "name": "mars_0611",
+        "lander": [
+          8240.44287109375,
+          40513.40576171875
+        ],
+        "rover": [
+          8195.451782226562,
+          40786.404052734375
+        ],
+        "north": "up",
+        "map_scale": 0.25,
+        "inliers": 223,
+        "median_residual_px": 0.1135471761226654,
+        "reference": "mars_0611_ESP_069731_2055.jpg",
+        "homography": [
+          [
+            0.500198912955847,
+            0.00010380297181056759,
+            1285.836260812463
+          ],
+          [
+            0.00014094679615905486,
+            0.5001696875960637,
+            1987.876558056649
+          ],
+          [
+            6.561070996448788e-08,
+            4.476716262970742e-08,
+            1.0
+          ]
+        ],
+        "roi": [
+          6292,
+          38149,
+          9892,
+          41749
+        ]
+      },
+      "preview_bytes": 28367
+    },
+    {
+      "file_path": "NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2",
+      "name": "mars_tracks",
+      "bytes": 495137334,
+      "sha256": "2e4c2e75f2c566b9b8d09a7698e52202b8aeb1d485326827b5414cc2e31fb991",
+      "parts": [
+        "assets/NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2.part00",
+        "assets/NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2.part01",
+        "assets/NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2.part02",
+        "assets/NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2.part03",
+        "assets/NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2.part04",
+        "assets/NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2.part05"
+      ],
+      "width": 11680,
+      "height": 57915,
+      "locations": {
+        "name": "mars_tracks",
+        "rover": [
+          8268.6513671875,
+          33061.31457519531
+        ],
+        "lander": [
+          7538.0,
+          28191.0
+        ],
+        "north": "up",
+        "map_scale": 0.25,
+        "inliers": 263,
+        "median_residual_px": 0.17080481350421906,
+        "reference": "mars_tracks_ESP_073225_2055-cut-1.jpg",
+        "homography": [
+          [
+            0.5774948021217303,
+            0.07080319202177977,
+            2372.40971184851
+          ],
+          [
+            -0.07008684668443693,
+            0.5739359615438656,
+            1015.3622675990136
+          ],
+          [
+            4.5851774673976844e-07,
+            2.419125807930162e-07,
+            1.0
+          ]
+        ],
+        "roi": [
+          5464,
+          31706,
+          9064,
+          35306
+        ]
+      },
+      "preview_bytes": 30028
+    },
+    {
+      "file_path": "NA/NA-36/NA-36_01_m1303619844lc_full_nac_pds.tif",
+      "name": "moon_0201_L",
+      "bytes": 42268309,
+      "sha256": "6681f7c30d28bae2a2bde5f1555d2d898c096b885e6d9997efc144922002f4a1",
+      "parts": [],
+      "width": 5064,
+      "height": 52224,
+      "locations": {
+        "name": "moon_0201_L",
+        "lander": [
+          4750.529296875,
+          26493.90234375
+        ],
+        "rover": [
+          4775.1533203125,
+          26516.091796875
+        ],
+        "north_vector_xy": [
+          0.08029405772686005,
+          0.9967711567878723
+        ],
+        "north_azimuth_metadata_deg": 287.86,
+        "resolution": 0.836388605140525,
+        "reference": "/Users/mashazhenta/CodeXProject/Vibe知识大赏/phase4_work/ref_feb01.png",
+        "inliers": 158,
+        "median_residual_px": 0.21803820133209229,
+        "roi": [
+          2687,
+          24957,
+          5687,
+          27957
+        ]
+      },
+      "preview_bytes": 34463
+    },
+    {
+      "file_path": "NA/NA-36/NA-36_02_m1305967189rc_full_nac_pds.tif",
+      "name": "moon_0228_R",
+      "bytes": 55890103,
+      "sha256": "b77b337f4fa2109caddbe8219516382f81a0618538cf7ee3a688bb52e7dee82f",
+      "parts": [],
+      "width": 5064,
+      "height": 52224,
+      "locations": {
+        "name": "moon_0228_R",
+        "lander": [
+          1536.458984375,
+          24750.6015625
+        ],
+        "rover": [
+          1611.705322265625,
+          24768.2734375
+        ],
+        "north_vector_xy": [
+          0.08242988586425781,
+          0.9965968728065491
+        ],
+        "north_azimuth_metadata_deg": 266.99,
+        "resolution": 0.8366050899433282,
+        "reference": "/Users/mashazhenta/CodeXProject/Vibe知识大赏/phase4_work/ref_moon_move.png",
+        "inliers": 37,
+        "median_residual_px": 0.11014943569898605,
+        "roi": [
+          309,
+          23221,
+          3309,
+          26221
+        ]
+      },
+      "preview_bytes": 43467
+    }
+  ],
+  "native_pixel_validation": [
+    {
+      "name": "mars_0606_color",
+      "file": "mars_0606_color.jp2",
+      "bytes": 531492878,
+      "sha256": "8217ea28197bbbc225c1f27ebdf9ba37ebcb8963fe2f72dab71bf3e5e6d113e7",
+      "width": 13100,
+      "height": 64337,
+      "bands": 3,
+      "bits": 16,
+      "map_scale": 0.25,
+      "decoded_values": 2528444100,
+      "full_decode": true,
+      "decode_seconds": 96.6
+    },
+    {
+      "name": "mars_0611_color",
+      "file": "mars_0611_color.jp2",
+      "bytes": 523983770,
+      "sha256": "b615790575a193aef343fb18d77c9bb8b633c381e964c0fc7b08c14b3eec4db4",
+      "width": 11847,
+      "height": 63934,
+      "bands": 3,
+      "bits": 16,
+      "map_scale": 0.25,
+      "decoded_values": 2272278294,
+      "full_decode": true,
+      "decode_seconds": 83.5
+    },
+    {
+      "name": "mars_tracks_color",
+      "file": "mars_tracks_color.jp2",
+      "bytes": 495137334,
+      "sha256": "2e4c2e75f2c566b9b8d09a7698e52202b8aeb1d485326827b5414cc2e31fb991",
+      "width": 11680,
+      "height": 57915,
+      "bands": 3,
+      "bits": 16,
+      "map_scale": 0.25,
+      "decoded_values": 2029341600,
+      "full_decode": true,
+      "decode_seconds": 72.9
+    },
+    {
+      "name": "moon_0201_L",
+      "file": "moon_0201_L.tif",
+      "bytes": 42268309,
+      "sha256": "6681f7c30d28bae2a2bde5f1555d2d898c096b885e6d9997efc144922002f4a1",
+      "width": 5064,
+      "height": 52224,
+      "bands": 1,
+      "bits": 8,
+      "full_decode": true,
+      "tiff_levels": 9
+    },
+    {
+      "name": "moon_0228_R",
+      "file": "moon_0228_R.tif",
+      "bytes": 55890103,
+      "sha256": "b77b337f4fa2109caddbe8219516382f81a0618538cf7ee3a688bb52e7dee82f",
+      "width": 5064,
+      "height": 52224,
+      "bands": 1,
+      "bits": 8,
+      "full_decode": true,
+      "tiff_levels": 9
+    }
+  ],
+  "new_original_bytes": 1648772394,
+  "new_original_files": 5,
+  "new_split_originals": 3,
+  "new_parts": 18,
+  "manifest_rows": 157,
+  "prior_rows_preserved_except_documented_direction_fix": true,
+  "prior_metadata_corrections": [
+    {
+      "asset_id": "NA-32",
+      "candidate": "02",
+      "field": "key_moments",
+      "reason": "Correct native TIFF north direction using PDS corner geography"
+    }
+  ],
+  "full_native_decode": true,
+  "original_bytes_verified": true,
+  "previews_under_1mb_and_1280px": true,
+  "model_photos": {
+    "status": "verified_CC_BY_SA_4.0_original_download_403_not_in_manifest",
+    "author": "Shujianyang",
+    "files": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Chang%27e_4_mockup_at_CSTM_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e8/Zhurong_rover_mockup_at_CSTM_02.jpg"
+    ]
+  }
+}

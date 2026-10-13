@@ -1,6 +1,9 @@
 file_path,media_type,resolution,fps,duration,codec,size_mb,in_repo
 SX/SX-01/_full_broadcast/SX-01_01_starship_flight14_full_broadcast_spacex.mp4,video,3840×2160,1007819978/33627591,03:50:51,h264,8024.456,只在本地
 SX/SX-01/SX-01_04_flight14_prelaunch_pad_spacex.mp4,video,3840×2160,24000/1001,00:05:48,h264,632.821,分片入库
+NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2,image,13100×64337,,,jpeg2000,531.493,分片入库
+NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2,image,11847×63934,,,jpeg2000,523.984,分片入库
+NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2,image,11680×57915,,,jpeg2000,495.137,分片入库
 NA/NA-15/NA-15_01_artemis2_launch_4k_nasa.mp4,video,3840×2160,60000/1001,00:02:27,h264,276.763,分片入库
 PD/PD-10/PD-10_02_lilienthal_gliding_plate_1895_loc.tif,image,7500×5999,,,tiff,270.003,分片入库
 SX/SX-03/SX-03_12_flight14_deployment_cut02_spacex.mp4,video,3840×2160,11416000/380913,00:06:21,h264,263.734,分片入库
@@ -22,11 +25,13 @@ SX/SX-01/SX-01_06_flight14_booster_splashdown_spacex.mp4,video,3840×2160,125300
 SX/SX-01/SX-01_02_flight14_liftoff_spacex.mp4,video,3840×2160,172375/5752,00:00:46,h264,65.663,直接入库
 SX/SX-03/SX-03_02_flight14_orbital_insertion_spacex.mp4,video,3840×2160,1659000/55357,00:00:55,h264,57.580,直接入库
 NA/NA-09/NA-09_01_apollo11_70mm_launch_nasa.mp4,video,1812×1812,24/1,00:01:24,h264,56.745,直接入库
+NA/NA-36/NA-36_02_m1305967189rc_full_nac_pds.tif,image,5064×52224,,,tiff,55.890,直接入库
 FX/FX-17/FX-17_02_vhs_damaged_tape_freesound.wav,audio,,,00:02:25,pcm_f32le,55.624,直接入库
 SX/SX-03/SX-03_05_flight14_live_orbital_views_spacex.mp4,video,3840×2160,812500/27113,00:00:54,h264,55.617,直接入库
 SX/SX-03/SX-03_13_flight14_orbit_burn_cut03_spacex.mp4,video,3840×2160,536200/17891,00:01:30,h264,51.742,直接入库
 NA/NA-32/NA-32_02_change6_full_nac_pds.tif,image,5064×52224,,,tiff,45.852,直接入库
 SX/SX-05/SX-05_01_starship_flight5_spacex.mp4,video,1920×1080,37395000/1559683,00:03:28,h264,43.970,直接入库
+NA/NA-36/NA-36_01_m1303619844lc_full_nac_pds.tif,image,5064×52224,,,tiff,42.268,直接入库
 NA/NA-30/NA-30_01_webb_first_deep_field_smacs0723_esa.tif,image,4537×4630,,,tiff,40.571,直接入库
 SX/SX-01/SX-01_08_flight14_mission_recap_spacex.mp4,video,3840×2160,24000/1001,00:00:40,h264,37.880,直接入库
 SX/SX-01/SX-01_09_flight14_hotstaging_angle1_spacex.mp4,video,3840×2160,1545216/51499,00:00:17,h264,32.999,直接入库
@@ -131,6 +136,7 @@ FX/FX-08/FX-08_01_fuse_burning_pixabay.mp3,audio,,,00:00:08,mp3,0.250,直接入�
 CN/CN-03/CN-03_02_yutu2_rover_cnsa.jpg,image,900×661,,,mjpeg,0.242,直接入库
 FX/FX-05/FX-05_01_paper_turn_pixabay.mp3,audio,,,00:00:11,mp3,0.215,直接入库
 AU/AU-02/AU-02_02_armstrong_small_step_nasa.mp3,audio,,,00:00:13,mp3,0.211,直接入库
+WM/WM-01/WM-01_01_tiangong_telescope_barcat_commons.png,image,940×788,,,png,0.158,直接入库
 CN/CN-07/CN-07_04_zhuque3_vtvl_350m_launch_landspace.jpg,image,1080×810,,,mjpeg,0.139,直接入库
 FX/FX-09/FX-09_01_radio_static_pixabay.mp3,audio,,,00:00:06,mp3,0.125,直接入库
 NA/NA-26/NA-26_01_sts107_inflight_crew_nasa.jpg,image,1041×1041,,,mjpeg,0.120,直接入库

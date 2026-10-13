@@ -27,3 +27,6 @@ shasum -a 256 -c example.mp4.sha256
 | assets/SX/SX-03/SX-03_11_flight14_earth_limb_cut01_spacex.mp4 | 147182258 | 2 | 6d84b2bec7cdda5ec1e57d885437712529b488f6521e505e1158cea93e7ad2ed |
 | assets/SX/SX-03/SX-03_12_flight14_deployment_cut02_spacex.mp4 | 263734039 | 3 | 1769ceaef8c5870d2133e0b4fddc73eab42913bd4ef0d447f53b02322d4e27f4 |
 | assets/PD/PD-10/PD-10_02_lilienthal_gliding_plate_1895_loc.tif | 270003290 | 3 | 23887f7da371e9a5458515a56cc0755b6929468dea2414ae6196ba79b65f2043 |
+| assets/NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2 | 531492878 | 6 | 8217ea28197bbbc225c1f27ebdf9ba37ebcb8963fe2f72dab71bf3e5e6d113e7 |
+| assets/NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2 | 523983770 | 6 | b615790575a193aef343fb18d77c9bb8b633c381e964c0fc7b08c14b3eec4db4 |
+| assets/NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2 | 495137334 | 6 | 2e4c2e75f2c566b9b8d09a7698e52202b8aeb1d485326827b5414cc2e31fb991 |

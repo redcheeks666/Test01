@@ -1,54 +1,29 @@
-# 《天问》阶段三素材清单
+# 《天问》阶段四素材清单
 
-实际本地原素材：**151 个文件，12.522 GB（十进制）**。预览与文档不计入原素材大小。
-仓库中原素材总大小：**4.498 GB（4,497,505,068 字节）**，直接文件与分片对应的原件按一个素材计数，SHA sidecar、预览和文档不计入。完整直播不进入仓库。
-入库情况：直接入库 136 个；分片入库 14 个；只在本地 1 个。
+本地原素材 **157 份，14.171 GB**；仓库原素材 **6.146 GB（6,146,435,716字节）**。分片按其原件计1份；完整直播留在本地；预览、PDS标签和文档不计入原素材大小。
+直接入库 139；分片入库 17；只在本地 1。
 
 ## 分类统计
 
-| 类别 | 文件数 | 大小（MB） |
+| 类别 | 份数 | 大小（MB） |
 |---|---:|---:|
-| SX | 36 | 10715.520 |
-| NA | 51 | 965.866 |
-| SU | 0 | 0.000 |
-| CN | 15 | 40.418 |
-| IN | 0 | 0.000 |
-| PD | 15 | 570.609 |
-| FX | 31 | 228.866 |
 | AU | 3 | 0.682 |
-
-## 大文件分档
-
-| 门槛 | 文件数 | 合计（MB） |
-|---|---:|---:|
-| >100 MB | 15 | 11037.043 |
-| ↳ `SX/SX-01/_full_broadcast/SX-01_01_starship_flight14_full_broadcast_spacex.mp4` |  | 8024.456 |
-| ↳ `SX/SX-01/SX-01_04_flight14_prelaunch_pad_spacex.mp4` |  | 632.821 |
-| ↳ `NA/NA-15/NA-15_01_artemis2_launch_4k_nasa.mp4` |  | 276.763 |
-| ↳ `PD/PD-10/PD-10_02_lilienthal_gliding_plate_1895_loc.tif` |  | 270.003 |
-| ↳ `SX/SX-03/SX-03_12_flight14_deployment_cut02_spacex.mp4` |  | 263.734 |
-| ↳ `PD/PD-11/PD-11_01_wright_first_flight_loc.tif` |  | 243.314 |
-| ↳ `SX/SX-01/SX-01_03_flight14_prelaunch_payload_spacex.mp4` |  | 200.435 |
-| ↳ `SX/SX-01/SX-01_12_flight14_liftoff_cut01_spacex.mp4` |  | 180.322 |
-| ↳ `NA/NA-15/NA-15_02_orion_liftoff_camera_nasa.mp4` |  | 158.709 |
-| ↳ `SX/SX-03/SX-03_07_flight14_deorbit_complete_spacex.mp4` |  | 158.539 |
-| ↳ `SX/SX-03/SX-03_09_flight14_splashdown_spacex.mp4` |  | 152.029 |
-| ↳ `SX/SX-03/SX-03_11_flight14_earth_limb_cut01_spacex.mp4` |  | 147.182 |
-| ↳ `SX/SX-03/SX-03_03_flight14_payload_deploy_start_spacex.mp4` |  | 113.708 |
-| ↳ `NA/NA-04/NA-04_02_iss_view_of_earth_nasa.mp4` |  | 112.793 |
-| ↳ `SX/SX-01/SX-01_05_flight14_hot_staging_spacex.mp4` |  | 102.234 |
-| >380 MB | 2 | 8657.277 |
-| ↳ `SX/SX-01/_full_broadcast/SX-01_01_starship_flight14_full_broadcast_spacex.mp4` |  | 8024.456 |
-| ↳ `SX/SX-01/SX-01_04_flight14_prelaunch_pad_spacex.mp4` |  | 632.821 |
-| >2 GB | 1 | 8024.456 |
-| ↳ `SX/SX-01/_full_broadcast/SX-01_01_starship_flight14_full_broadcast_spacex.mp4` |  | 8024.456 |
+| CN | 15 | 40.418 |
+| FX | 31 | 228.866 |
+| NA | 56 | 2614.638 |
+| PD | 15 | 570.609 |
+| SX | 36 | 10715.520 |
+| WM | 1 | 0.158 |
 
 ## 完整清单
 
-| file_path | media_type | width×height | fps | duration | codec | size_mb | in_repo |
-|---|---|---:|---:|---:|---|---:|---|
+| file_path | media_type | resolution | fps | duration | codec | size_mb | in_repo |
+|---|---|---|---|---|---|---|---|
 | SX/SX-01/_full_broadcast/SX-01_01_starship_flight14_full_broadcast_spacex.mp4 | video | 3840×2160 | 1007819978/33627591 | 03:50:51 | h264 | 8024.456 | 只在本地 |
 | SX/SX-01/SX-01_04_flight14_prelaunch_pad_spacex.mp4 | video | 3840×2160 | 24000/1001 | 00:05:48 | h264 | 632.821 | 分片入库 |
+| NA/NA-35/NA-35_01_esp_069665_2055_full_color_hirise.jp2 | image | 13100×64337 |  |  | jpeg2000 | 531.493 | 分片入库 |
+| NA/NA-35/NA-35_02_esp_069731_2055_full_color_hirise.jp2 | image | 11847×63934 |  |  | jpeg2000 | 523.984 | 分片入库 |
+| NA/NA-35/NA-35_03_esp_073225_2055_full_color_hirise.jp2 | image | 11680×57915 |  |  | jpeg2000 | 495.137 | 分片入库 |
 | NA/NA-15/NA-15_01_artemis2_launch_4k_nasa.mp4 | video | 3840×2160 | 60000/1001 | 00:02:27 | h264 | 276.763 | 分片入库 |
 | PD/PD-10/PD-10_02_lilienthal_gliding_plate_1895_loc.tif | image | 7500×5999 |  |  | tiff | 270.003 | 分片入库 |
 | SX/SX-03/SX-03_12_flight14_deployment_cut02_spacex.mp4 | video | 3840×2160 | 11416000/380913 | 00:06:21 | h264 | 263.734 | 分片入库 |
@@ -70,11 +45,13 @@
 | SX/SX-01/SX-01_02_flight14_liftoff_spacex.mp4 | video | 3840×2160 | 172375/5752 | 00:00:46 | h264 | 65.663 | 直接入库 |
 | SX/SX-03/SX-03_02_flight14_orbital_insertion_spacex.mp4 | video | 3840×2160 | 1659000/55357 | 00:00:55 | h264 | 57.580 | 直接入库 |
 | NA/NA-09/NA-09_01_apollo11_70mm_launch_nasa.mp4 | video | 1812×1812 | 24/1 | 00:01:24 | h264 | 56.745 | 直接入库 |
+| NA/NA-36/NA-36_02_m1305967189rc_full_nac_pds.tif | image | 5064×52224 |  |  | tiff | 55.890 | 直接入库 |
 | FX/FX-17/FX-17_02_vhs_damaged_tape_freesound.wav | audio |  |  | 00:02:25 | pcm_f32le | 55.624 | 直接入库 |
 | SX/SX-03/SX-03_05_flight14_live_orbital_views_spacex.mp4 | video | 3840×2160 | 812500/27113 | 00:00:54 | h264 | 55.617 | 直接入库 |
 | SX/SX-03/SX-03_13_flight14_orbit_burn_cut03_spacex.mp4 | video | 3840×2160 | 536200/17891 | 00:01:30 | h264 | 51.742 | 直接入库 |
 | NA/NA-32/NA-32_02_change6_full_nac_pds.tif | image | 5064×52224 |  |  | tiff | 45.852 | 直接入库 |
 | SX/SX-05/SX-05_01_starship_flight5_spacex.mp4 | video | 1920×1080 | 37395000/1559683 | 00:03:28 | h264 | 43.970 | 直接入库 |
+| NA/NA-36/NA-36_01_m1303619844lc_full_nac_pds.tif | image | 5064×52224 |  |  | tiff | 42.268 | 直接入库 |
 | NA/NA-30/NA-30_01_webb_first_deep_field_smacs0723_esa.tif | image | 4537×4630 |  |  | tiff | 40.571 | 直接入库 |
 | SX/SX-01/SX-01_08_flight14_mission_recap_spacex.mp4 | video | 3840×2160 | 24000/1001 | 00:00:40 | h264 | 37.880 | 直接入库 |
 | SX/SX-01/SX-01_09_flight14_hotstaging_angle1_spacex.mp4 | video | 3840×2160 | 1545216/51499 | 00:00:17 | h264 | 32.999 | 直接入库 |
@@ -179,6 +156,7 @@
 | CN/CN-03/CN-03_02_yutu2_rover_cnsa.jpg | image | 900×661 |  |  | mjpeg | 0.242 | 直接入库 |
 | FX/FX-05/FX-05_01_paper_turn_pixabay.mp3 | audio |  |  | 00:00:11 | mp3 | 0.215 | 直接入库 |
 | AU/AU-02/AU-02_02_armstrong_small_step_nasa.mp3 | audio |  |  | 00:00:13 | mp3 | 0.211 | 直接入库 |
+| WM/WM-01/WM-01_01_tiangong_telescope_barcat_commons.png | image | 940×788 |  |  | png | 0.158 | 直接入库 |
 | CN/CN-07/CN-07_04_zhuque3_vtvl_350m_launch_landspace.jpg | image | 1080×810 |  |  | mjpeg | 0.139 | 直接入库 |
 | FX/FX-09/FX-09_01_radio_static_pixabay.mp3 | audio |  |  | 00:00:06 | mp3 | 0.125 | 直接入库 |
 | NA/NA-26/NA-26_01_sts107_inflight_crew_nasa.jpg | image | 1041×1041 |  |  | mjpeg | 0.120 | 直接入库 |
