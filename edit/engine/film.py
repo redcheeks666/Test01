@@ -119,9 +119,13 @@ _FILM = None
 
 
 def _worker(args):
+    """在独立进程（spawn）里加载全片并渲染一段帧，避免 fork 继承 OpenCV 线程池导致死锁。"""
     key, f0, f1, part = args
     cv2.setNumThreads(1)
-    ch = _FILM.chapter(key)
+    import sys
+    sys.path.insert(0, str(ROOT / "edit"))
+    from tianwen import load_film
+    ch = load_film().chapter(key)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
            "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "fast", "-crf", "17", "-g", "60",
            "-pix_fmt", "yuv420p", str(part)]
@@ -157,7 +161,7 @@ def render_chapter(film, key, workers=4, frames=None):
     n = f1 - f0
     bounds = np.linspace(f0, f1, workers + 1).astype(int)
     parts = [(key, int(a), int(b), d / f"{key}_part{i}.mp4") for i, (a, b) in enumerate(zip(bounds, bounds[1:])) if b > a]
-    with mp.get_context("fork").Pool(len(parts)) as pool:
+    with mp.get_context("spawn").Pool(len(parts)) as pool:
         pool.map(_worker, parts)
     lst = d / f"{key}_parts.txt"
     lst.write_text("".join(f"file '{p[3].name}'\n" for p in parts))
