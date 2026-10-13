@@ -1,5 +1,6 @@
 file_path,media_type,resolution,fps,duration,codec,size_mb
 NA/NA-15/NA-15_01_artemis2_launch_4k_nasa.mp4,video,3840×2160,60000/1001,00:02:27,h264,276.763
+PD/PD-11/PD-11_01_wright_first_flight_loc.tif,image,7500×5406,,,tiff,243.314
 NA/NA-15/NA-15_02_orion_liftoff_camera_nasa.mp4,video,3840×2160,60000/1001,00:00:54,h264,158.709
 NA/NA-04/NA-04_02_iss_view_of_earth_nasa.mp4,video,3840×2160,24000/1001,00:01:37,h264,112.793
 NA/NA-04/NA-04_01_iss_earth_observations_nasa.mp4,video,3840×2160,24000/1001,00:01:06,h264,83.963
@@ -8,8 +9,10 @@ NA/NA-09/NA-09_01_apollo11_70mm_launch_nasa.mp4,video,1812×1812,24/1,00:01:24,h
 SX/SX-05/SX-05_01_starship_flight5_spacex.mp4,video,1920×1080,37395000/1559683,00:03:28,h264,43.970
 NA/NA-30/NA-30_01_webb_first_deep_field_smacs0723_esa.tif,image,4537×4630,,,tiff,40.571
 NA/NA-14/NA-14_02_pale_blue_dot_revisited_nasa.tif,image,5230×5175,,,tiff,31.303
+PD/PD-08/PD-08_01_first_free_balloon_flight_1783_loc.tif,image,2418×3377,,,tiff,24.501
 CN/CN-04/CN-04_01_mars_panorama_cnsa.jpg,image,11736×4000,,,mjpeg,23.771
 NA/NA-18/NA-18_01_voyager_probe_testing_nasa.tif,image,3029×2410,,,tiff,21.637
+PD/PD-10/PD-10_01_lilienthal_gliding_1895_loc.tif,image,2688×2204,,,tiff,17.776
 SX/SX-07/SX-07_01_demo2_liftoff_nasa.jpg,image,5616×3744,,,mjpeg,16.527
 NA/NA-17/NA-17_01_orion_splashdown_nasa.jpg,image,3819×5092,,,mjpeg,15.049
 NA/NA-01/NA-01_01_full_moon_feb2026_nasa.tif,image,5760×3240,,,tiff,11.373
@@ -20,6 +23,7 @@ NA/NA-12/NA-12_01_apollo17_ascent_nasa.jpg,image,8072×6401,,,mjpeg,6.240
 NA/NA-27/NA-27_01_voyager_heliopause_illustration_nasa.tif,image,1920×1080,,,tiff,5.847
 NA/NA-06/NA-06_01_goddard_first_rocket_nasa.jpg,image,3297×4296,,,mjpeg,5.326
 NA/NA-17/NA-17_02_orion_recovery_nasa.jpg,image,3321×4982,,,mjpeg,4.403
+PD/PD-13/PD-13_01_artemis_bow_lekythos_met.jpg,image,2184×3648,,,mjpeg,4.039
 NA/NA-13/NA-13_04_golden_record_cover_jpl.tif,image,1024×1280,,,tiff,3.934
 NA/NA-18/NA-18_02_voyager_encapsulation_nasa.tif,image,1760×2227,,,tiff,3.919
 NA/NA-13/NA-13_02_record_preparation_nasa.tif,image,1760×2227,,,tiff,3.766
@@ -30,10 +34,12 @@ NA/NA-28/NA-28_01_pluto_big_heart_color_nasa.tif,image,1024×1024,,,tiff,3.147
 NA/NA-05/NA-05_03_apollo11_capsule_nasa.jpg,image,4158×4213,,,mjpeg,3.127
 CN/CN-05/CN-05_01_tiangong_station_54721_cmse.jpg,image,2953×2126,,,mjpeg,2.954
 NA/NA-13/NA-13_03_golden_record_installation_jpl.tif,image,2256×1792,,,tiff,2.667
+PD/PD-13/PD-13_03_leto_apollo_artemis_met.jpg,image,3443×4000,,,mjpeg,2.572
 NA/NA-05/NA-05_02_apollo11_recovery_nasa.jpg,image,4080×4080,,,mjpeg,2.285
 FX/FX-09/FX-09_02_shortwave_tuning_noise_pixabay.mp3,audio,,,00:01:40,mp3,2.004
 NA/NA-12/NA-12_02_blue_marble_nasa.jpg,image,4579×4579,,,mjpeg,1.916
 NA/NA-10/NA-10_01_apollo11_footprint_nasa.jpg,image,3896×3912,,,mjpeg,1.865
+PD/PD-13/PD-13_02_apollo_artemis_pelike_met.jpg,image,2978×3722,,,mjpeg,1.861
 NA/NA-02/NA-02_01_earthset_window_nasa.jpg,image,5568×3712,,,mjpeg,1.803
 CN/CN-04/CN-04_02_zhurong_lander_selfie_cnsa.jpg,image,1920×1080,,,mjpeg,1.746
 NA/NA-22/NA-22_01_sts1_columbia_liftoff_nasa.jpg,image,2431×3639,,,mjpeg,1.721
