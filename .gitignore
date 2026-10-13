@@ -1,0 +1,9 @@
+# 原始素材不进仓库，只保留 assets_review/ 里的清单和预览
+assets/
+*.mov
+*.mxf
+*.tif
+*.tiff
+*.wav
+*.flac
+.DS_Store
