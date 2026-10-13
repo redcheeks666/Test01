@@ -95,36 +95,44 @@ def cosmonaut(size=520):
 
 
 def long_march(height=900):
-    """水墨风格的长征二号 F：芯级、四个助推器、整流罩、逃逸塔。"""
+    """长征二号 F：暖白舰体（圆柱明暗）+ 细墨勾边 + 红色标记；整流罩比芯级粗，两侧助推器带尖锥与尾翼。"""
     w = int(height * 0.36)
     im = Image.new("RGBA", (w * S, height * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    ink = (22, 18, 14, 255)
+    body = (240, 226, 198, 255)
+    line = (70, 46, 28, 255)
     cx = w / 2
     k = height / 900
+    lw = max(1, int(2 * k * S))
 
     def P(pts):
         return [(cx * S + x * k * S, y * k * S) for x, y in pts]
-    d.line(P([(0, 0), (0, 80)]), fill=ink, width=int(5 * k * S))                         # 逃逸塔
+    d.line(P([(0, 0), (0, 80)]), fill=line, width=int(5 * k * S))                        # 逃逸塔
     for sx in (-1, 1):
-        d.polygon(P([(0, 40), (sx * 12, 62), (0, 62)]), fill=ink)                            # 逃逸塔小翼
-    d.polygon(P([(-10, 80), (10, 80), (40, 150), (40, 250), (-40, 250), (-40, 150)]), fill=ink)  # 整流罩（比芯级粗）
-    d.polygon(P([(-40, 250), (40, 250), (32, 270), (-32, 270)]), fill=ink)
-    d.rectangle([P([(-32, 270)])[0], P([(32, 840)])[0]], fill=ink)                         # 芯级
-    d.rectangle([P([(-33, 470)])[0], P([(33, 478)])[0]], fill=(60, 50, 40, 255))           # 级间段
-    for sx in (-1, 1):                                                                        # 两侧助推器
-        x0, x1 = sx * 34, sx * 64
+        d.polygon(P([(0, 40), (sx * 12, 62), (0, 62)]), fill=line)
+        x0, x1 = sx * 34, sx * 64                                                            # 助推器
         lo, hi = min(x0, x1), max(x0, x1)
-        d.rectangle([P([(lo, 590)])[0], P([(hi, 850)])[0]], fill=ink)
-        d.polygon(P([(lo, 590), (hi, 590), ((lo + hi) / 2, 528)]), fill=ink)                 # 尖锥
-        d.polygon(P([(x1, 800), (x1 + sx * 22, 852), (x1, 852)]), fill=ink)                  # 尾翼
-    d.rectangle([P([(-32, 330)])[0], P([(32, 342)])[0]], fill=(200, 40, 30, 255))           # 红色标记
+        d.polygon(P([(lo, 590), (hi, 590), (hi, 850), (lo, 850)]), fill=body, outline=line, width=lw)
+        d.polygon(P([(lo, 590), (hi, 590), ((lo + hi) / 2, 528)]), fill=body, outline=line, width=lw)
+        d.polygon(P([(x1, 800), (x1 + sx * 22, 852), (x1, 852)]), fill=(200, 60, 40, 255), outline=line, width=lw)
+    d.polygon(P([(-32, 270), (32, 270), (32, 840), (-32, 840)]), fill=body, outline=line, width=lw)   # 芯级
+    d.polygon(P([(-10, 80), (10, 80), (40, 150), (40, 250), (32, 270), (-32, 270), (-40, 250), (-40, 150)]),
+              fill=body, outline=line, width=lw)                                                     # 整流罩
+    d.line(P([(-40, 250), (40, 250)]), fill=line, width=lw)
+    d.line(P([(-32, 474), (32, 474)]), fill=line, width=lw)                                         # 级间段
+    d.rectangle([P([(-32, 330)])[0], P([(32, 344)])[0]], fill=(200, 40, 30, 255))                  # 红色标记
+    d.rectangle([P([(-14, 380)])[0], P([(14, 400)])[0]], fill=(214, 40, 30, 255))                  # 小国旗
+    d.ellipse([P([(-11, 383)])[0], P([(-5, 389)])[0]], fill=(250, 210, 60, 255))
     im = im.resize((w, height), Image.LANCZOS)
     a = np.asarray(im, np.float32) / 255
-    # 墨色飞白：边缘做一点干笔纹理
-    tex = (fbm(height, w, 5, 77) > 0.42).astype(np.float32)
-    a[..., 3] *= 0.96 + 0.04 * tex
-    return a[..., :3], a[..., 3:]
+    rgb, al = a[..., :3].copy(), a[..., 3:]
+    # 圆柱明暗：左侧受暖光，右侧略暗
+    u = (np.arange(w, dtype=np.float32) - w / 2) / (w * 0.12)
+    shade = np.clip(1.04 - 0.16 * np.clip(u, -1, 1.6) ** 2 * np.sign(u + 1e-6).clip(0, 1) - 0.05 * np.clip(-u, 0, 1), 0.7, 1.05)
+    rgb *= shade[None, :, None]
+    rgb[..., 0] *= 1.02
+    rgb[..., 2] *= 0.94
+    return np.clip(rgb, 0, 1), al
 
 
 def lander(size=360):

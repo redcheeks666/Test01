@@ -75,8 +75,16 @@ def s_columbia(c):
 LM = A.long_march(860)
 
 
+_WASH = None
+
+
 def s_shenzhou(c):
-    f = PAPER.copy()
+    global _WASH
+    if _WASH is None:  # 宣纸上方一层淡灰墨天空，让暖白舰体跳出来
+        n = SMOKE[1]
+        g = np.clip(1 - yy / (H * 0.85), 0, 1) ** 1.3
+        _WASH = np.clip(g * 0.55 + (n - 0.5) * 0.25 * g, 0, 0.6)[..., None]
+    f = PAPER * (1 - _WASH) + np.array([0.22, 0.22, 0.24], np.float32) * _WASH
     rise = ease_in(clamp01((c.lb - 1.5) / 6.5), 2.0)
     cx, cy = 1300, lerp(620, 120, rise)
     A.paste(f, *LM, cx, cy, 1.0)
