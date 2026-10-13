@@ -2,3 +2,17 @@
 # 不超过 95MB 的原件直接提交，更大的原件只提交 .partNN 分片，原文件本身不提交
 .DS_Store
 assets/**/_full_broadcast/
+assets/**/_superseded/
+/assets/NA/NA-04/NA-04_02_iss_view_of_earth_nasa.mp4
+/assets/NA/NA-15/NA-15_01_artemis2_launch_4k_nasa.mp4
+/assets/NA/NA-15/NA-15_02_orion_liftoff_camera_nasa.mp4
+/assets/PD/PD-11/PD-11_01_wright_first_flight_loc.tif
+/assets/SX/SX-01/SX-01_03_flight14_prelaunch_payload_spacex.mp4
+/assets/SX/SX-01/SX-01_04_flight14_prelaunch_pad_spacex.mp4
+/assets/SX/SX-01/SX-01_05_flight14_hot_staging_spacex.mp4
+/assets/SX/SX-03/SX-03_03_flight14_payload_deploy_start_spacex.mp4
+/assets/SX/SX-03/SX-03_07_flight14_deorbit_complete_spacex.mp4
+/assets/SX/SX-03/SX-03_09_flight14_splashdown_spacex.mp4
+/assets/SX/SX-01/SX-01_12_flight14_liftoff_cut01_spacex.mp4
+/assets/SX/SX-03/SX-03_11_flight14_earth_limb_cut01_spacex.mp4
+/assets/SX/SX-03/SX-03_12_flight14_deployment_cut02_spacex.mp4
