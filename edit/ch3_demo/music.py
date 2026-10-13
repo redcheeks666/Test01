@@ -12,6 +12,7 @@ from scipy.signal import butter, fftconvolve, sosfilt
 from timeline import DURATION, SR, t
 
 OUT = Path(__file__).resolve().parent / "out"
+ASSETS = Path(__file__).resolve().parents[2] / "assets"
 rng = np.random.default_rng(7)
 N = int(DURATION * SR) + SR
 music = np.zeros((N, 2))   # 进混响的乐器
@@ -220,6 +221,41 @@ def sputnik_beep():
     return s * e
 
 
+# ---------- 真实音效（assets/ 原件，缺失时退回合成） ----------
+
+def real(rel, dur=None, fade=0.05):
+    """读取 assets/ 下的音频原件，解码为 48k 单声道，峰值归一化；dur 给定时截断或循环到该长度。"""
+    import subprocess
+    p = ASSETS / rel
+    if not p.exists():
+        return None
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(p), "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"],
+                         capture_output=True, check=True).stdout
+    x = np.frombuffer(raw, np.float32).astype(np.float64)
+    x /= np.abs(x).max() + 1e-9
+    if dur is not None:
+        n = int(dur * SR)
+        x = np.tile(x, n // len(x) + 1)[:n] if len(x) < n else x[:n]
+    f = min(int(fade * SR), len(x) // 4)
+    if f:
+        x[:f] *= np.linspace(0, 1, f)
+        x[-f:] *= np.linspace(1, 0, f)
+    return x
+
+
+def pick(real_sig, synth_sig):
+    return real_sig if real_sig is not None else synth_sig
+
+
+def keys(text_len, at_sec, gain=0.12):
+    """日期戳逐字打出时的键盘声：每两个字符一下。"""
+    k = real("FX/FX-01/FX-01_01_mech_keyboard_click_pixabay.mp3", fade=0.005)
+    if k is None:
+        return
+    for i in range(0, text_len, 2):
+        add(dry, k * rng.uniform(0.7, 1.0), at_sec + i / 30, gain, pan=rng.uniform(-0.3, 0.3))
+
+
 # ---------- 编曲 ----------
 
 def bl(b0, b1):
@@ -279,24 +315,27 @@ def main():
         add(music, timpani(38, 0.6, 0.25 + 0.75 * k), t(b), 0.6)
         b += 0.25
     add(dry, stamp(), t(6), 0.8)
-    add(dry, whoosh(bl(7.5, 8) + 0.05, 500, 5000), t(7.5), 0.35)
+    add(dry, pick(real("FX/FX-11/FX-11_01_short_whoosh_pixabay.mp3"), whoosh(bl(7.5, 8) + 0.05, 500, 5000)), t(7.5), 0.45)
 
     # 3-02 万户（8—16）：固定音型进入，引信嘶嘶，第 15.5 拍抽空
     ostinato(8, 15.5)
     pads(8, 15.5, 0.16)
     timp_pattern(8, 15.5)
-    add(dry, fuse(bl(8, 15.5)), t(8), 0.35, pan=0.2)
+    add(dry, pick(real("FX/FX-08/FX-08_01_fuse_burning_pixabay.mp3", bl(8, 15.5)), fuse(bl(8, 15.5))), t(8), 0.3, pan=0.2)
     stab(8, 0.45)
 
     # 3-03 热气球（16—24）：爆炸 + 全编制 + 旋律
-    add(dry, boom(3.5, 70, 30, 1.2), t(16), 0.9)
+    add(dry, boom(3.5, 70, 30, 1.2), t(16), 0.75)
+    ex = real("FX/FX-08/FX-08_02_distant_explosion_pixabay.mp3")
+    if ex is not None:
+        add(dry, ex, t(16), 0.6)
     add(music, cymbal(), t(16), 0.25)
     stab(16, 0.6)
     add(music, timpani(38, vel=1.2), t(16), 0.9)
     ostinato(16, 44)
     pads(16, 44)
     timp_pattern(18, 44)
-    add(dry, fire(bl(16.5, 22)), t(16.5), 0.25, pan=-0.3)
+    add(dry, pick(real("FX/FX-07/FX-07_03_fire_sounds_pixabay.mp3", bl(16.5, 22), 0.4), fire(bl(16.5, 22))), t(16.5), 0.22, pan=-0.3)
     melody = [(16, 62, 2), (18, 65, 1), (19, 69, 1), (20, 67, 2), (22, 65, 1), (23, 64, 1),
               (24, 69, 2), (26, 72, 1), (27, 74, 1), (28, 72, 2), (30, 69, 2),
               (32, 67, 2), (34, 70, 1), (35, 69, 1), (36, 69, 4),
@@ -305,8 +344,8 @@ def main():
         add(music, horn(m, bl(b0, b0 + d) * 0.95), t(b0), 0.2, pan=0.15)
 
     # 3-06 李林塔尔（24—28）：甩入 + 风声，最后半拍风声骤停
-    add(dry, whoosh(0.5, 300, 4000), t(24) - 0.25, 0.45)
-    add(dry, wind(bl(24, 27.5)), t(24), 0.4)
+    add(dry, pick(real("FX/FX-11/FX-11_01_short_whoosh_pixabay.mp3"), whoosh(0.5, 300, 4000)), t(24) - 0.25, 0.5)
+    add(dry, pick(real("FX/FX-07/FX-07_02_harsh_wind_pixabay.mp3", bl(24, 27.5), 0.2), wind(bl(24, 27.5))), t(24), 0.35)
 
     # 3-07 1903（28—36）：铜管重音 + 螺旋桨 + 笔尖
     stab(28, 0.6)
@@ -320,7 +359,7 @@ def main():
     add(dry, press(bl(36, 40), bl(36, 37)), t(36), 0.3)
     stab(36, 0.6)
     stab(38, 0.5)
-    add(dry, whoosh(0.3, 400, 5000), t(38) - 0.12, 0.35)
+    add(dry, pick(real("FX/FX-11/FX-11_01_short_whoosh_pixabay.mp3"), whoosh(0.3, 400, 5000)), t(38) - 0.15, 0.4)
 
     # 3-09 戈达德（40—44）：定音鼓八分音符 + 2.5 秒火箭嘶鸣
     timp_pattern(40, 44, every=0.5, gain=0.45)
@@ -328,7 +367,7 @@ def main():
     add(music, cymbal(1.2), t(40), 0.2)
 
     # 3-11 V-2（44—48）：固定音型和鼓撤掉（44 之后不再写入），只留铺底 + 短波
-    add(dry, shortwave(bl(44, 49)), t(44), 0.3)
+    add(dry, pick(real("FX/FX-09/FX-09_02_shortwave_tuning_noise_pixabay.mp3", bl(44, 49), 0.4), shortwave(bl(44, 49))), t(44), 0.22)
     add(music, pad([50, 57, 62], bl(44, 50)), t(44), 0.12)
 
     # 3-12 X-1（48—52）：上升音 + 小军鼓加速滚奏 → 第 50 拍音爆
@@ -338,10 +377,18 @@ def main():
         k = (b - 48) / 2
         add(music, snare(0.3 + 0.7 * k), t(b), 0.35)
         b += 0.25 if b < 49 else 0.125
-    add(dry, boom(3.0, 55, 24, 2.0), t(50), 1.0)
+    add(dry, boom(3.0, 55, 24, 2.0), t(50), 0.9)
+    lh = real("FX/FX-11/FX-11_02_cinematic_low_hit_pixabay.mp3")
+    if lh is not None:
+        add(dry, lh, t(50), 0.7)
+        add(dry, lh, t(16), 0.5)
     add(music, timpani(38, vel=1.3), t(50), 0.9)
     add(music, cymbal(2.0), t(50), 0.3)
     stab(50, 0.7)
+
+    # 日期戳的打字声
+    for b0, n in [(17, 18), (24.5, 9), (36.3, 10), (40.3, 10), (44.8, 10)]:
+        keys(n, t(b0))
 
     # 混响
     ir_len = int(2.2 * SR)
@@ -367,11 +414,20 @@ def main():
     mix[i52:] = 0
     tail = np.zeros((N, 2))
     add(tail, shortwave(DURATION - t(53)) * 0.25, t(53), 0.3)
-    b = 53.0
-    while t(b) < DURATION - 0.4:
-        add(tail, sputnik_beep(), t(b), 0.2)
-        b += 1.0
+    sp = real("AU/AU-01/AU-01_01_sputnik_signal_nasa.mp3", DURATION - t(53) - 0.1, 0.02)
+    if sp is not None:
+        add(tail, sp, t(53), 0.55)
+    else:
+        b = 53.0
+        while t(b) < DURATION - 0.4:
+            add(tail, sputnik_beep(), t(b), 0.2)
+            b += 1.0
+    tail_keys = dry * 0
     mix = mix + tail
+    k = real("FX/FX-01/FX-01_01_mech_keyboard_click_pixabay.mp3", fade=0.005)
+    if k is not None:
+        for i in range(0, 10, 2):
+            add(mix, k, t(54) + i / 30, 0.12)
 
     mix = np.tanh(mix * 0.9) * 0.89
     mix = mix[: int(DURATION * SR)]
