@@ -290,7 +290,6 @@ class Score:
         self.dry_bgm = np.zeros((self.N, 2))   # 不进混响的配乐（如合成的低频）
         self.silences = []
         self.gates = []
-        self.levels = []
 
     def add(self, bus, sig, at, gain=1.0, pan=0.0):
         if sig is None:
@@ -311,11 +310,6 @@ class Score:
     def gate(self, t0, t1, level=0.08):
         """压低（如"吸气"空拍）。"""
         self.gates.append((t0, t1, level))
-
-    def level(self, t0, t1, db0, db1=None):
-        """自动电平之后的配乐音量曲线（dB，线性渐变）。自动电平会把轻的段落抬回满电平，
-        要做"重拍前先收"的对比，就在这里压。"""
-        self.levels.append((t0, t1, db0, db0 if db1 is None else db1))
 
     def master(self, path, bgm_target_db=-1.6, sfx_ref_db=-3.0, ceiling_db=-1.5):
         ir_len = int(2.4 * SR)
@@ -343,14 +337,6 @@ class Score:
         sfx *= g[:, None]
 
         bgm = leveler(bgm, bgm_target_db) * 0.9
-        if self.levels:
-            lv = np.zeros(self.N)
-            for t0, t1, d0, d1 in self.levels:
-                i0, i1 = int(t0 * SR), min(int(t1 * SR), self.N)
-                lv[i0:i1] = np.linspace(d0, d1, i1 - i0)
-            k = int(0.03 * SR)
-            lv = np.convolve(lv, np.ones(k) / k, mode="same")
-            bgm *= (10 ** (lv / 20))[:, None]
         ref = np.percentile(np.abs(sfx[np.abs(sfx).max(axis=1) > 1e-4]).max(axis=1), 99.9) if np.any(sfx) else 1
         sfx *= 10 ** (sfx_ref_db / 20) / (ref + 1e-9)
         mix = limiter(bgm + sfx, ceiling_db)

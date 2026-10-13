@@ -637,13 +637,8 @@ def music(sc, ch):
     sb = M.real("FX/FX-15/FX-15_02_fighter_real_sonic_boom_freesound.flac", 3.0, 0.005)
     sc.add("sfx", M.filt(sb, "low", 6000) if sb is not None else None, T(x0 + 2), 0.55)
     sc.add("sfx", M.boom(2.5, 55, 24, 0.2), T(x0 + 2), 0.5)
-    sc.add("bgm", M.timpani(38, vel=1.3), T(x0 + 2), 0.9)
-    sc.add("bgm", M.cymbal(2.0), T(x0 + 2), 0.3)
-    stab(x0 + 2, 0.7)
-    sc.add("sfx", M.real("FX/FX-11/FX-11_02_cinematic_low_hit_pixabay.mp3"), T(x0 + 2), 0.6)
-    # 动态：V-2 收到 −8 dB，X-1 滚奏期间推回去，音爆满电平落下（自动电平之后施加，不会被抬平）
-    sc.level(T(S_[10]), T(x0), -8)
-    sc.level(T(x0), T(x0 + 1.95), -8, -3)
+    sc.add("bgm", M.timpani(38, vel=1.2), T(x0 + 2), 0.8)
+    sc.add("bgm", M.cymbal(2.0), T(x0 + 2), 0.25)
     stab(x0 + 2, 0.65)
     sc.silence(T(S_[12]), T(S_[13]))
     # 年份滚动时的电传声
