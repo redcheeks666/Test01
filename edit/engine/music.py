@@ -2,13 +2,14 @@
 
 所有乐器与音效函数返回单声道 float64 数组；Score.add 负责定位、增益、声像。
 """
+import os
 import subprocess
 from functools import lru_cache
 
 import numpy as np
 from scipy.io import wavfile
 from scipy.ndimage import maximum_filter1d, minimum_filter1d, uniform_filter1d
-from scipy.signal import butter, fftconvolve, sosfilt
+from scipy.signal import butter, fftconvolve, resample_poly, sosfilt
 
 from .core import ROOT
 
@@ -310,7 +311,7 @@ class Score:
         """压低（如"吸气"空拍）。"""
         self.gates.append((t0, t1, level))
 
-    def master(self, path, bgm_target_db=-1.6, sfx_ref_db=-3.0, ceiling_db=-2.0):
+    def master(self, path, bgm_target_db=-1.6, sfx_ref_db=-3.0, ceiling_db=-1.5):
         ir_len = int(2.4 * SR)
         xi = np.arange(ir_len) / SR
         r = np.random.default_rng(11)
@@ -341,7 +342,9 @@ class Score:
         mix = limiter(bgm + sfx, ceiling_db)
         end = int(self.duration * SR)
         mix = mix[:end]
-        wavfile.write(path, SR, (mix * 32767).astype(np.int16))
+        tmp = str(path) + ".tmp"                                    # 写完再替换，拼接时不会读到半个文件
+        wavfile.write(tmp, SR, (mix * 32767).astype(np.int16))
+        os.replace(tmp, path)
         np.save(str(path).replace(".wav", "_bgm.npy"), bgm[:end].astype(np.float32))
         return mix, bgm[:end]
 
@@ -359,15 +362,27 @@ def leveler(x, target_db=-1.6, floor_db=-42.0, max_gain=40.0):
     return x * g[:, None]
 
 
-def limiter(x, ceiling_db=-2.0, lookahead_ms=5.0, release_ms=120.0):
-    """前瞻峰值限幅：峰值到来前 5 毫秒开始平滑压低增益，释放 120 毫秒，不产生削波失真。
-    上限 -2 dBFS：样点间峰值约高 0.5 dB，真峰值留在 -1.5 dBTP 左右，平台转码后不爆音。"""
+def true_peak(x, os_=4, chunk=SR * 10):
+    """4 倍过采样估计每个样点处的真峰值（ITU-R BS.1770 的做法），分段计算省内存。"""
+    out = np.empty(len(x), np.float32)
+    pad = 64
+    for i in range(0, len(x), chunk):
+        a, b = max(i - pad, 0), min(i + chunk + pad, len(x))
+        tp = np.abs(resample_poly(x[a:b], os_, 1, axis=0)).max(axis=1).reshape(-1, os_).max(axis=1)
+        m = min(chunk, len(x) - i)
+        out[i:i + m] = tp[i - a:i - a + m]
+    return out
+
+
+def limiter(x, ceiling_db=-1.5, lookahead_ms=5.0, release_ms=120.0):
+    """前瞻真峰值限幅：按 4 倍过采样的峰值计算增益，峰值到来前 5 毫秒开始平滑压低，释放 120 毫秒。
+    上限 -1.5 dBTP：平台转码（AAC）后也不会爆音。"""
     ceil = 10 ** (ceiling_db / 20)
     blk = 48
     n = len(x) // blk + 1
-    pad = np.zeros((n * blk - len(x), 2))
-    xp = np.vstack([x, pad])
-    pk = np.abs(xp).max(axis=1).reshape(n, blk).max(axis=1)
+    pad = n * blk - len(x)
+    tp = np.concatenate([np.maximum(true_peak(x), np.abs(x).max(axis=1)), np.zeros(pad, np.float32)])
+    pk = tp.reshape(n, blk).max(axis=1)
     need = np.minimum(1.0, ceil / np.maximum(pk, 1e-9))
     la = max(1, int(lookahead_ms / 1000 * SR / blk))
     need = minimum_filter1d(need, size=2 * la + 1, origin=-la)
