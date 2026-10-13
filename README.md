@@ -5,6 +5,7 @@
 | 文件 | 说明 |
 | --- | --- |
 | `docs/PLAN_v2.md` | 整体画面规划：章节结构、逐镜头规划、视觉与声音规范、素材交接流程 |
+| `docs/EDIT_RHYTHM.md` | 剪辑节奏与动效设计：张力曲线、拍子网格、变速、英雄时刻、照片运镜分配 |
 | `docs/CODEX_PROMPT_v2.md` | 发给 Codex 的素材收集提示词（阶段一） |
 | `docs/CODEX_PROMPT_phase2.md` | 发给 Codex 的素材入库与补充收集提示词（阶段二） |
 | `assets_review/REVIEW_claude.md` | Claude 对阶段一素材的审核意见 |

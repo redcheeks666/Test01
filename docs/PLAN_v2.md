@@ -2,7 +2,7 @@
 
 16:9 · 1920×1080 · 30fps · 纯音乐无旁白 · 时长不设上限（按本规划约 9–10 分钟）
 
-在 `script_v1.md` 的基础上，按用户的修改意见重构。素材编号（SX / NA / SU / CN / IN / PD / FX / AU）与 `CODEX_PROMPT_v2.md` 一一对应。
+在 `script_v1.md` 的基础上，按用户的修改意见重构。素材编号（SX / NA / SU / CN / IN / PD / FX / AU）与 `CODEX_PROMPT_v2.md` 一一对应。剪辑节奏、变速、运镜和英雄时刻的设计见 `EDIT_RHYTHM.md`。
 
 ---
 
