@@ -1,0 +1,50 @@
+{
+  "original_count": 146,
+  "manifest_local_count": 147,
+  "direct_count": 132,
+  "split_count": 14,
+  "local_only_count": 1,
+  "repository_original_bytes": 4450490003,
+  "repository_single_file_limit": 95000000,
+  "largest_tracked_asset_blob": 94371840,
+  "all_repository_blob_ids_match_files": true,
+  "all_preview_files_exist_and_under_1mb": true,
+  "excerpt_checks": [
+    {
+      "file_path": "SX/SX-01/SX-01_12_flight14_liftoff_cut01_spacex.mp4",
+      "excerpt_in": 2080.078,
+      "excerpt_out": 2341.0,
+      "first_source_packet": "2080.078000",
+      "first_video_packet_sha256": "SHA256:9b33adb30d4bdcc035c241641dfc5824120b4b804f4fdda4f1f2f4e52eda09e6",
+      "first_frame_keyframe": true,
+      "first_second_decodes_cleanly": true
+    },
+    {
+      "file_path": "SX/SX-03/SX-03_11_flight14_earth_limb_cut01_spacex.mp4",
+      "excerpt_in": 2560.558,
+      "excerpt_out": 2761.0,
+      "first_source_packet": "2560.558000",
+      "first_video_packet_sha256": "SHA256:9a6d374e276a576bc616717523d644d1d62ec1fc8ce73f404540e95bffad3ef4",
+      "first_frame_keyframe": true,
+      "first_second_decodes_cleanly": true
+    },
+    {
+      "file_path": "SX/SX-03/SX-03_12_flight14_deployment_cut02_spacex.mp4",
+      "excerpt_in": 4180.176,
+      "excerpt_out": 4561.0,
+      "first_source_packet": "4180.176000",
+      "first_video_packet_sha256": "SHA256:1f9303269b7e256dfbce027e1711d50c04ed9a051234c95ff05d95516a33259e",
+      "first_frame_keyframe": true,
+      "first_second_decodes_cleanly": true
+    },
+    {
+      "file_path": "SX/SX-03/SX-03_13_flight14_orbit_burn_cut03_spacex.mp4",
+      "excerpt_in": 3629.626,
+      "excerpt_out": 3719.0,
+      "first_source_packet": "3629.626000",
+      "first_video_packet_sha256": "SHA256:153261e8c0a75f5576b8399b60bfa9f457be258a04aa4cf40ceac3ad8dbdb4cc",
+      "first_frame_keyframe": true,
+      "first_second_decodes_cleanly": true
+    }
+  ]
+}
