@@ -29,3 +29,4 @@ edit/out/*.npy
 edit/out/*.log
 edit/out/tianwen_video.mp4
 edit/out/tianwen_master.mp4
+edit/out/check/
