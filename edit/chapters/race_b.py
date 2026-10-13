@@ -127,13 +127,45 @@ def s_pluto(c):
     return post(f, c.fi, grain=0.025)
 
 
+CE4_LANDER = (1536, 1415)       # NA-36/02 工作区里的着陆器；玉兔二号在 (1612, 1432)
+_CE4 = None
+
+
 def s_change4(c):
-    f = ink_card(c, image("CN-03", "01", 1400), 1250, 560, 1000, clamp01(c.lb / 1.0))
-    caption(f, c, 0.3, [("嫦娥四号", "big"), ("人类第一次在月球背面着陆", "mid")], color=INK, scrim=0.0)
+    """嫦娥四号：LRO 2019-02-28 低太阳角观测（NA-36/02，公有领域），着陆器拖着长影子。从月面推近锁定。"""
+    global _CE4
+    if _CE4 is None:
+        _CE4 = _pyramid(CACHE / "na36_change4_work.png")
+    s0, s1 = W / _CE4[0].shape[1], 2.6
+    k = ease_io(clamp01((c.lb - 0.3) / (c.beats - 1.3)))
+    s = s0 * (s1 / s0) ** k
+    cx = lerp(_CE4[0].shape[1] / 2, CE4_LANDER[0] + 30, ease_out(k, 2))
+    f = _orbit_view(_CE4, cx, CE4_LANDER[1] + 8, s)
+    rev = ink_reveal(clamp01(c.lb / 0.6), 0)
+    f = PAPER * (1 - rev) + f * rev
+    lock = ease_out(clamp01((c.lb - (c.beats - 1.2)) / 0.4), 3)
+    if lock > 0:
+        f = hud(f, lock, "45.44°S  177.60°E")
+        f = _lock(f, lock, W // 2 - 30 * s1, H // 2 - 8 * s1)
+    caption(f, c, 0.3, [("嫦娥四号", "big"), ("人类第一次在月球背面着陆", "mid"), ("从月球轨道上看到的着陆器", "small")])
     return post(f, c.fi, grain=0.025)
 
 
 TIANWEN_CHARS = "天问"
+ZR_LANDER = (2480, 902)        # NA-35/01 工作区里的着陆平台；祝融号在 (2504, 988)
+_ZR = None
+
+
+def _zhurong_view(c):
+    """祝融号：HiRISE 2021-06-06 彩色观测（NA-35/01，公有领域，红外-红-蓝绿假彩色），右半屏从火星表面推近到着陆平台。"""
+    global _ZR
+    if _ZR is None:
+        _ZR = _pyramid(CACHE / "na35_zhurong_work.png", color=True)
+    s0, s1 = H / _ZR[0].shape[0], 2.2
+    k = ease_io(clamp01((c.lb - 0.3) / 4.2))
+    v = _orbit_view(_ZR, ZR_LANDER[0], ZR_LANDER[1] + 20, s0 * (s1 / s0) ** k, W // 2, H)
+    lum = v.mean(axis=2, keepdims=True)
+    return (v * 0.7 + lum * 0.3) * np.array([1.0, 0.98, 0.86], np.float32)
 
 
 def s_spring2021(c):
@@ -142,27 +174,26 @@ def s_spring2021(c):
     l_ = ken(c, ing, (0.5, 0.5, 1.0), (0.5, 0.5, 1.08), out_w=W // 2)
     left[:, : W // 2] = l_
     left = hud(left, 1.0, "") if False else left
-    right = ink_card(c, image("CN-04", "02", 1920), W * 0.75, H * 0.45, 820, clamp01((c.lb - 0.3) / 1.0))
-    rh = np.zeros_like(right)
-    rh[:, : W // 2] = right[:, W // 2:]
+    rh = np.zeros((H, W, 3), np.float32)
+    rh[:, : W // 2] = _zhurong_view(c)
     f = split(left, rh, line=ease_out_expo(c.since(0) * FPS / 8))
     # "天问"二字从左上沿弧线飞到祝融号上方
     k = ease_io(clamp01((c.lb - 2.5) / 2.0))
     if c.lb >= 2.5:
         x = lerp(W * 0.30, W * 0.75, k)
-        y = lerp(H * 0.20, H * 0.25, k) - np.sin(k * np.pi) * 140
+        y = lerp(H * 0.20, H * 0.5 - 150, k) - np.sin(k * np.pi) * 140
         s = lerp(1.6, 1.0, k)
-        draw_text(f, TIANWEN_CHARS, "brush", int(96 * s), INK if k > 0.5 else CREAM, x, y, 1.0, anchor="c", tracking=10,
-                  shadow=k <= 0.5)
+        draw_text(f, TIANWEN_CHARS, "brush", int(96 * s), CREAM, x, y, 1.0, anchor="c", tracking=10, shadow=True)
     if c.lb >= 4.5:
-        f = f + glow(W * 0.75, H * 0.25, 120, (0.3, 0.2, 0.05), 0.4 * (1 - clamp01((c.lb - 4.5) / 1.5)))
+        f = f + glow(W * 0.75, H * 0.5, 90, (0.35, 0.25, 0.08), 0.5 * (1 - clamp01((c.lb - 4.5) / 1.5)))
+        f = _lock(f, ease_out(clamp01((c.lb - 4.5) / 0.5), 3), W * 0.75, H * 0.5 - 20 * 2.2, 160, 60)
     fr = c.since(0) * FPS
     draw_text(f, "2021 年春天", "brush", 84, CREAM, W * 0.25, 110, min(fr / 4, 1), lerp(1.25, 1, ease_out_expo(fr / 9)),
               anchor="c")
     a2 = clamp01((c.lb - 0.8) * 2)
-    f[int(H * 0.66):int(H * 0.77), : W // 2] *= 0.45
+    f[int(H * 0.66):int(H * 0.77), :] *= 0.45
     draw_text(f, "4.19 · 机智号：第一次在另一颗行星上飞行", "serif", 30, CREAM, W * 0.25, H * 0.715, a2, anchor="c")
-    draw_text(f, "5.15 · 天问一号：祝融号登陆火星", "serif", 30, INK, W * 0.75, H * 0.80, a2, anchor="c", shadow=False)
+    draw_text(f, "5.15 · 天问一号：祝融号登陆火星", "serif", 30, CREAM, W * 0.75, H * 0.715, a2, anchor="c")
     return post(f, c.fi, grain=0.025)
 
 
@@ -251,16 +282,43 @@ def _change6_pyr():
     return _C6
 
 
-def _moon_view(cx, cy, s):
-    pyr = _change6_pyr()
+def _pyramid(path, color=False, levels=3):
+    g = cv2.imread(str(path), cv2.IMREAD_COLOR if color else cv2.IMREAD_GRAYSCALE)
+    if color:
+        g = cv2.cvtColor(g, cv2.COLOR_BGR2RGB)
+    pyr = [g]
+    for _ in range(levels):
+        pyr.append(cv2.pyrDown(pyr[-1]))
+    return pyr
+
+
+def _orbit_view(pyr, cx, cy, s, out_w=W, out_h=H):
+    """轨道器原图的推近视图：按缩放选金字塔层，(cx, cy) 为原图坐标，放到画面中心。"""
     lvl = int(np.clip(np.floor(np.log2(1 / s)), 0, len(pyr) - 1)) if s < 1 else 0
     f = 2 ** lvl
     ss = s * f
-    m = np.float32([[ss, 0, W / 2 - ss * cx / f], [0, ss, H / 2 - ss * cy / f]])
-    g = cv2.warpAffine(pyr[lvl], m, (W, H), flags=cv2.INTER_CUBIC if ss > 1 else cv2.INTER_LINEAR,
+    m = np.float32([[ss, 0, out_w / 2 - ss * cx / f], [0, ss, out_h / 2 - ss * cy / f]])
+    g = cv2.warpAffine(pyr[lvl], m, (out_w, out_h), flags=cv2.INTER_CUBIC if ss > 1 else cv2.INTER_LINEAR,
                        borderMode=cv2.BORDER_REFLECT).astype(np.float32) / 255
-    g = np.clip((g - 0.06) * 1.45, 0, 1) ** 0.9
-    return g[..., None] * np.array([1.0, 0.985, 0.95], np.float32)
+    if g.ndim == 2:
+        g = (np.clip((g - 0.06) * 1.45, 0, 1) ** 0.9)[..., None] * np.array([1.0, 0.985, 0.95], np.float32)
+    return g
+
+
+def _moon_view(cx, cy, s):
+    return _orbit_view(_change6_pyr(), cx, cy, s)
+
+
+def _lock(f, k, cx, cy, r0=220, r1=90, arm=26):
+    """金色取景框从大收到小，锁定目标。"""
+    r = int(lerp(r0, r1, k))
+    col = np.array([0.95, 0.85, 0.55], np.float32)
+    cx, cy = int(cx), int(cy)
+    for dx, dy in ((-1, -1), (1, -1), (-1, 1), (1, 1)):
+        x, y = cx + dx * r, cy + dy * r
+        f[min(y, y - dy * arm):max(y, y - dy * arm), x - 1:x + 2] = col
+        f[y - 1:y + 2, min(x, x - dx * arm):max(x, x - dx * arm)] = col
+    return f
 
 
 def s_change6(c):
@@ -276,12 +334,7 @@ def s_change6(c):
     lock = ease_out(clamp01((c.lb - (c.beats - 1.8)) / 0.5), 3)
     if lock > 0:
         f = hud(f, lock, "41.64°S  206.01°E")
-        r = int(lerp(220, 90, lock))
-        col = np.array([0.95, 0.85, 0.55], np.float32)
-        for dx, dy in ((-1, -1), (1, -1), (-1, 1), (1, 1)):
-            x, y = W // 2 + dx * r, H // 2 + dy * r
-            f[min(y, y - dy * 26):max(y, y - dy * 26), x - 1:x + 2] = col
-            f[y - 1:y + 2, min(x, x - dx * 26):max(x, x - dx * 26)] = col
+        f = _lock(f, lock, W // 2, H // 2)
     caption(f, c, 0.3, [("嫦娥六号", "big"), ("第一次带回月球背面的样本", "mid"), ("从月球轨道上看到的着陆器", "small")])
     return post(f * (1 - clamp01((c.lb - (c.beats - 0.5)) * 2)), c.fi, grain=0.025)
 
