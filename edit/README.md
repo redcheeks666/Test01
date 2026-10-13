@@ -9,6 +9,7 @@ python3 tianwen.py frames <章节> 100 200    # 输出检查帧到 out/chapters/
 python3 tianwen.py render all --workers 4  # 逐章并行渲染 → out/chapters/<章节>.mp4
 python3 tianwen.py music                   # 全片配乐与音效 → out/score.wav
 python3 tianwen.py assemble                # 拼接 + 混音 → out/tianwen_master.mp4
+python3 tianwen.py deliver                 # 上传版 → ../delivery/（90 MiB 分片 + sha256）；720p 分段预览 → out/preview/
 ```
 
 | 目录 | 说明 |
@@ -17,7 +18,7 @@ python3 tianwen.py assemble                # 拼接 + 混音 → out/tianwen_mas
 | `engine/media.py` | 原件读取、视频片段抽帧缓存、变速曲线 |
 | `engine/shots.py` | 通用镜头：照片运镜、视频、分屏、纪念镜头、甩镜 |
 | `engine/film.py` | 全片时间轴（每章自己的 BPM，可渐变）与多进程渲染 |
-| `engine/music.py` | 合成乐器库、真实音效、BGM 自动电平（0 到 −6 dBFS）、前瞻限幅（峰值 −1 dBFS，无削波） |
+| `engine/music.py` | 合成乐器库、真实音效、BGM 自动电平（0 到 −6 dBFS）、前瞻真峰值限幅（4 倍过采样，−1.5 dBTP，无削波） |
 | `chapters/*.py` | 各章镜头清单与配乐提示：序章、神话、仰望、先驱、竞赛（前后两段）、回来再出发、尾声 |
 
 

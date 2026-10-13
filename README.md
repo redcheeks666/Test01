@@ -15,3 +15,5 @@
 | `reference/sample_v0.mp4` | 样片（序章到第二章开头，87 秒） |
 | `assets_review/` | Codex 推送的素材清单、文件大小统计和预览图 |
 | `assets/` | 原素材（阶段二入库，大文件为 .partNN 分片，见 `assets/SPLIT_FILES.md`） |
+| `delivery/` | 成片上传版（1080p，.partNN 分片，拼回方法见 `delivery/README.md`） |
+| `docs/CREDITS_post.md` | 发布时随帖附上的素材来源署名文案 |
