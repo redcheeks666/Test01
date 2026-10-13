@@ -105,15 +105,20 @@ def long_march(height=900):
 
     def P(pts):
         return [(cx * S + x * k * S, y * k * S) for x, y in pts]
-    d.line(P([(0, 0), (0, 70)]), fill=ink, width=int(6 * k * S))                         # 逃逸塔
-    d.polygon(P([(-34, 70), (34, 70), (40, 230), (-40, 230)]), fill=ink)                  # 整流罩
-    d.rectangle([P([(-40, 230)])[0], P([(40, 820)])[0]], fill=ink)                        # 芯级
+    d.line(P([(0, 0), (0, 80)]), fill=ink, width=int(5 * k * S))                         # 逃逸塔
     for sx in (-1, 1):
-        for off in (0, 1):
-            x0 = sx * (40 + off * 30)
-            d.polygon(P([(x0, 560), (x0 + sx * 30, 560), (x0 + sx * 30, 840), (x0, 840)]), fill=ink)
-            d.polygon(P([(x0, 560), (x0 + sx * 15, 510), (x0 + sx * 30, 560)]), fill=ink)
-    d.rectangle([P([(-36, 400)])[0], P([(36, 412)])[0]], fill=(200, 40, 30, 255))          # 一道红色标记
+        d.polygon(P([(0, 40), (sx * 12, 62), (0, 62)]), fill=ink)                            # 逃逸塔小翼
+    d.polygon(P([(-10, 80), (10, 80), (40, 150), (40, 250), (-40, 250), (-40, 150)]), fill=ink)  # 整流罩（比芯级粗）
+    d.polygon(P([(-40, 250), (40, 250), (32, 270), (-32, 270)]), fill=ink)
+    d.rectangle([P([(-32, 270)])[0], P([(32, 840)])[0]], fill=ink)                         # 芯级
+    d.rectangle([P([(-33, 470)])[0], P([(33, 478)])[0]], fill=(60, 50, 40, 255))           # 级间段
+    for sx in (-1, 1):                                                                        # 两侧助推器
+        x0, x1 = sx * 34, sx * 64
+        lo, hi = min(x0, x1), max(x0, x1)
+        d.rectangle([P([(lo, 590)])[0], P([(hi, 850)])[0]], fill=ink)
+        d.polygon(P([(lo, 590), (hi, 590), ((lo + hi) / 2, 528)]), fill=ink)                 # 尖锥
+        d.polygon(P([(x1, 800), (x1 + sx * 22, 852), (x1, 852)]), fill=ink)                  # 尾翼
+    d.rectangle([P([(-32, 330)])[0], P([(32, 342)])[0]], fill=(200, 40, 30, 255))           # 红色标记
     im = im.resize((w, height), Image.LANCZOS)
     a = np.asarray(im, np.float32) / 255
     # 墨色飞白：边缘做一点干笔纹理

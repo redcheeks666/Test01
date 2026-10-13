@@ -80,13 +80,17 @@ def s_shenzhou(c):
     rise = ease_in(clamp01((c.lb - 1.5) / 6.5), 2.0)
     cx, cy = 1300, lerp(620, 120, rise)
     A.paste(f, *LM, cx, cy, 1.0)
-    # 墨色尾烟：从火箭底部向两侧晕开
+    # 墨色尾烟：留在地面，向两侧淡淡晕开；火箭与地面之间只留一道淡墨痕
     base_y = cy + LM[1].shape[0] / 2
+    ground = 960
     n = SMOKE[0] * 0.6 + SMOKE[1] * 0.4
-    d = np.sqrt(((xx - cx) / 1.6) ** 2 + (np.clip(yy - base_y, 0, None)) ** 2)
-    grow = lerp(80, 520, ease_out(clamp01((c.lb - 1.0) / 5), 2))
-    smoke = np.clip((grow - d) / 140 + (n - 0.5) * 1.6, 0, 1) * (yy > base_y - 30)
-    f = f * (1 - smoke[..., None] * 0.92) + np.array([0.08, 0.07, 0.06]) * smoke[..., None] * 0.92
+    grow = lerp(60, 560, ease_out(clamp01((c.lb - 1.2) / 5), 2))
+    d = np.sqrt(((xx - cx) / 2.2) ** 2 + ((yy - ground) * 1.6) ** 2)
+    smoke = np.clip((grow - d) / 220 + (n - 0.5) * 1.4, 0, 1) * 0.55
+    trail_w = 18 + 10 * rise
+    trail = (np.exp(-((xx - cx) / trail_w) ** 2) * ((yy > base_y) & (yy < ground)) * 0.35 * clamp01((c.lb - 1.5) * 2))
+    ink = np.clip(smoke + trail, 0, 0.6)[..., None]
+    f = f * (1 - ink) + np.array([0.10, 0.09, 0.08]) * ink
     flame = glow(cx, base_y + 30, 30, (1.0, 0.5, 0.15), 1.2 * clamp01((c.lb - 1.2) * 2), sx=26, sy=60)
     f = f + flame
     f = PAPER * (1 - ink_reveal(clamp01(c.lb / 1.2))) + f * ink_reveal(clamp01(c.lb / 1.2))
