@@ -101,29 +101,18 @@ CREDITS = [
     ("天问", "title"),
     ("人类向往星空的五千年", "sub"),
     ("", "gap"),
-    ("影像", "head"),
-    ("NASA · NASA Johnson · NASA Goddard Space Flight Center", "line"),
-    ("NASA Scientific Visualization Studio · NASA/JPL-Caltech", "line"),
-    ("NASA/Johns Hopkins APL/Southwest Research Institute", "line"),
-    ("NASA, ESA, CSA, and STScI · NASA/USAF · NASA/U.S. Army", "line"),
-    ("NASA/Joel Kowsky · NASA/Bill Ingalls", "line"),
-    ("SpaceX · Official SpaceX Photos · Starlink", "line"),
-    ("国家航天局 · 中国载人航天工程办公室 · 中国航天科技集团", "line"),
-    ("国家航天局/新华社 · 蓝箭航天", "line"),
-    ("", "gap"),
-    ("古籍与档案", "head"),
-    ("Library of Congress · The Metropolitan Museum of Art", "line"),
-    ("Wellcome Collection · ETH-Bibliothek Zürich · Bayerische Staatsbibliothek", "line"),
-    ("Jules Verne, J. Hetzel (1872) · Internet Archive", "line"),
+    ("音乐", "head"),
+    ("配乐为程序合成", "line"),
     ("", "gap"),
     ("音效", "head"),
-    ("NASA · Freesound (CC0) · Pixabay", "line"),
+    ("取自真实的航天录音与 CC0 音效素材", "line"),
     ("", "gap"),
     ("说明", "head"),
     ("万户的故事为传说", "line"),
-    ("万户、苏联航天器与航天员、神舟五号、月船 3 号、凯利滑翔机、皮卡尔气球、", "line"),
-    ("张衡浑天仪等画面为代码绘制的示意；《纽约时报》版面为重绘示意", "line"),
-    ("神话段落沿用样片中的绘制画面 · 配乐为程序合成", "line"),
+    ("万户、斯普特尼克 1 号、莱卡、加加林、列昂诺夫、神舟五号、月船 3 号、", "line"),
+    ("凯利滑翔机、皮卡尔气球、张衡浑天仪等画面为代码绘制的示意", "line"),
+    ("报纸版面为重绘示意 · 神话段落沿用样片中的绘制画面", "line"),
+    ("", "gap"),
     ("", "gap"),
     ("谨以此片，致敬每一位为飞向星空付出过的人", "sub"),
 ]
@@ -131,10 +120,10 @@ CREDITS = [
 
 def s_credits(c):
     f = STARS * 0.5
-    spec = {"title": ("brush", 96, 150), "sub": ("serif", 32, 70), "head": ("serif", 30, 60),
-            "line": ("serif", 26, 44), "gap": ("serif", 20, 40)}
-    total = sum(spec[k][2] for _, k in CREDITS)
-    y0 = lerp(H + 40, -total + H * 0.42, clamp01(c.lb / (c.beats - 2)))
+    spec = {"title": ("brush", 110, 170), "sub": ("serif", 36, 76), "head": ("serif", 34, 66),
+            "line": ("serif", 30, 50), "gap": ("serif", 20, 44)}
+    last = sum(spec[k][2] for _, k in CREDITS[:-1])           # 最后一行（致敬）相对首行的偏移
+    y0 = lerp(H + 40, H / 2 - last, ease_out(clamp01(c.lb / (c.beats - 4)), 1.6))   # 致敬停在画面中央，留 4 拍
     y = y0
     for text, kind in CREDITS:
         font_k, size, step = spec[kind]
@@ -147,7 +136,7 @@ def s_credits(c):
 
 
 SHOTS = [Shot(8, s_47, name="E-01"), Shot(7, s_voyager, name="E-02"), Shot(7, s_words, name="E-03"),
-         Shot(9, s_title, name="E-04"), Shot(24, s_credits, name="E-05")]
+         Shot(9, s_title, name="E-04"), Shot(20, s_credits, name="E-05")]
 ST = np.concatenate([[0], np.cumsum([s.beats for s in SHOTS])])
 
 
