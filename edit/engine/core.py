@@ -350,7 +350,10 @@ def caption(frame, c, at, lines, color=CREAM, x=110, y=150, scrim=None, out=None
             if lvl == "big":
                 a = min(fr / 4, 1) * fade
                 s = lerp(1.28, 1.0, ease_out_expo(fr / 9))
-                draw_text(frame, text, kind, size, color, xx_, cy, a, s, tr, anchor=anc)
+                if text.isascii():          # 纯英文大标题用衬线体，比毛笔体的拉丁字母更庄重
+                    draw_text(frame, text, "serif", 112, color, xx_, cy + 6, a, s, 6, anchor=anc, weight=700)
+                else:
+                    draw_text(frame, text, kind, size, color, xx_, cy, a, s, tr, anchor=anc)
             elif lvl == "date":
                 draw_text(frame, text, kind, size, color, xx_, cy, fade, 1.0, tr,
                           reveal=min(1, int(fr) / max(len(text), 1)), anchor=anc)

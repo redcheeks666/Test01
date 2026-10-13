@@ -174,7 +174,7 @@ def s_earthset(c):
         f[y0:y0 + h_, x0:x0 + w_] = reg * (1 - a) + np.array(GOLD) * a + glow(0, 0, 1, (0, 0, 0))[y0:y0 + h_, x0:x0 + w_]
     caption(f, c, 0.5, [("四名航天员绕月", "big"), ("飞得比任何人类都远", "mid"), ("半个多世纪后，人类重返月球附近", "small")],
             out=6.6)
-    caption(f, c, 7.6, [("阿尔忒弥斯", "big"), ("是阿波罗的孪生姐姐", "mid")])
+    caption(f, c, 7.6, [("Artemis", "big"), ("阿尔忒弥斯，是阿波罗的孪生姐姐", "mid")])
     return post(f, c.fi, grain=0.02)
 
 

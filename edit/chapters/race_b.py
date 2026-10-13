@@ -172,7 +172,7 @@ def s_tiangong(c):
 def s_artemis1(c):
     f = ken(c, img("NA-31"), (0.55, 0.5, 1.1), (0.5, 0.45, 1.22))
     f = hud(f, 1.0, "ORION · ARTEMIS I")
-    caption(f, c, 0.2, [("阿尔忒弥斯 1 号", "big"), ("无人绕月试飞", "mid")])
+    caption(f, c, 0.2, [("Artemis I", "big"), ("无人绕月试飞", "mid")])
     return post(f, c.fi, grain=0.025)
 
 

@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 from engine.core import (W, H, FPS, CREAM, INK, GOLD, ROOT, chapter_card, post, place, lerp, ease_io, ease_out,
-                         ease_out_expo, clamp01, fbm, glow, caption, circle_mask, xx, yy)
+                         ease_in, ease_out_expo, clamp01, fbm, glow, caption, circle_mask, xx, yy, draw_text, text_width)
 from engine.film import Chapter, Shot
 from engine.media import Clip, image
 from engine import music as M
@@ -14,7 +14,7 @@ from engine import music as M
 SAMPLE = ROOT / "reference" / "sample_v0.mp4"
 CHANGE = Clip("smp_change", SAMPLE, 32.0, 42.0, size=(1920, 1080))
 FEITIAN = Clip("smp_feitian", SAMPLE, 42.0, 52.8, size=(1920, 1080))
-TIANWEN = Clip("smp_tianwen", SAMPLE, 63.8, 82.0, size=(1920, 1080))
+STARS_Q = Clip("smp_stars", SAMPLE, 73.6, 82.0, size=(1920, 1080))     # 样片：问号化作星辰之后的星空段
 
 
 def s_card(c):
@@ -34,8 +34,93 @@ def s_feitian(c):
     return _sample(c, FEITIAN, 10.8)
 
 
-def s_tianwen(c):
-    f = _sample(c, TIANWEN, 18.2)
+# ---------------- 天问：竹简（重画）+ 样片星空 ----------------
+
+LINE = "遂古之初，谁传道之？"
+N_SLIPS, SLIP_W, SLIP_GAP, SLIP_H = 15, 84, 9, 860
+_SLIP = None
+_NIGHT = None
+
+
+def _slip():
+    """单片竹简：圆柱感的明暗、竖向纤维、上下两道编绳。"""
+    global _SLIP
+    if _SLIP is None:
+        w, h = SLIP_W, SLIP_H
+        u = np.linspace(-1, 1, w, dtype=np.float32)[None, :]
+        shade = 0.62 + 0.38 * np.clip(np.cos(u * np.pi / 2), 0, 1) ** 0.8
+        base = np.array([0.76, 0.58, 0.32], np.float32)
+        r = np.random.default_rng(12)
+        grain = cv2.resize(r.random((h // 8, w)).astype(np.float32), (w, h), interpolation=cv2.INTER_LINEAR)
+        img = base * (shade * (0.9 + 0.12 * grain))[..., None]
+        img[:, :, :] *= (1 - 0.18 * np.clip(fbm(h, w, 4, 5) - 0.55, 0, 1))[..., None]
+        for y in (int(h * 0.08), int(h * 0.92)):
+            img[y - 3:y + 3] = np.array([0.30, 0.22, 0.14], np.float32)
+        img[h // 2 - 1:h // 2 + 1] *= 0.85
+        a = np.ones((h, w, 1), np.float32)
+        a[:6], a[-6:] = 0.6, 0.6
+        _SLIP = (np.clip(img, 0, 1), a)
+    return _SLIP
+
+
+def _night():
+    global _NIGHT
+    if _NIGHT is None:
+        from engine.core import starfield
+        _NIGHT = starfield(14, 500, (0.03, 0.035, 0.06))
+    return _NIGHT
+
+
+def s_bamboo(c):
+    """竹简从右往左逐片展开 → 第一句横排、从左往右一字一字写出 → 问号飞起化作星辰。"""
+    f = _night().copy()
+    rgb, a = _slip()
+    total_w = N_SLIPS * SLIP_W + (N_SLIPS - 1) * SLIP_GAP
+    x0 = int(W / 2 - total_w / 2)
+    y0 = int(H / 2 - SLIP_H / 2)
+    unroll = clamp01(c.lb / 2.0)
+    fade = 1 - clamp01((c.lb - 8.6) / 1.0)
+    for i in range(N_SLIPS):
+        j = N_SLIPS - 1 - i                       # 从右往左
+        k = clamp01(unroll * N_SLIPS - j)
+        if k <= 0:
+            continue
+        x = x0 + i * (SLIP_W + SLIP_GAP) + int((1 - ease_out(k, 2)) * 40)
+        al = a * k * fade
+        f[y0:y0 + SLIP_H, x:x + SLIP_W] = f[y0:y0 + SLIP_H, x:x + SLIP_W] * (1 - al) + rgb * al
+    # 第一句：横排，一字一字写出（墨色略微晕开）
+    from engine.core import text_img
+    size = 128
+    widths = [text_width(ch, "brush", size) for ch in LINE]
+    gap = 6
+    tw = sum(widths) + gap * (len(LINE) - 1)
+    tx = W / 2 - tw / 2
+    for n, (ch, wd) in enumerate(zip(LINE, widths)):
+        b0 = 2.2 + n * 0.5
+        k = clamp01((c.lb - b0) / 0.35)
+        if k <= 0:
+            tx += wd + gap
+            continue
+        cx = tx + wd / 2
+        cy = H / 2
+        if ch == "？" and c.lb > 8.4:              # 问号飞起来，变成一颗星
+            q = ease_in(clamp01((c.lb - 8.4) / 1.4), 1.8)
+            cy = lerp(H / 2, -40, q)
+            cx = lerp(cx, W * 0.62, q)
+            f += glow(cx, cy, lerp(6, 16, q), (1.0, 0.85, 0.55), 1.3 * q)
+            draw_text(f, ch, "brush", int(size * lerp(1.0, 0.4, q)), (0.95, 0.85, 0.6), cx, cy, 1 - q * 0.7,
+                      anchor="c", shadow=False)
+        else:
+            ink = (0.09, 0.05, 0.02)
+            draw_text(f, ch, "brush", size, ink, cx, cy, k * fade, lerp(1.12, 1.0, ease_out(k, 2)), anchor="c",
+                      shadow=False)
+        tx += wd + gap
+    caption(f, c, 2.4, [("屈原《天问》", "lead")], y=y0 - 70, x=x0, scrim=0.0, out=8.4)
+    return post(f, c.fi, grain=0.02, vignette=False, weave=False)
+
+
+def s_stars(c):
+    f = _sample(c, STARS_Q, 8.4)
     return f * (1 - clamp01((c.lb - (c.beats - 1.0)) / 1.0))
 
 
@@ -117,14 +202,14 @@ def s_artemis(c):
         sx2 = lerp(1900, 1610, twin)
         f = _medallion(f, apo, 0.335, 0.465, 0.44 * r2 / 255, sx2, 580, r2, ring_k=twin, alpha=twin)
         f = _sun(f, sx2, 580 - r2 - 95, 44, twin, c.lsec * 0.3)
-    caption(f, c, 0.6, [("同一个月亮，在地中海的另一端", "lead"), ("阿尔忒弥斯", "big"),
+    caption(f, c, 0.6, [("同一个月亮，在地中海的另一端", "lead"), ("Artemis", "big"),
                         ("希腊神话里的月亮女神", "mid")], y=120, scrim=0.35)
     caption(f, c, 7.6, [("太阳神阿波罗的孪生姐姐", "mid")], y=120 + 52 + 158 + 70, scrim=0.0)
     return post(f, c.fi, grain=0.02, vig_amt=0.45)
 
 
 SHOTS = [Shot(8, s_card, name="1-01"), Shot(12, s_change, name="1-02"), Shot(13, s_feitian, name="1-03"),
-         Shot(14, s_artemis, name="1-04"), Shot(22, s_tianwen, name="1-05")]
+         Shot(14, s_artemis, name="1-04"), Shot(10, s_bamboo, name="1-05a"), Shot(10, s_stars, name="1-05b")]
 
 # D 小调五声：D F G A C
 PENTA = [50, 53, 55, 57, 60, 62, 65, 67, 69, 72, 74]
@@ -170,11 +255,13 @@ def music(sc, ch):
     sc.add("bgm", M.bell(81, 3.0), T(b_art + 7.5), 0.2)
     # 天问：竹简碰撞（纸声 + 木声），问号飞升化作星辰时的钟声
     b_tw = ch.shot_start(4)
-    for k in range(6):
-        sc.add("sfx", M.tick() * 3, T(b_tw + 0.4 + k * 0.35), 0.25)
-    sc.add("sfx", M.real("FX/FX-05/FX-05_01_paper_turn_pixabay.mp3", fade=0.02), T(b_tw + 0.3), 0.35)
+    for k in range(13):                                   # 竹简逐片展开的碰撞声
+        sc.add("sfx", M.tick() * 3, T(b_tw + k * 2.0 / 13), 0.22, pan=0.4 - 0.06 * k)
+    for n in range(10):                                   # 一字一笔
+        sc.add("sfx", M.filt(M.noise(0.25), "band", [1500, 5000]) * np.exp(-np.arange(int(0.25 * M.SR)) / M.SR * 14),
+               T(b_tw + 2.2 + n * 0.5), 0.1)
     for k, m in enumerate([74, 77, 81, 86, 89]):
-        sc.add("bgm", M.bell(m, 2.5), T(b_tw + 11 + k * 0.5), 0.18)
+        sc.add("bgm", M.bell(m, 2.5), T(b_tw + 8.6 + k * 0.5), 0.18)
 
 
-CHAPTER = Chapter("myth", "神话", 72, SHOTS, clips=[CHANGE, FEITIAN, TIANWEN], music=music)
+CHAPTER = Chapter("myth", "神话", 72, SHOTS, clips=[CHANGE, FEITIAN, STARS_Q], music=music)
