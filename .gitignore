@@ -16,3 +16,7 @@ assets/**/_superseded/
 /assets/SX/SX-01/SX-01_12_flight14_liftoff_cut01_spacex.mp4
 /assets/SX/SX-03/SX-03_11_flight14_earth_limb_cut01_spacex.mp4
 /assets/SX/SX-03/SX-03_12_flight14_deployment_cut02_spacex.mp4
+edit/ch3_demo/out/*.jpg
+edit/ch3_demo/out/*.log
+edit/ch3_demo/out/*.wav
+__pycache__/

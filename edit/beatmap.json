@@ -1,0 +1,8912 @@
+{
+ "fps": 30,
+ "total_s": 580.775,
+ "sections": [
+  {
+   "section": "序章",
+   "bpm": "60",
+   "bars": 6,
+   "start_s": 0.0,
+   "end_s": 24.0,
+   "start_frame": 0,
+   "end_frame": 720,
+   "note": "心跳脉冲；第 4 小节强拍点火（H1）；第 5 小节倒带"
+  },
+  {
+   "section": "壹 神话",
+   "bpm": "72",
+   "bars": 18,
+   "start_s": 24.0,
+   "end_s": 84.0,
+   "start_frame": 720,
+   "end_frame": 2520,
+   "note": "章节卡 2 小节 + 四个神话段落各 4 小节"
+  },
+  {
+   "section": "贰 仰望",
+   "bpm": "84",
+   "bars": 18,
+   "start_s": 84.0,
+   "end_s": 135.429,
+   "start_frame": 2520,
+   "end_frame": 4063,
+   "note": "章节卡 2 小节 + 四位人物各 4 小节"
+  },
+  {
+   "section": "叁 先驱",
+   "bpm": "96→112",
+   "bars": 44,
+   "start_s": 135.429,
+   "end_s": 233.825,
+   "start_frame": 4063,
+   "end_frame": 7015,
+   "note": "前 24 小节从 96 渐快到 112，之后保持；最后一小节强拍音爆（H3），接一拍静音"
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bpm": "120",
+   "bars": 16,
+   "start_s": 233.825,
+   "end_s": 265.825,
+   "start_frame": 7015,
+   "end_frame": 7975,
+   "note": "每拍一切"
+  },
+  {
+   "section": "肆 4B 登月",
+   "bpm": "120",
+   "bars": 20,
+   "start_s": 265.825,
+   "end_s": 305.825,
+   "start_frame": 7975,
+   "end_frame": 9175,
+   "note": "第 9 小节强拍阿波罗 11 号升空（H4）"
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bpm": "120",
+   "bars": 16,
+   "start_s": 305.825,
+   "end_s": 337.825,
+   "start_frame": 9175,
+   "end_frame": 10135,
+   "note": "鼓组撤掉，半速感"
+  },
+  {
+   "section": "肆 4D 远方",
+   "bpm": "120",
+   "bars": 24,
+   "start_s": 337.825,
+   "end_s": 385.825,
+   "start_frame": 10135,
+   "end_frame": 11575,
+   "note": "第 17—19 小节为暗淡蓝点静音（H6），约 6 秒"
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bpm": "128",
+   "bars": 14,
+   "start_s": 385.825,
+   "end_s": 412.075,
+   "start_frame": 11575,
+   "end_frame": 12362,
+   "note": "哥伦比亚号静默后神舟五号起势"
+  },
+  {
+   "section": "肆 4F 加速",
+   "bpm": "128",
+   "bars": 20,
+   "start_s": 412.075,
+   "end_s": 449.575,
+   "start_frame": 12362,
+   "end_frame": 13487,
+   "note": "每 2 拍一切，最后 4 个镜头每拍一切"
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bpm": "100",
+   "bars": 38,
+   "start_s": 449.575,
+   "end_s": 540.775,
+   "start_frame": 13487,
+   "end_frame": 16223,
+   "note": "半速重拍；英雄时刻落在小节第一拍（H8、H9、H10）"
+  },
+  {
+   "section": "尾声",
+   "bpm": "60",
+   "bars": 10,
+   "start_s": 540.775,
+   "end_s": 580.775,
+   "start_frame": 16223,
+   "end_frame": 17423,
+   "note": "自由速度，按 60 BPM 估算；第 1 小节强拍 47 → 33（H11）"
+  }
+ ],
+ "beats": [
+  {
+   "section": "序章",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 0.0,
+   "frame": 0,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "序章",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 1.0,
+   "frame": 30,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 2.0,
+   "frame": 60,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 3.0,
+   "frame": 90,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 4.0,
+   "frame": 120,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "序章",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 5.0,
+   "frame": 150,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 6.0,
+   "frame": 180,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 7.0,
+   "frame": 210,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 8.0,
+   "frame": 240,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "序章",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 9.0,
+   "frame": 270,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 10.0,
+   "frame": 300,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 11.0,
+   "frame": 330,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 12.0,
+   "frame": 360,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "序章",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 13.0,
+   "frame": 390,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 14.0,
+   "frame": 420,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 15.0,
+   "frame": 450,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 16.0,
+   "frame": 480,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "序章",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 17.0,
+   "frame": 510,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 18.0,
+   "frame": 540,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 19.0,
+   "frame": 570,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 20.0,
+   "frame": 600,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "序章",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 21.0,
+   "frame": 630,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 22.0,
+   "frame": 660,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "序章",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 23.0,
+   "frame": 690,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 24.0,
+   "frame": 720,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 24.8333,
+   "frame": 745,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 25.6667,
+   "frame": 770,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 26.5,
+   "frame": 795,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 27.3333,
+   "frame": 820,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 28.1667,
+   "frame": 845,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 29.0,
+   "frame": 870,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 29.8333,
+   "frame": 895,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 30.6667,
+   "frame": 920,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 31.5,
+   "frame": 945,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 32.3333,
+   "frame": 970,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 33.1667,
+   "frame": 995,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 34.0,
+   "frame": 1020,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 34.8333,
+   "frame": 1045,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 35.6667,
+   "frame": 1070,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 36.5,
+   "frame": 1095,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 37.3333,
+   "frame": 1120,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 38.1667,
+   "frame": 1145,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 39.0,
+   "frame": 1170,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 39.8333,
+   "frame": 1195,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 40.6667,
+   "frame": 1220,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 41.5,
+   "frame": 1245,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 42.3333,
+   "frame": 1270,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 43.1667,
+   "frame": 1295,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 44.0,
+   "frame": 1320,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 44.8333,
+   "frame": 1345,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 45.6667,
+   "frame": 1370,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 46.5,
+   "frame": 1395,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 47.3333,
+   "frame": 1420,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 48.1667,
+   "frame": 1445,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 49.0,
+   "frame": 1470,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 49.8333,
+   "frame": 1495,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 50.6667,
+   "frame": 1520,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 51.5,
+   "frame": 1545,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 52.3333,
+   "frame": 1570,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 53.1667,
+   "frame": 1595,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 54.0,
+   "frame": 1620,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 54.8333,
+   "frame": 1645,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 55.6667,
+   "frame": 1670,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 56.5,
+   "frame": 1695,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 11,
+   "beat": 1,
+   "time_s": 57.3333,
+   "frame": 1720,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 11,
+   "beat": 2,
+   "time_s": 58.1667,
+   "frame": 1745,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 11,
+   "beat": 3,
+   "time_s": 59.0,
+   "frame": 1770,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 11,
+   "beat": 4,
+   "time_s": 59.8333,
+   "frame": 1795,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 12,
+   "beat": 1,
+   "time_s": 60.6667,
+   "frame": 1820,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 12,
+   "beat": 2,
+   "time_s": 61.5,
+   "frame": 1845,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 12,
+   "beat": 3,
+   "time_s": 62.3333,
+   "frame": 1870,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 12,
+   "beat": 4,
+   "time_s": 63.1667,
+   "frame": 1895,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 13,
+   "beat": 1,
+   "time_s": 64.0,
+   "frame": 1920,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 13,
+   "beat": 2,
+   "time_s": 64.8333,
+   "frame": 1945,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 13,
+   "beat": 3,
+   "time_s": 65.6667,
+   "frame": 1970,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 13,
+   "beat": 4,
+   "time_s": 66.5,
+   "frame": 1995,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 14,
+   "beat": 1,
+   "time_s": 67.3333,
+   "frame": 2020,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 14,
+   "beat": 2,
+   "time_s": 68.1667,
+   "frame": 2045,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 14,
+   "beat": 3,
+   "time_s": 69.0,
+   "frame": 2070,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 14,
+   "beat": 4,
+   "time_s": 69.8333,
+   "frame": 2095,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 15,
+   "beat": 1,
+   "time_s": 70.6667,
+   "frame": 2120,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 15,
+   "beat": 2,
+   "time_s": 71.5,
+   "frame": 2145,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 15,
+   "beat": 3,
+   "time_s": 72.3333,
+   "frame": 2170,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 15,
+   "beat": 4,
+   "time_s": 73.1667,
+   "frame": 2195,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 16,
+   "beat": 1,
+   "time_s": 74.0,
+   "frame": 2220,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 16,
+   "beat": 2,
+   "time_s": 74.8333,
+   "frame": 2245,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 16,
+   "beat": 3,
+   "time_s": 75.6667,
+   "frame": 2270,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 16,
+   "beat": 4,
+   "time_s": 76.5,
+   "frame": 2295,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 17,
+   "beat": 1,
+   "time_s": 77.3333,
+   "frame": 2320,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 17,
+   "beat": 2,
+   "time_s": 78.1667,
+   "frame": 2345,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 17,
+   "beat": 3,
+   "time_s": 79.0,
+   "frame": 2370,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 17,
+   "beat": 4,
+   "time_s": 79.8333,
+   "frame": 2395,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 18,
+   "beat": 1,
+   "time_s": 80.6667,
+   "frame": 2420,
+   "bpm": 72,
+   "downbeat": true
+  },
+  {
+   "section": "壹 神话",
+   "bar": 18,
+   "beat": 2,
+   "time_s": 81.5,
+   "frame": 2445,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 18,
+   "beat": 3,
+   "time_s": 82.3333,
+   "frame": 2470,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "壹 神话",
+   "bar": 18,
+   "beat": 4,
+   "time_s": 83.1667,
+   "frame": 2495,
+   "bpm": 72,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 84.0,
+   "frame": 2520,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 84.7143,
+   "frame": 2541,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 85.4286,
+   "frame": 2563,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 86.1429,
+   "frame": 2584,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 86.8571,
+   "frame": 2606,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 87.5714,
+   "frame": 2627,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 88.2857,
+   "frame": 2649,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 89.0,
+   "frame": 2670,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 89.7143,
+   "frame": 2691,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 90.4286,
+   "frame": 2713,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 91.1429,
+   "frame": 2734,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 91.8571,
+   "frame": 2756,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 92.5714,
+   "frame": 2777,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 93.2857,
+   "frame": 2799,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 94.0,
+   "frame": 2820,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 94.7143,
+   "frame": 2841,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 95.4286,
+   "frame": 2863,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 96.1429,
+   "frame": 2884,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 96.8571,
+   "frame": 2906,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 97.5714,
+   "frame": 2927,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 98.2857,
+   "frame": 2949,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 99.0,
+   "frame": 2970,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 99.7143,
+   "frame": 2991,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 100.4286,
+   "frame": 3013,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 101.1429,
+   "frame": 3034,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 101.8571,
+   "frame": 3056,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 102.5714,
+   "frame": 3077,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 103.2857,
+   "frame": 3099,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 104.0,
+   "frame": 3120,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 104.7143,
+   "frame": 3141,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 105.4286,
+   "frame": 3163,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 106.1429,
+   "frame": 3184,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 106.8571,
+   "frame": 3206,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 107.5714,
+   "frame": 3227,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 108.2857,
+   "frame": 3249,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 109.0,
+   "frame": 3270,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 109.7143,
+   "frame": 3291,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 110.4286,
+   "frame": 3313,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 111.1429,
+   "frame": 3334,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 111.8571,
+   "frame": 3356,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 11,
+   "beat": 1,
+   "time_s": 112.5714,
+   "frame": 3377,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 11,
+   "beat": 2,
+   "time_s": 113.2857,
+   "frame": 3399,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 11,
+   "beat": 3,
+   "time_s": 114.0,
+   "frame": 3420,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 11,
+   "beat": 4,
+   "time_s": 114.7143,
+   "frame": 3441,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 12,
+   "beat": 1,
+   "time_s": 115.4286,
+   "frame": 3463,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 12,
+   "beat": 2,
+   "time_s": 116.1429,
+   "frame": 3484,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 12,
+   "beat": 3,
+   "time_s": 116.8571,
+   "frame": 3506,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 12,
+   "beat": 4,
+   "time_s": 117.5714,
+   "frame": 3527,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 13,
+   "beat": 1,
+   "time_s": 118.2857,
+   "frame": 3549,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 13,
+   "beat": 2,
+   "time_s": 119.0,
+   "frame": 3570,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 13,
+   "beat": 3,
+   "time_s": 119.7143,
+   "frame": 3591,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 13,
+   "beat": 4,
+   "time_s": 120.4286,
+   "frame": 3613,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 14,
+   "beat": 1,
+   "time_s": 121.1429,
+   "frame": 3634,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 14,
+   "beat": 2,
+   "time_s": 121.8571,
+   "frame": 3656,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 14,
+   "beat": 3,
+   "time_s": 122.5714,
+   "frame": 3677,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 14,
+   "beat": 4,
+   "time_s": 123.2857,
+   "frame": 3699,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 15,
+   "beat": 1,
+   "time_s": 124.0,
+   "frame": 3720,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 15,
+   "beat": 2,
+   "time_s": 124.7143,
+   "frame": 3741,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 15,
+   "beat": 3,
+   "time_s": 125.4286,
+   "frame": 3763,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 15,
+   "beat": 4,
+   "time_s": 126.1429,
+   "frame": 3784,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 16,
+   "beat": 1,
+   "time_s": 126.8571,
+   "frame": 3806,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 16,
+   "beat": 2,
+   "time_s": 127.5714,
+   "frame": 3827,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 16,
+   "beat": 3,
+   "time_s": 128.2857,
+   "frame": 3849,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 16,
+   "beat": 4,
+   "time_s": 129.0,
+   "frame": 3870,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 17,
+   "beat": 1,
+   "time_s": 129.7143,
+   "frame": 3891,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 17,
+   "beat": 2,
+   "time_s": 130.4286,
+   "frame": 3913,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 17,
+   "beat": 3,
+   "time_s": 131.1429,
+   "frame": 3934,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 17,
+   "beat": 4,
+   "time_s": 131.8571,
+   "frame": 3956,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 18,
+   "beat": 1,
+   "time_s": 132.5714,
+   "frame": 3977,
+   "bpm": 84,
+   "downbeat": true
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 18,
+   "beat": 2,
+   "time_s": 133.2857,
+   "frame": 3999,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 18,
+   "beat": 3,
+   "time_s": 134.0,
+   "frame": 4020,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "贰 仰望",
+   "bar": 18,
+   "beat": 4,
+   "time_s": 134.7143,
+   "frame": 4041,
+   "bpm": 84,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 135.4286,
+   "frame": 4063,
+   "bpm": 96.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 136.0536,
+   "frame": 4082,
+   "bpm": 96.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 136.6775,
+   "frame": 4100,
+   "bpm": 96.33,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 137.3003,
+   "frame": 4119,
+   "bpm": 96.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 137.9221,
+   "frame": 4138,
+   "bpm": 96.67,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 138.5428,
+   "frame": 4156,
+   "bpm": 96.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 139.1624,
+   "frame": 4175,
+   "bpm": 97.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 139.781,
+   "frame": 4193,
+   "bpm": 97.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 140.3985,
+   "frame": 4212,
+   "bpm": 97.33,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 141.0149,
+   "frame": 4230,
+   "bpm": 97.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 141.6303,
+   "frame": 4249,
+   "bpm": 97.67,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 142.2446,
+   "frame": 4267,
+   "bpm": 97.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 142.8579,
+   "frame": 4286,
+   "bpm": 98.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 143.4701,
+   "frame": 4304,
+   "bpm": 98.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 144.0813,
+   "frame": 4322,
+   "bpm": 98.33,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 144.6915,
+   "frame": 4341,
+   "bpm": 98.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 145.3007,
+   "frame": 4359,
+   "bpm": 98.67,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 145.9088,
+   "frame": 4377,
+   "bpm": 98.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 146.5158,
+   "frame": 4395,
+   "bpm": 99.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 147.1219,
+   "frame": 4414,
+   "bpm": 99.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 147.7269,
+   "frame": 4432,
+   "bpm": 99.33,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 148.331,
+   "frame": 4450,
+   "bpm": 99.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 148.934,
+   "frame": 4468,
+   "bpm": 99.67,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 149.536,
+   "frame": 4486,
+   "bpm": 99.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 150.137,
+   "frame": 4504,
+   "bpm": 100.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 150.737,
+   "frame": 4522,
+   "bpm": 100.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 151.336,
+   "frame": 4540,
+   "bpm": 100.33,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 151.934,
+   "frame": 4558,
+   "bpm": 100.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 152.531,
+   "frame": 4576,
+   "bpm": 100.67,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 153.127,
+   "frame": 4594,
+   "bpm": 100.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 153.7221,
+   "frame": 4612,
+   "bpm": 101.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 154.3161,
+   "frame": 4629,
+   "bpm": 101.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 154.9092,
+   "frame": 4647,
+   "bpm": 101.33,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 155.5013,
+   "frame": 4665,
+   "bpm": 101.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 156.0925,
+   "frame": 4683,
+   "bpm": 101.67,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 156.6826,
+   "frame": 4700,
+   "bpm": 101.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 157.2718,
+   "frame": 4718,
+   "bpm": 102.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 157.8601,
+   "frame": 4736,
+   "bpm": 102.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 158.4473,
+   "frame": 4753,
+   "bpm": 102.33,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 159.0337,
+   "frame": 4771,
+   "bpm": 102.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 11,
+   "beat": 1,
+   "time_s": 159.619,
+   "frame": 4789,
+   "bpm": 102.67,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 11,
+   "beat": 2,
+   "time_s": 160.2034,
+   "frame": 4806,
+   "bpm": 102.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 11,
+   "beat": 3,
+   "time_s": 160.7869,
+   "frame": 4824,
+   "bpm": 103.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 11,
+   "beat": 4,
+   "time_s": 161.3694,
+   "frame": 4841,
+   "bpm": 103.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 12,
+   "beat": 1,
+   "time_s": 161.951,
+   "frame": 4859,
+   "bpm": 103.33,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 12,
+   "beat": 2,
+   "time_s": 162.5317,
+   "frame": 4876,
+   "bpm": 103.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 12,
+   "beat": 3,
+   "time_s": 163.1114,
+   "frame": 4893,
+   "bpm": 103.67,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 12,
+   "beat": 4,
+   "time_s": 163.6901,
+   "frame": 4911,
+   "bpm": 103.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 13,
+   "beat": 1,
+   "time_s": 164.268,
+   "frame": 4928,
+   "bpm": 104.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 13,
+   "beat": 2,
+   "time_s": 164.8449,
+   "frame": 4945,
+   "bpm": 104.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 13,
+   "beat": 3,
+   "time_s": 165.4209,
+   "frame": 4963,
+   "bpm": 104.33,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 13,
+   "beat": 4,
+   "time_s": 165.996,
+   "frame": 4980,
+   "bpm": 104.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 14,
+   "beat": 1,
+   "time_s": 166.5702,
+   "frame": 4997,
+   "bpm": 104.67,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 14,
+   "beat": 2,
+   "time_s": 167.1434,
+   "frame": 5014,
+   "bpm": 104.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 14,
+   "beat": 3,
+   "time_s": 167.7157,
+   "frame": 5031,
+   "bpm": 105.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 14,
+   "beat": 4,
+   "time_s": 168.2872,
+   "frame": 5049,
+   "bpm": 105.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 15,
+   "beat": 1,
+   "time_s": 168.8577,
+   "frame": 5066,
+   "bpm": 105.33,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 15,
+   "beat": 2,
+   "time_s": 169.4273,
+   "frame": 5083,
+   "bpm": 105.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 15,
+   "beat": 3,
+   "time_s": 169.996,
+   "frame": 5100,
+   "bpm": 105.67,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 15,
+   "beat": 4,
+   "time_s": 170.5639,
+   "frame": 5117,
+   "bpm": 105.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 16,
+   "beat": 1,
+   "time_s": 171.1308,
+   "frame": 5134,
+   "bpm": 106.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 16,
+   "beat": 2,
+   "time_s": 171.6968,
+   "frame": 5151,
+   "bpm": 106.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 16,
+   "beat": 3,
+   "time_s": 172.262,
+   "frame": 5168,
+   "bpm": 106.33,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 16,
+   "beat": 4,
+   "time_s": 172.8262,
+   "frame": 5185,
+   "bpm": 106.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 17,
+   "beat": 1,
+   "time_s": 173.3896,
+   "frame": 5202,
+   "bpm": 106.67,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 17,
+   "beat": 2,
+   "time_s": 173.9521,
+   "frame": 5219,
+   "bpm": 106.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 17,
+   "beat": 3,
+   "time_s": 174.5137,
+   "frame": 5235,
+   "bpm": 107.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 17,
+   "beat": 4,
+   "time_s": 175.0745,
+   "frame": 5252,
+   "bpm": 107.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 18,
+   "beat": 1,
+   "time_s": 175.6344,
+   "frame": 5269,
+   "bpm": 107.33,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 18,
+   "beat": 2,
+   "time_s": 176.1934,
+   "frame": 5286,
+   "bpm": 107.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 18,
+   "beat": 3,
+   "time_s": 176.7515,
+   "frame": 5303,
+   "bpm": 107.67,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 18,
+   "beat": 4,
+   "time_s": 177.3088,
+   "frame": 5319,
+   "bpm": 107.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 19,
+   "beat": 1,
+   "time_s": 177.8652,
+   "frame": 5336,
+   "bpm": 108.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 19,
+   "beat": 2,
+   "time_s": 178.4208,
+   "frame": 5353,
+   "bpm": 108.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 19,
+   "beat": 3,
+   "time_s": 178.9755,
+   "frame": 5369,
+   "bpm": 108.33,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 19,
+   "beat": 4,
+   "time_s": 179.5293,
+   "frame": 5386,
+   "bpm": 108.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 20,
+   "beat": 1,
+   "time_s": 180.0823,
+   "frame": 5402,
+   "bpm": 108.67,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 20,
+   "beat": 2,
+   "time_s": 180.6344,
+   "frame": 5419,
+   "bpm": 108.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 20,
+   "beat": 3,
+   "time_s": 181.1858,
+   "frame": 5436,
+   "bpm": 109.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 20,
+   "beat": 4,
+   "time_s": 181.7362,
+   "frame": 5452,
+   "bpm": 109.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 21,
+   "beat": 1,
+   "time_s": 182.2858,
+   "frame": 5469,
+   "bpm": 109.33,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 21,
+   "beat": 2,
+   "time_s": 182.8346,
+   "frame": 5485,
+   "bpm": 109.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 21,
+   "beat": 3,
+   "time_s": 183.3826,
+   "frame": 5501,
+   "bpm": 109.67,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 21,
+   "beat": 4,
+   "time_s": 183.9297,
+   "frame": 5518,
+   "bpm": 109.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 22,
+   "beat": 1,
+   "time_s": 184.4759,
+   "frame": 5534,
+   "bpm": 110.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 22,
+   "beat": 2,
+   "time_s": 185.0214,
+   "frame": 5551,
+   "bpm": 110.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 22,
+   "beat": 3,
+   "time_s": 185.566,
+   "frame": 5567,
+   "bpm": 110.33,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 22,
+   "beat": 4,
+   "time_s": 186.1098,
+   "frame": 5583,
+   "bpm": 110.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 23,
+   "beat": 1,
+   "time_s": 186.6528,
+   "frame": 5600,
+   "bpm": 110.67,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 23,
+   "beat": 2,
+   "time_s": 187.195,
+   "frame": 5616,
+   "bpm": 110.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 23,
+   "beat": 3,
+   "time_s": 187.7363,
+   "frame": 5632,
+   "bpm": 111.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 23,
+   "beat": 4,
+   "time_s": 188.2769,
+   "frame": 5648,
+   "bpm": 111.17,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 24,
+   "beat": 1,
+   "time_s": 188.8166,
+   "frame": 5664,
+   "bpm": 111.33,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 24,
+   "beat": 2,
+   "time_s": 189.3555,
+   "frame": 5681,
+   "bpm": 111.5,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 24,
+   "beat": 3,
+   "time_s": 189.8937,
+   "frame": 5697,
+   "bpm": 111.67,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 24,
+   "beat": 4,
+   "time_s": 190.431,
+   "frame": 5713,
+   "bpm": 111.83,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 25,
+   "beat": 1,
+   "time_s": 190.9675,
+   "frame": 5729,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 25,
+   "beat": 2,
+   "time_s": 191.5032,
+   "frame": 5745,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 25,
+   "beat": 3,
+   "time_s": 192.0389,
+   "frame": 5761,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 25,
+   "beat": 4,
+   "time_s": 192.5746,
+   "frame": 5777,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 26,
+   "beat": 1,
+   "time_s": 193.1103,
+   "frame": 5793,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 26,
+   "beat": 2,
+   "time_s": 193.6461,
+   "frame": 5809,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 26,
+   "beat": 3,
+   "time_s": 194.1818,
+   "frame": 5825,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 26,
+   "beat": 4,
+   "time_s": 194.7175,
+   "frame": 5842,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 27,
+   "beat": 1,
+   "time_s": 195.2532,
+   "frame": 5858,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 27,
+   "beat": 2,
+   "time_s": 195.7889,
+   "frame": 5874,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 27,
+   "beat": 3,
+   "time_s": 196.3246,
+   "frame": 5890,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 27,
+   "beat": 4,
+   "time_s": 196.8603,
+   "frame": 5906,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 28,
+   "beat": 1,
+   "time_s": 197.3961,
+   "frame": 5922,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 28,
+   "beat": 2,
+   "time_s": 197.9318,
+   "frame": 5938,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 28,
+   "beat": 3,
+   "time_s": 198.4675,
+   "frame": 5954,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 28,
+   "beat": 4,
+   "time_s": 199.0032,
+   "frame": 5970,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 29,
+   "beat": 1,
+   "time_s": 199.5389,
+   "frame": 5986,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 29,
+   "beat": 2,
+   "time_s": 200.0746,
+   "frame": 6002,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 29,
+   "beat": 3,
+   "time_s": 200.6103,
+   "frame": 6018,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 29,
+   "beat": 4,
+   "time_s": 201.1461,
+   "frame": 6034,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 30,
+   "beat": 1,
+   "time_s": 201.6818,
+   "frame": 6050,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 30,
+   "beat": 2,
+   "time_s": 202.2175,
+   "frame": 6067,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 30,
+   "beat": 3,
+   "time_s": 202.7532,
+   "frame": 6083,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 30,
+   "beat": 4,
+   "time_s": 203.2889,
+   "frame": 6099,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 31,
+   "beat": 1,
+   "time_s": 203.8246,
+   "frame": 6115,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 31,
+   "beat": 2,
+   "time_s": 204.3603,
+   "frame": 6131,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 31,
+   "beat": 3,
+   "time_s": 204.8961,
+   "frame": 6147,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 31,
+   "beat": 4,
+   "time_s": 205.4318,
+   "frame": 6163,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 32,
+   "beat": 1,
+   "time_s": 205.9675,
+   "frame": 6179,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 32,
+   "beat": 2,
+   "time_s": 206.5032,
+   "frame": 6195,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 32,
+   "beat": 3,
+   "time_s": 207.0389,
+   "frame": 6211,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 32,
+   "beat": 4,
+   "time_s": 207.5746,
+   "frame": 6227,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 33,
+   "beat": 1,
+   "time_s": 208.1103,
+   "frame": 6243,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 33,
+   "beat": 2,
+   "time_s": 208.6461,
+   "frame": 6259,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 33,
+   "beat": 3,
+   "time_s": 209.1818,
+   "frame": 6275,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 33,
+   "beat": 4,
+   "time_s": 209.7175,
+   "frame": 6292,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 34,
+   "beat": 1,
+   "time_s": 210.2532,
+   "frame": 6308,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 34,
+   "beat": 2,
+   "time_s": 210.7889,
+   "frame": 6324,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 34,
+   "beat": 3,
+   "time_s": 211.3246,
+   "frame": 6340,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 34,
+   "beat": 4,
+   "time_s": 211.8603,
+   "frame": 6356,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 35,
+   "beat": 1,
+   "time_s": 212.3961,
+   "frame": 6372,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 35,
+   "beat": 2,
+   "time_s": 212.9318,
+   "frame": 6388,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 35,
+   "beat": 3,
+   "time_s": 213.4675,
+   "frame": 6404,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 35,
+   "beat": 4,
+   "time_s": 214.0032,
+   "frame": 6420,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 36,
+   "beat": 1,
+   "time_s": 214.5389,
+   "frame": 6436,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 36,
+   "beat": 2,
+   "time_s": 215.0746,
+   "frame": 6452,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 36,
+   "beat": 3,
+   "time_s": 215.6103,
+   "frame": 6468,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 36,
+   "beat": 4,
+   "time_s": 216.1461,
+   "frame": 6484,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 37,
+   "beat": 1,
+   "time_s": 216.6818,
+   "frame": 6500,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 37,
+   "beat": 2,
+   "time_s": 217.2175,
+   "frame": 6517,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 37,
+   "beat": 3,
+   "time_s": 217.7532,
+   "frame": 6533,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 37,
+   "beat": 4,
+   "time_s": 218.2889,
+   "frame": 6549,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 38,
+   "beat": 1,
+   "time_s": 218.8246,
+   "frame": 6565,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 38,
+   "beat": 2,
+   "time_s": 219.3603,
+   "frame": 6581,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 38,
+   "beat": 3,
+   "time_s": 219.8961,
+   "frame": 6597,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 38,
+   "beat": 4,
+   "time_s": 220.4318,
+   "frame": 6613,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 39,
+   "beat": 1,
+   "time_s": 220.9675,
+   "frame": 6629,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 39,
+   "beat": 2,
+   "time_s": 221.5032,
+   "frame": 6645,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 39,
+   "beat": 3,
+   "time_s": 222.0389,
+   "frame": 6661,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 39,
+   "beat": 4,
+   "time_s": 222.5746,
+   "frame": 6677,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 40,
+   "beat": 1,
+   "time_s": 223.1103,
+   "frame": 6693,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 40,
+   "beat": 2,
+   "time_s": 223.6461,
+   "frame": 6709,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 40,
+   "beat": 3,
+   "time_s": 224.1818,
+   "frame": 6725,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 40,
+   "beat": 4,
+   "time_s": 224.7175,
+   "frame": 6742,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 41,
+   "beat": 1,
+   "time_s": 225.2532,
+   "frame": 6758,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 41,
+   "beat": 2,
+   "time_s": 225.7889,
+   "frame": 6774,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 41,
+   "beat": 3,
+   "time_s": 226.3246,
+   "frame": 6790,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 41,
+   "beat": 4,
+   "time_s": 226.8603,
+   "frame": 6806,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 42,
+   "beat": 1,
+   "time_s": 227.3961,
+   "frame": 6822,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 42,
+   "beat": 2,
+   "time_s": 227.9318,
+   "frame": 6838,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 42,
+   "beat": 3,
+   "time_s": 228.4675,
+   "frame": 6854,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 42,
+   "beat": 4,
+   "time_s": 229.0032,
+   "frame": 6870,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 43,
+   "beat": 1,
+   "time_s": 229.5389,
+   "frame": 6886,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 43,
+   "beat": 2,
+   "time_s": 230.0746,
+   "frame": 6902,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 43,
+   "beat": 3,
+   "time_s": 230.6103,
+   "frame": 6918,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 43,
+   "beat": 4,
+   "time_s": 231.1461,
+   "frame": 6934,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 44,
+   "beat": 1,
+   "time_s": 231.6818,
+   "frame": 6950,
+   "bpm": 112.0,
+   "downbeat": true
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 44,
+   "beat": 2,
+   "time_s": 232.2175,
+   "frame": 6967,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 44,
+   "beat": 3,
+   "time_s": 232.7532,
+   "frame": 6983,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "叁 先驱",
+   "bar": 44,
+   "beat": 4,
+   "time_s": 233.2889,
+   "frame": 6999,
+   "bpm": 112.0,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 233.8246,
+   "frame": 7015,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 234.3246,
+   "frame": 7030,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 234.8246,
+   "frame": 7045,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 235.3246,
+   "frame": 7060,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 235.8246,
+   "frame": 7075,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 236.3246,
+   "frame": 7090,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 236.8246,
+   "frame": 7105,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 237.3246,
+   "frame": 7120,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 237.8246,
+   "frame": 7135,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 238.3246,
+   "frame": 7150,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 238.8246,
+   "frame": 7165,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 239.3246,
+   "frame": 7180,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 239.8246,
+   "frame": 7195,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 240.3246,
+   "frame": 7210,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 240.8246,
+   "frame": 7225,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 241.3246,
+   "frame": 7240,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 241.8246,
+   "frame": 7255,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 242.3246,
+   "frame": 7270,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 242.8246,
+   "frame": 7285,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 243.3246,
+   "frame": 7300,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 243.8246,
+   "frame": 7315,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 244.3246,
+   "frame": 7330,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 244.8246,
+   "frame": 7345,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 245.3246,
+   "frame": 7360,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 245.8246,
+   "frame": 7375,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 246.3246,
+   "frame": 7390,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 246.8246,
+   "frame": 7405,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 247.3246,
+   "frame": 7420,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 247.8246,
+   "frame": 7435,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 248.3246,
+   "frame": 7450,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 248.8246,
+   "frame": 7465,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 249.3246,
+   "frame": 7480,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 249.8246,
+   "frame": 7495,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 250.3246,
+   "frame": 7510,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 250.8246,
+   "frame": 7525,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 251.3246,
+   "frame": 7540,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 251.8246,
+   "frame": 7555,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 252.3246,
+   "frame": 7570,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 252.8246,
+   "frame": 7585,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 253.3246,
+   "frame": 7600,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 11,
+   "beat": 1,
+   "time_s": 253.8246,
+   "frame": 7615,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 11,
+   "beat": 2,
+   "time_s": 254.3246,
+   "frame": 7630,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 11,
+   "beat": 3,
+   "time_s": 254.8246,
+   "frame": 7645,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 11,
+   "beat": 4,
+   "time_s": 255.3246,
+   "frame": 7660,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 12,
+   "beat": 1,
+   "time_s": 255.8246,
+   "frame": 7675,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 12,
+   "beat": 2,
+   "time_s": 256.3246,
+   "frame": 7690,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 12,
+   "beat": 3,
+   "time_s": 256.8246,
+   "frame": 7705,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 12,
+   "beat": 4,
+   "time_s": 257.3246,
+   "frame": 7720,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 13,
+   "beat": 1,
+   "time_s": 257.8246,
+   "frame": 7735,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 13,
+   "beat": 2,
+   "time_s": 258.3246,
+   "frame": 7750,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 13,
+   "beat": 3,
+   "time_s": 258.8246,
+   "frame": 7765,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 13,
+   "beat": 4,
+   "time_s": 259.3246,
+   "frame": 7780,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 14,
+   "beat": 1,
+   "time_s": 259.8246,
+   "frame": 7795,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 14,
+   "beat": 2,
+   "time_s": 260.3246,
+   "frame": 7810,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 14,
+   "beat": 3,
+   "time_s": 260.8246,
+   "frame": 7825,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 14,
+   "beat": 4,
+   "time_s": 261.3246,
+   "frame": 7840,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 15,
+   "beat": 1,
+   "time_s": 261.8246,
+   "frame": 7855,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 15,
+   "beat": 2,
+   "time_s": 262.3246,
+   "frame": 7870,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 15,
+   "beat": 3,
+   "time_s": 262.8246,
+   "frame": 7885,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 15,
+   "beat": 4,
+   "time_s": 263.3246,
+   "frame": 7900,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 16,
+   "beat": 1,
+   "time_s": 263.8246,
+   "frame": 7915,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 16,
+   "beat": 2,
+   "time_s": 264.3246,
+   "frame": 7930,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 16,
+   "beat": 3,
+   "time_s": 264.8246,
+   "frame": 7945,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4A 第一连发",
+   "bar": 16,
+   "beat": 4,
+   "time_s": 265.3246,
+   "frame": 7960,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 265.8246,
+   "frame": 7975,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 266.3246,
+   "frame": 7990,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 266.8246,
+   "frame": 8005,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 267.3246,
+   "frame": 8020,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 267.8246,
+   "frame": 8035,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 268.3246,
+   "frame": 8050,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 268.8246,
+   "frame": 8065,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 269.3246,
+   "frame": 8080,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 269.8246,
+   "frame": 8095,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 270.3246,
+   "frame": 8110,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 270.8246,
+   "frame": 8125,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 271.3246,
+   "frame": 8140,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 271.8246,
+   "frame": 8155,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 272.3246,
+   "frame": 8170,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 272.8246,
+   "frame": 8185,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 273.3246,
+   "frame": 8200,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 273.8246,
+   "frame": 8215,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 274.3246,
+   "frame": 8230,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 274.8246,
+   "frame": 8245,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 275.3246,
+   "frame": 8260,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 275.8246,
+   "frame": 8275,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 276.3246,
+   "frame": 8290,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 276.8246,
+   "frame": 8305,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 277.3246,
+   "frame": 8320,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 277.8246,
+   "frame": 8335,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 278.3246,
+   "frame": 8350,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 278.8246,
+   "frame": 8365,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 279.3246,
+   "frame": 8380,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 279.8246,
+   "frame": 8395,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 280.3246,
+   "frame": 8410,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 280.8246,
+   "frame": 8425,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 281.3246,
+   "frame": 8440,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 281.8246,
+   "frame": 8455,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 282.3246,
+   "frame": 8470,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 282.8246,
+   "frame": 8485,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 283.3246,
+   "frame": 8500,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 283.8246,
+   "frame": 8515,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 284.3246,
+   "frame": 8530,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 284.8246,
+   "frame": 8545,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 285.3246,
+   "frame": 8560,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 11,
+   "beat": 1,
+   "time_s": 285.8246,
+   "frame": 8575,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 11,
+   "beat": 2,
+   "time_s": 286.3246,
+   "frame": 8590,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 11,
+   "beat": 3,
+   "time_s": 286.8246,
+   "frame": 8605,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 11,
+   "beat": 4,
+   "time_s": 287.3246,
+   "frame": 8620,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 12,
+   "beat": 1,
+   "time_s": 287.8246,
+   "frame": 8635,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 12,
+   "beat": 2,
+   "time_s": 288.3246,
+   "frame": 8650,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 12,
+   "beat": 3,
+   "time_s": 288.8246,
+   "frame": 8665,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 12,
+   "beat": 4,
+   "time_s": 289.3246,
+   "frame": 8680,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 13,
+   "beat": 1,
+   "time_s": 289.8246,
+   "frame": 8695,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 13,
+   "beat": 2,
+   "time_s": 290.3246,
+   "frame": 8710,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 13,
+   "beat": 3,
+   "time_s": 290.8246,
+   "frame": 8725,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 13,
+   "beat": 4,
+   "time_s": 291.3246,
+   "frame": 8740,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 14,
+   "beat": 1,
+   "time_s": 291.8246,
+   "frame": 8755,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 14,
+   "beat": 2,
+   "time_s": 292.3246,
+   "frame": 8770,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 14,
+   "beat": 3,
+   "time_s": 292.8246,
+   "frame": 8785,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 14,
+   "beat": 4,
+   "time_s": 293.3246,
+   "frame": 8800,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 15,
+   "beat": 1,
+   "time_s": 293.8246,
+   "frame": 8815,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 15,
+   "beat": 2,
+   "time_s": 294.3246,
+   "frame": 8830,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 15,
+   "beat": 3,
+   "time_s": 294.8246,
+   "frame": 8845,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 15,
+   "beat": 4,
+   "time_s": 295.3246,
+   "frame": 8860,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 16,
+   "beat": 1,
+   "time_s": 295.8246,
+   "frame": 8875,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 16,
+   "beat": 2,
+   "time_s": 296.3246,
+   "frame": 8890,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 16,
+   "beat": 3,
+   "time_s": 296.8246,
+   "frame": 8905,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 16,
+   "beat": 4,
+   "time_s": 297.3246,
+   "frame": 8920,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 17,
+   "beat": 1,
+   "time_s": 297.8246,
+   "frame": 8935,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 17,
+   "beat": 2,
+   "time_s": 298.3246,
+   "frame": 8950,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 17,
+   "beat": 3,
+   "time_s": 298.8246,
+   "frame": 8965,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 17,
+   "beat": 4,
+   "time_s": 299.3246,
+   "frame": 8980,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 18,
+   "beat": 1,
+   "time_s": 299.8246,
+   "frame": 8995,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 18,
+   "beat": 2,
+   "time_s": 300.3246,
+   "frame": 9010,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 18,
+   "beat": 3,
+   "time_s": 300.8246,
+   "frame": 9025,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 18,
+   "beat": 4,
+   "time_s": 301.3246,
+   "frame": 9040,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 19,
+   "beat": 1,
+   "time_s": 301.8246,
+   "frame": 9055,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 19,
+   "beat": 2,
+   "time_s": 302.3246,
+   "frame": 9070,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 19,
+   "beat": 3,
+   "time_s": 302.8246,
+   "frame": 9085,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 19,
+   "beat": 4,
+   "time_s": 303.3246,
+   "frame": 9100,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 20,
+   "beat": 1,
+   "time_s": 303.8246,
+   "frame": 9115,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 20,
+   "beat": 2,
+   "time_s": 304.3246,
+   "frame": 9130,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 20,
+   "beat": 3,
+   "time_s": 304.8246,
+   "frame": 9145,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4B 登月",
+   "bar": 20,
+   "beat": 4,
+   "time_s": 305.3246,
+   "frame": 9160,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 305.8246,
+   "frame": 9175,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 306.3246,
+   "frame": 9190,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 306.8246,
+   "frame": 9205,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 307.3246,
+   "frame": 9220,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 307.8246,
+   "frame": 9235,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 308.3246,
+   "frame": 9250,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 308.8246,
+   "frame": 9265,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 309.3246,
+   "frame": 9280,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 309.8246,
+   "frame": 9295,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 310.3246,
+   "frame": 9310,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 310.8246,
+   "frame": 9325,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 311.3246,
+   "frame": 9340,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 311.8246,
+   "frame": 9355,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 312.3246,
+   "frame": 9370,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 312.8246,
+   "frame": 9385,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 313.3246,
+   "frame": 9400,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 313.8246,
+   "frame": 9415,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 314.3246,
+   "frame": 9430,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 314.8246,
+   "frame": 9445,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 315.3246,
+   "frame": 9460,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 315.8246,
+   "frame": 9475,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 316.3246,
+   "frame": 9490,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 316.8246,
+   "frame": 9505,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 317.3246,
+   "frame": 9520,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 317.8246,
+   "frame": 9535,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 318.3246,
+   "frame": 9550,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 318.8246,
+   "frame": 9565,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 319.3246,
+   "frame": 9580,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 319.8246,
+   "frame": 9595,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 320.3246,
+   "frame": 9610,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 320.8246,
+   "frame": 9625,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 321.3246,
+   "frame": 9640,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 321.8246,
+   "frame": 9655,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 322.3246,
+   "frame": 9670,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 322.8246,
+   "frame": 9685,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 323.3246,
+   "frame": 9700,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 323.8246,
+   "frame": 9715,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 324.3246,
+   "frame": 9730,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 324.8246,
+   "frame": 9745,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 325.3246,
+   "frame": 9760,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 11,
+   "beat": 1,
+   "time_s": 325.8246,
+   "frame": 9775,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 11,
+   "beat": 2,
+   "time_s": 326.3246,
+   "frame": 9790,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 11,
+   "beat": 3,
+   "time_s": 326.8246,
+   "frame": 9805,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 11,
+   "beat": 4,
+   "time_s": 327.3246,
+   "frame": 9820,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 12,
+   "beat": 1,
+   "time_s": 327.8246,
+   "frame": 9835,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 12,
+   "beat": 2,
+   "time_s": 328.3246,
+   "frame": 9850,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 12,
+   "beat": 3,
+   "time_s": 328.8246,
+   "frame": 9865,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 12,
+   "beat": 4,
+   "time_s": 329.3246,
+   "frame": 9880,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 13,
+   "beat": 1,
+   "time_s": 329.8246,
+   "frame": 9895,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 13,
+   "beat": 2,
+   "time_s": 330.3246,
+   "frame": 9910,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 13,
+   "beat": 3,
+   "time_s": 330.8246,
+   "frame": 9925,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 13,
+   "beat": 4,
+   "time_s": 331.3246,
+   "frame": 9940,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 14,
+   "beat": 1,
+   "time_s": 331.8246,
+   "frame": 9955,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 14,
+   "beat": 2,
+   "time_s": 332.3246,
+   "frame": 9970,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 14,
+   "beat": 3,
+   "time_s": 332.8246,
+   "frame": 9985,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 14,
+   "beat": 4,
+   "time_s": 333.3246,
+   "frame": 10000,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 15,
+   "beat": 1,
+   "time_s": 333.8246,
+   "frame": 10015,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 15,
+   "beat": 2,
+   "time_s": 334.3246,
+   "frame": 10030,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 15,
+   "beat": 3,
+   "time_s": 334.8246,
+   "frame": 10045,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 15,
+   "beat": 4,
+   "time_s": 335.3246,
+   "frame": 10060,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 16,
+   "beat": 1,
+   "time_s": 335.8246,
+   "frame": 10075,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 16,
+   "beat": 2,
+   "time_s": 336.3246,
+   "frame": 10090,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 16,
+   "beat": 3,
+   "time_s": 336.8246,
+   "frame": 10105,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4C 同一个月",
+   "bar": 16,
+   "beat": 4,
+   "time_s": 337.3246,
+   "frame": 10120,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 337.8246,
+   "frame": 10135,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 338.3246,
+   "frame": 10150,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 338.8246,
+   "frame": 10165,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 339.3246,
+   "frame": 10180,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 339.8246,
+   "frame": 10195,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 340.3246,
+   "frame": 10210,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 340.8246,
+   "frame": 10225,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 341.3246,
+   "frame": 10240,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 341.8246,
+   "frame": 10255,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 342.3246,
+   "frame": 10270,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 342.8246,
+   "frame": 10285,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 343.3246,
+   "frame": 10300,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 343.8246,
+   "frame": 10315,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 344.3246,
+   "frame": 10330,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 344.8246,
+   "frame": 10345,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 345.3246,
+   "frame": 10360,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 345.8246,
+   "frame": 10375,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 346.3246,
+   "frame": 10390,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 346.8246,
+   "frame": 10405,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 347.3246,
+   "frame": 10420,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 347.8246,
+   "frame": 10435,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 348.3246,
+   "frame": 10450,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 348.8246,
+   "frame": 10465,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 349.3246,
+   "frame": 10480,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 349.8246,
+   "frame": 10495,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 350.3246,
+   "frame": 10510,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 350.8246,
+   "frame": 10525,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 351.3246,
+   "frame": 10540,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 351.8246,
+   "frame": 10555,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 352.3246,
+   "frame": 10570,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 352.8246,
+   "frame": 10585,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 353.3246,
+   "frame": 10600,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 353.8246,
+   "frame": 10615,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 354.3246,
+   "frame": 10630,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 354.8246,
+   "frame": 10645,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 355.3246,
+   "frame": 10660,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 355.8246,
+   "frame": 10675,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 356.3246,
+   "frame": 10690,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 356.8246,
+   "frame": 10705,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 357.3246,
+   "frame": 10720,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 11,
+   "beat": 1,
+   "time_s": 357.8246,
+   "frame": 10735,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 11,
+   "beat": 2,
+   "time_s": 358.3246,
+   "frame": 10750,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 11,
+   "beat": 3,
+   "time_s": 358.8246,
+   "frame": 10765,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 11,
+   "beat": 4,
+   "time_s": 359.3246,
+   "frame": 10780,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 12,
+   "beat": 1,
+   "time_s": 359.8246,
+   "frame": 10795,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 12,
+   "beat": 2,
+   "time_s": 360.3246,
+   "frame": 10810,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 12,
+   "beat": 3,
+   "time_s": 360.8246,
+   "frame": 10825,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 12,
+   "beat": 4,
+   "time_s": 361.3246,
+   "frame": 10840,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 13,
+   "beat": 1,
+   "time_s": 361.8246,
+   "frame": 10855,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 13,
+   "beat": 2,
+   "time_s": 362.3246,
+   "frame": 10870,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 13,
+   "beat": 3,
+   "time_s": 362.8246,
+   "frame": 10885,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 13,
+   "beat": 4,
+   "time_s": 363.3246,
+   "frame": 10900,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 14,
+   "beat": 1,
+   "time_s": 363.8246,
+   "frame": 10915,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 14,
+   "beat": 2,
+   "time_s": 364.3246,
+   "frame": 10930,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 14,
+   "beat": 3,
+   "time_s": 364.8246,
+   "frame": 10945,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 14,
+   "beat": 4,
+   "time_s": 365.3246,
+   "frame": 10960,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 15,
+   "beat": 1,
+   "time_s": 365.8246,
+   "frame": 10975,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 15,
+   "beat": 2,
+   "time_s": 366.3246,
+   "frame": 10990,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 15,
+   "beat": 3,
+   "time_s": 366.8246,
+   "frame": 11005,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 15,
+   "beat": 4,
+   "time_s": 367.3246,
+   "frame": 11020,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 16,
+   "beat": 1,
+   "time_s": 367.8246,
+   "frame": 11035,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 16,
+   "beat": 2,
+   "time_s": 368.3246,
+   "frame": 11050,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 16,
+   "beat": 3,
+   "time_s": 368.8246,
+   "frame": 11065,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 16,
+   "beat": 4,
+   "time_s": 369.3246,
+   "frame": 11080,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 17,
+   "beat": 1,
+   "time_s": 369.8246,
+   "frame": 11095,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 17,
+   "beat": 2,
+   "time_s": 370.3246,
+   "frame": 11110,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 17,
+   "beat": 3,
+   "time_s": 370.8246,
+   "frame": 11125,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 17,
+   "beat": 4,
+   "time_s": 371.3246,
+   "frame": 11140,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 18,
+   "beat": 1,
+   "time_s": 371.8246,
+   "frame": 11155,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 18,
+   "beat": 2,
+   "time_s": 372.3246,
+   "frame": 11170,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 18,
+   "beat": 3,
+   "time_s": 372.8246,
+   "frame": 11185,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 18,
+   "beat": 4,
+   "time_s": 373.3246,
+   "frame": 11200,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 19,
+   "beat": 1,
+   "time_s": 373.8246,
+   "frame": 11215,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 19,
+   "beat": 2,
+   "time_s": 374.3246,
+   "frame": 11230,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 19,
+   "beat": 3,
+   "time_s": 374.8246,
+   "frame": 11245,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 19,
+   "beat": 4,
+   "time_s": 375.3246,
+   "frame": 11260,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 20,
+   "beat": 1,
+   "time_s": 375.8246,
+   "frame": 11275,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 20,
+   "beat": 2,
+   "time_s": 376.3246,
+   "frame": 11290,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 20,
+   "beat": 3,
+   "time_s": 376.8246,
+   "frame": 11305,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 20,
+   "beat": 4,
+   "time_s": 377.3246,
+   "frame": 11320,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 21,
+   "beat": 1,
+   "time_s": 377.8246,
+   "frame": 11335,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 21,
+   "beat": 2,
+   "time_s": 378.3246,
+   "frame": 11350,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 21,
+   "beat": 3,
+   "time_s": 378.8246,
+   "frame": 11365,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 21,
+   "beat": 4,
+   "time_s": 379.3246,
+   "frame": 11380,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 22,
+   "beat": 1,
+   "time_s": 379.8246,
+   "frame": 11395,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 22,
+   "beat": 2,
+   "time_s": 380.3246,
+   "frame": 11410,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 22,
+   "beat": 3,
+   "time_s": 380.8246,
+   "frame": 11425,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 22,
+   "beat": 4,
+   "time_s": 381.3246,
+   "frame": 11440,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 23,
+   "beat": 1,
+   "time_s": 381.8246,
+   "frame": 11455,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 23,
+   "beat": 2,
+   "time_s": 382.3246,
+   "frame": 11470,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 23,
+   "beat": 3,
+   "time_s": 382.8246,
+   "frame": 11485,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 23,
+   "beat": 4,
+   "time_s": 383.3246,
+   "frame": 11500,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 24,
+   "beat": 1,
+   "time_s": 383.8246,
+   "frame": 11515,
+   "bpm": 120,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 24,
+   "beat": 2,
+   "time_s": 384.3246,
+   "frame": 11530,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 24,
+   "beat": 3,
+   "time_s": 384.8246,
+   "frame": 11545,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4D 远方",
+   "bar": 24,
+   "beat": 4,
+   "time_s": 385.3246,
+   "frame": 11560,
+   "bpm": 120,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 385.8246,
+   "frame": 11575,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 386.2934,
+   "frame": 11589,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 386.7621,
+   "frame": 11603,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 387.2309,
+   "frame": 11617,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 387.6996,
+   "frame": 11631,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 388.1684,
+   "frame": 11645,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 388.6371,
+   "frame": 11659,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 389.1059,
+   "frame": 11673,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 389.5746,
+   "frame": 11687,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 390.0434,
+   "frame": 11701,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 390.5121,
+   "frame": 11715,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 390.9809,
+   "frame": 11729,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 391.4496,
+   "frame": 11743,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 391.9184,
+   "frame": 11758,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 392.3871,
+   "frame": 11772,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 392.8559,
+   "frame": 11786,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 393.3246,
+   "frame": 11800,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 393.7934,
+   "frame": 11814,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 394.2621,
+   "frame": 11828,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 394.7309,
+   "frame": 11842,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 395.1996,
+   "frame": 11856,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 395.6684,
+   "frame": 11870,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 396.1371,
+   "frame": 11884,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 396.6059,
+   "frame": 11898,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 397.0746,
+   "frame": 11912,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 397.5434,
+   "frame": 11926,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 398.0121,
+   "frame": 11940,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 398.4809,
+   "frame": 11954,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 398.9496,
+   "frame": 11968,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 399.4184,
+   "frame": 11983,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 399.8871,
+   "frame": 11997,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 400.3559,
+   "frame": 12011,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 400.8246,
+   "frame": 12025,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 401.2934,
+   "frame": 12039,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 401.7621,
+   "frame": 12053,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 402.2309,
+   "frame": 12067,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 402.6996,
+   "frame": 12081,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 403.1684,
+   "frame": 12095,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 403.6371,
+   "frame": 12109,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 404.1059,
+   "frame": 12123,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 11,
+   "beat": 1,
+   "time_s": 404.5746,
+   "frame": 12137,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 11,
+   "beat": 2,
+   "time_s": 405.0434,
+   "frame": 12151,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 11,
+   "beat": 3,
+   "time_s": 405.5121,
+   "frame": 12165,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 11,
+   "beat": 4,
+   "time_s": 405.9809,
+   "frame": 12179,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 12,
+   "beat": 1,
+   "time_s": 406.4496,
+   "frame": 12193,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 12,
+   "beat": 2,
+   "time_s": 406.9184,
+   "frame": 12208,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 12,
+   "beat": 3,
+   "time_s": 407.3871,
+   "frame": 12222,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 12,
+   "beat": 4,
+   "time_s": 407.8559,
+   "frame": 12236,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 13,
+   "beat": 1,
+   "time_s": 408.3246,
+   "frame": 12250,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 13,
+   "beat": 2,
+   "time_s": 408.7934,
+   "frame": 12264,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 13,
+   "beat": 3,
+   "time_s": 409.2621,
+   "frame": 12278,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 13,
+   "beat": 4,
+   "time_s": 409.7309,
+   "frame": 12292,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 14,
+   "beat": 1,
+   "time_s": 410.1996,
+   "frame": 12306,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 14,
+   "beat": 2,
+   "time_s": 410.6684,
+   "frame": 12320,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 14,
+   "beat": 3,
+   "time_s": 411.1371,
+   "frame": 12334,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4E 长住太空",
+   "bar": 14,
+   "beat": 4,
+   "time_s": 411.6059,
+   "frame": 12348,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 412.0746,
+   "frame": 12362,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 412.5434,
+   "frame": 12376,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 413.0121,
+   "frame": 12390,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 413.4809,
+   "frame": 12404,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 413.9496,
+   "frame": 12418,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 414.4184,
+   "frame": 12433,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 414.8871,
+   "frame": 12447,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 415.3559,
+   "frame": 12461,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 415.8246,
+   "frame": 12475,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 416.2934,
+   "frame": 12489,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 416.7621,
+   "frame": 12503,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 417.2309,
+   "frame": 12517,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 417.6996,
+   "frame": 12531,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 418.1684,
+   "frame": 12545,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 418.6371,
+   "frame": 12559,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 419.1059,
+   "frame": 12573,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 419.5746,
+   "frame": 12587,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 420.0434,
+   "frame": 12601,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 420.5121,
+   "frame": 12615,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 420.9809,
+   "frame": 12629,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 421.4496,
+   "frame": 12643,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 421.9184,
+   "frame": 12658,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 422.3871,
+   "frame": 12672,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 422.8559,
+   "frame": 12686,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 423.3246,
+   "frame": 12700,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 423.7934,
+   "frame": 12714,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 424.2621,
+   "frame": 12728,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 424.7309,
+   "frame": 12742,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 425.1996,
+   "frame": 12756,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 425.6684,
+   "frame": 12770,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 426.1371,
+   "frame": 12784,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 426.6059,
+   "frame": 12798,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 427.0746,
+   "frame": 12812,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 427.5434,
+   "frame": 12826,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 428.0121,
+   "frame": 12840,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 428.4809,
+   "frame": 12854,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 428.9496,
+   "frame": 12868,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 429.4184,
+   "frame": 12883,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 429.8871,
+   "frame": 12897,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 430.3559,
+   "frame": 12911,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 11,
+   "beat": 1,
+   "time_s": 430.8246,
+   "frame": 12925,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 11,
+   "beat": 2,
+   "time_s": 431.2934,
+   "frame": 12939,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 11,
+   "beat": 3,
+   "time_s": 431.7621,
+   "frame": 12953,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 11,
+   "beat": 4,
+   "time_s": 432.2309,
+   "frame": 12967,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 12,
+   "beat": 1,
+   "time_s": 432.6996,
+   "frame": 12981,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 12,
+   "beat": 2,
+   "time_s": 433.1684,
+   "frame": 12995,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 12,
+   "beat": 3,
+   "time_s": 433.6371,
+   "frame": 13009,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 12,
+   "beat": 4,
+   "time_s": 434.1059,
+   "frame": 13023,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 13,
+   "beat": 1,
+   "time_s": 434.5746,
+   "frame": 13037,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 13,
+   "beat": 2,
+   "time_s": 435.0434,
+   "frame": 13051,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 13,
+   "beat": 3,
+   "time_s": 435.5121,
+   "frame": 13065,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 13,
+   "beat": 4,
+   "time_s": 435.9809,
+   "frame": 13079,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 14,
+   "beat": 1,
+   "time_s": 436.4496,
+   "frame": 13093,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 14,
+   "beat": 2,
+   "time_s": 436.9184,
+   "frame": 13108,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 14,
+   "beat": 3,
+   "time_s": 437.3871,
+   "frame": 13122,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 14,
+   "beat": 4,
+   "time_s": 437.8559,
+   "frame": 13136,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 15,
+   "beat": 1,
+   "time_s": 438.3246,
+   "frame": 13150,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 15,
+   "beat": 2,
+   "time_s": 438.7934,
+   "frame": 13164,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 15,
+   "beat": 3,
+   "time_s": 439.2621,
+   "frame": 13178,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 15,
+   "beat": 4,
+   "time_s": 439.7309,
+   "frame": 13192,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 16,
+   "beat": 1,
+   "time_s": 440.1996,
+   "frame": 13206,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 16,
+   "beat": 2,
+   "time_s": 440.6684,
+   "frame": 13220,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 16,
+   "beat": 3,
+   "time_s": 441.1371,
+   "frame": 13234,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 16,
+   "beat": 4,
+   "time_s": 441.6059,
+   "frame": 13248,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 17,
+   "beat": 1,
+   "time_s": 442.0746,
+   "frame": 13262,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 17,
+   "beat": 2,
+   "time_s": 442.5434,
+   "frame": 13276,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 17,
+   "beat": 3,
+   "time_s": 443.0121,
+   "frame": 13290,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 17,
+   "beat": 4,
+   "time_s": 443.4809,
+   "frame": 13304,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 18,
+   "beat": 1,
+   "time_s": 443.9496,
+   "frame": 13318,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 18,
+   "beat": 2,
+   "time_s": 444.4184,
+   "frame": 13333,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 18,
+   "beat": 3,
+   "time_s": 444.8871,
+   "frame": 13347,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 18,
+   "beat": 4,
+   "time_s": 445.3559,
+   "frame": 13361,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 19,
+   "beat": 1,
+   "time_s": 445.8246,
+   "frame": 13375,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 19,
+   "beat": 2,
+   "time_s": 446.2934,
+   "frame": 13389,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 19,
+   "beat": 3,
+   "time_s": 446.7621,
+   "frame": 13403,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 19,
+   "beat": 4,
+   "time_s": 447.2309,
+   "frame": 13417,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 20,
+   "beat": 1,
+   "time_s": 447.6996,
+   "frame": 13431,
+   "bpm": 128,
+   "downbeat": true
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 20,
+   "beat": 2,
+   "time_s": 448.1684,
+   "frame": 13445,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 20,
+   "beat": 3,
+   "time_s": 448.6371,
+   "frame": 13459,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "肆 4F 加速",
+   "bar": 20,
+   "beat": 4,
+   "time_s": 449.1059,
+   "frame": 13473,
+   "bpm": 128,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 449.5746,
+   "frame": 13487,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 450.1746,
+   "frame": 13505,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 450.7746,
+   "frame": 13523,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 451.3746,
+   "frame": 13541,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 451.9746,
+   "frame": 13559,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 452.5746,
+   "frame": 13577,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 453.1746,
+   "frame": 13595,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 453.7746,
+   "frame": 13613,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 454.3746,
+   "frame": 13631,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 454.9746,
+   "frame": 13649,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 455.5746,
+   "frame": 13667,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 456.1746,
+   "frame": 13685,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 456.7746,
+   "frame": 13703,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 457.3746,
+   "frame": 13721,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 457.9746,
+   "frame": 13739,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 458.5746,
+   "frame": 13757,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 459.1746,
+   "frame": 13775,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 459.7746,
+   "frame": 13793,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 460.3746,
+   "frame": 13811,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 460.9746,
+   "frame": 13829,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 461.5746,
+   "frame": 13847,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 462.1746,
+   "frame": 13865,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 462.7746,
+   "frame": 13883,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 463.3746,
+   "frame": 13901,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 463.9746,
+   "frame": 13919,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 464.5746,
+   "frame": 13937,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 465.1746,
+   "frame": 13955,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 465.7746,
+   "frame": 13973,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 466.3746,
+   "frame": 13991,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 466.9746,
+   "frame": 14009,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 467.5746,
+   "frame": 14027,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 468.1746,
+   "frame": 14045,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 468.7746,
+   "frame": 14063,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 469.3746,
+   "frame": 14081,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 469.9746,
+   "frame": 14099,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 470.5746,
+   "frame": 14117,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 471.1746,
+   "frame": 14135,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 471.7746,
+   "frame": 14153,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 472.3746,
+   "frame": 14171,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 472.9746,
+   "frame": 14189,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 11,
+   "beat": 1,
+   "time_s": 473.5746,
+   "frame": 14207,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 11,
+   "beat": 2,
+   "time_s": 474.1746,
+   "frame": 14225,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 11,
+   "beat": 3,
+   "time_s": 474.7746,
+   "frame": 14243,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 11,
+   "beat": 4,
+   "time_s": 475.3746,
+   "frame": 14261,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 12,
+   "beat": 1,
+   "time_s": 475.9746,
+   "frame": 14279,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 12,
+   "beat": 2,
+   "time_s": 476.5746,
+   "frame": 14297,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 12,
+   "beat": 3,
+   "time_s": 477.1746,
+   "frame": 14315,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 12,
+   "beat": 4,
+   "time_s": 477.7746,
+   "frame": 14333,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 13,
+   "beat": 1,
+   "time_s": 478.3746,
+   "frame": 14351,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 13,
+   "beat": 2,
+   "time_s": 478.9746,
+   "frame": 14369,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 13,
+   "beat": 3,
+   "time_s": 479.5746,
+   "frame": 14387,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 13,
+   "beat": 4,
+   "time_s": 480.1746,
+   "frame": 14405,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 14,
+   "beat": 1,
+   "time_s": 480.7746,
+   "frame": 14423,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 14,
+   "beat": 2,
+   "time_s": 481.3746,
+   "frame": 14441,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 14,
+   "beat": 3,
+   "time_s": 481.9746,
+   "frame": 14459,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 14,
+   "beat": 4,
+   "time_s": 482.5746,
+   "frame": 14477,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 15,
+   "beat": 1,
+   "time_s": 483.1746,
+   "frame": 14495,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 15,
+   "beat": 2,
+   "time_s": 483.7746,
+   "frame": 14513,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 15,
+   "beat": 3,
+   "time_s": 484.3746,
+   "frame": 14531,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 15,
+   "beat": 4,
+   "time_s": 484.9746,
+   "frame": 14549,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 16,
+   "beat": 1,
+   "time_s": 485.5746,
+   "frame": 14567,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 16,
+   "beat": 2,
+   "time_s": 486.1746,
+   "frame": 14585,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 16,
+   "beat": 3,
+   "time_s": 486.7746,
+   "frame": 14603,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 16,
+   "beat": 4,
+   "time_s": 487.3746,
+   "frame": 14621,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 17,
+   "beat": 1,
+   "time_s": 487.9746,
+   "frame": 14639,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 17,
+   "beat": 2,
+   "time_s": 488.5746,
+   "frame": 14657,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 17,
+   "beat": 3,
+   "time_s": 489.1746,
+   "frame": 14675,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 17,
+   "beat": 4,
+   "time_s": 489.7746,
+   "frame": 14693,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 18,
+   "beat": 1,
+   "time_s": 490.3746,
+   "frame": 14711,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 18,
+   "beat": 2,
+   "time_s": 490.9746,
+   "frame": 14729,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 18,
+   "beat": 3,
+   "time_s": 491.5746,
+   "frame": 14747,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 18,
+   "beat": 4,
+   "time_s": 492.1746,
+   "frame": 14765,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 19,
+   "beat": 1,
+   "time_s": 492.7746,
+   "frame": 14783,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 19,
+   "beat": 2,
+   "time_s": 493.3746,
+   "frame": 14801,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 19,
+   "beat": 3,
+   "time_s": 493.9746,
+   "frame": 14819,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 19,
+   "beat": 4,
+   "time_s": 494.5746,
+   "frame": 14837,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 20,
+   "beat": 1,
+   "time_s": 495.1746,
+   "frame": 14855,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 20,
+   "beat": 2,
+   "time_s": 495.7746,
+   "frame": 14873,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 20,
+   "beat": 3,
+   "time_s": 496.3746,
+   "frame": 14891,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 20,
+   "beat": 4,
+   "time_s": 496.9746,
+   "frame": 14909,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 21,
+   "beat": 1,
+   "time_s": 497.5746,
+   "frame": 14927,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 21,
+   "beat": 2,
+   "time_s": 498.1746,
+   "frame": 14945,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 21,
+   "beat": 3,
+   "time_s": 498.7746,
+   "frame": 14963,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 21,
+   "beat": 4,
+   "time_s": 499.3746,
+   "frame": 14981,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 22,
+   "beat": 1,
+   "time_s": 499.9746,
+   "frame": 14999,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 22,
+   "beat": 2,
+   "time_s": 500.5746,
+   "frame": 15017,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 22,
+   "beat": 3,
+   "time_s": 501.1746,
+   "frame": 15035,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 22,
+   "beat": 4,
+   "time_s": 501.7746,
+   "frame": 15053,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 23,
+   "beat": 1,
+   "time_s": 502.3746,
+   "frame": 15071,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 23,
+   "beat": 2,
+   "time_s": 502.9746,
+   "frame": 15089,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 23,
+   "beat": 3,
+   "time_s": 503.5746,
+   "frame": 15107,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 23,
+   "beat": 4,
+   "time_s": 504.1746,
+   "frame": 15125,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 24,
+   "beat": 1,
+   "time_s": 504.7746,
+   "frame": 15143,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 24,
+   "beat": 2,
+   "time_s": 505.3746,
+   "frame": 15161,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 24,
+   "beat": 3,
+   "time_s": 505.9746,
+   "frame": 15179,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 24,
+   "beat": 4,
+   "time_s": 506.5746,
+   "frame": 15197,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 25,
+   "beat": 1,
+   "time_s": 507.1746,
+   "frame": 15215,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 25,
+   "beat": 2,
+   "time_s": 507.7746,
+   "frame": 15233,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 25,
+   "beat": 3,
+   "time_s": 508.3746,
+   "frame": 15251,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 25,
+   "beat": 4,
+   "time_s": 508.9746,
+   "frame": 15269,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 26,
+   "beat": 1,
+   "time_s": 509.5746,
+   "frame": 15287,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 26,
+   "beat": 2,
+   "time_s": 510.1746,
+   "frame": 15305,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 26,
+   "beat": 3,
+   "time_s": 510.7746,
+   "frame": 15323,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 26,
+   "beat": 4,
+   "time_s": 511.3746,
+   "frame": 15341,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 27,
+   "beat": 1,
+   "time_s": 511.9746,
+   "frame": 15359,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 27,
+   "beat": 2,
+   "time_s": 512.5746,
+   "frame": 15377,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 27,
+   "beat": 3,
+   "time_s": 513.1746,
+   "frame": 15395,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 27,
+   "beat": 4,
+   "time_s": 513.7746,
+   "frame": 15413,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 28,
+   "beat": 1,
+   "time_s": 514.3746,
+   "frame": 15431,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 28,
+   "beat": 2,
+   "time_s": 514.9746,
+   "frame": 15449,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 28,
+   "beat": 3,
+   "time_s": 515.5746,
+   "frame": 15467,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 28,
+   "beat": 4,
+   "time_s": 516.1746,
+   "frame": 15485,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 29,
+   "beat": 1,
+   "time_s": 516.7746,
+   "frame": 15503,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 29,
+   "beat": 2,
+   "time_s": 517.3746,
+   "frame": 15521,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 29,
+   "beat": 3,
+   "time_s": 517.9746,
+   "frame": 15539,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 29,
+   "beat": 4,
+   "time_s": 518.5746,
+   "frame": 15557,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 30,
+   "beat": 1,
+   "time_s": 519.1746,
+   "frame": 15575,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 30,
+   "beat": 2,
+   "time_s": 519.7746,
+   "frame": 15593,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 30,
+   "beat": 3,
+   "time_s": 520.3746,
+   "frame": 15611,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 30,
+   "beat": 4,
+   "time_s": 520.9746,
+   "frame": 15629,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 31,
+   "beat": 1,
+   "time_s": 521.5746,
+   "frame": 15647,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 31,
+   "beat": 2,
+   "time_s": 522.1746,
+   "frame": 15665,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 31,
+   "beat": 3,
+   "time_s": 522.7746,
+   "frame": 15683,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 31,
+   "beat": 4,
+   "time_s": 523.3746,
+   "frame": 15701,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 32,
+   "beat": 1,
+   "time_s": 523.9746,
+   "frame": 15719,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 32,
+   "beat": 2,
+   "time_s": 524.5746,
+   "frame": 15737,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 32,
+   "beat": 3,
+   "time_s": 525.1746,
+   "frame": 15755,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 32,
+   "beat": 4,
+   "time_s": 525.7746,
+   "frame": 15773,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 33,
+   "beat": 1,
+   "time_s": 526.3746,
+   "frame": 15791,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 33,
+   "beat": 2,
+   "time_s": 526.9746,
+   "frame": 15809,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 33,
+   "beat": 3,
+   "time_s": 527.5746,
+   "frame": 15827,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 33,
+   "beat": 4,
+   "time_s": 528.1746,
+   "frame": 15845,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 34,
+   "beat": 1,
+   "time_s": 528.7746,
+   "frame": 15863,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 34,
+   "beat": 2,
+   "time_s": 529.3746,
+   "frame": 15881,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 34,
+   "beat": 3,
+   "time_s": 529.9746,
+   "frame": 15899,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 34,
+   "beat": 4,
+   "time_s": 530.5746,
+   "frame": 15917,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 35,
+   "beat": 1,
+   "time_s": 531.1746,
+   "frame": 15935,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 35,
+   "beat": 2,
+   "time_s": 531.7746,
+   "frame": 15953,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 35,
+   "beat": 3,
+   "time_s": 532.3746,
+   "frame": 15971,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 35,
+   "beat": 4,
+   "time_s": 532.9746,
+   "frame": 15989,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 36,
+   "beat": 1,
+   "time_s": 533.5746,
+   "frame": 16007,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 36,
+   "beat": 2,
+   "time_s": 534.1746,
+   "frame": 16025,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 36,
+   "beat": 3,
+   "time_s": 534.7746,
+   "frame": 16043,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 36,
+   "beat": 4,
+   "time_s": 535.3746,
+   "frame": 16061,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 37,
+   "beat": 1,
+   "time_s": 535.9746,
+   "frame": 16079,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 37,
+   "beat": 2,
+   "time_s": 536.5746,
+   "frame": 16097,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 37,
+   "beat": 3,
+   "time_s": 537.1746,
+   "frame": 16115,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 37,
+   "beat": 4,
+   "time_s": 537.7746,
+   "frame": 16133,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 38,
+   "beat": 1,
+   "time_s": 538.3746,
+   "frame": 16151,
+   "bpm": 100,
+   "downbeat": true
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 38,
+   "beat": 2,
+   "time_s": 538.9746,
+   "frame": 16169,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 38,
+   "beat": 3,
+   "time_s": 539.5746,
+   "frame": 16187,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "伍 回来，再出发",
+   "bar": 38,
+   "beat": 4,
+   "time_s": 540.1746,
+   "frame": 16205,
+   "bpm": 100,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 1,
+   "beat": 1,
+   "time_s": 540.7746,
+   "frame": 16223,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "尾声",
+   "bar": 1,
+   "beat": 2,
+   "time_s": 541.7746,
+   "frame": 16253,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 1,
+   "beat": 3,
+   "time_s": 542.7746,
+   "frame": 16283,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 1,
+   "beat": 4,
+   "time_s": 543.7746,
+   "frame": 16313,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 2,
+   "beat": 1,
+   "time_s": 544.7746,
+   "frame": 16343,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "尾声",
+   "bar": 2,
+   "beat": 2,
+   "time_s": 545.7746,
+   "frame": 16373,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 2,
+   "beat": 3,
+   "time_s": 546.7746,
+   "frame": 16403,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 2,
+   "beat": 4,
+   "time_s": 547.7746,
+   "frame": 16433,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 3,
+   "beat": 1,
+   "time_s": 548.7746,
+   "frame": 16463,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "尾声",
+   "bar": 3,
+   "beat": 2,
+   "time_s": 549.7746,
+   "frame": 16493,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 3,
+   "beat": 3,
+   "time_s": 550.7746,
+   "frame": 16523,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 3,
+   "beat": 4,
+   "time_s": 551.7746,
+   "frame": 16553,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 4,
+   "beat": 1,
+   "time_s": 552.7746,
+   "frame": 16583,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "尾声",
+   "bar": 4,
+   "beat": 2,
+   "time_s": 553.7746,
+   "frame": 16613,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 4,
+   "beat": 3,
+   "time_s": 554.7746,
+   "frame": 16643,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 4,
+   "beat": 4,
+   "time_s": 555.7746,
+   "frame": 16673,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 5,
+   "beat": 1,
+   "time_s": 556.7746,
+   "frame": 16703,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "尾声",
+   "bar": 5,
+   "beat": 2,
+   "time_s": 557.7746,
+   "frame": 16733,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 5,
+   "beat": 3,
+   "time_s": 558.7746,
+   "frame": 16763,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 5,
+   "beat": 4,
+   "time_s": 559.7746,
+   "frame": 16793,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 6,
+   "beat": 1,
+   "time_s": 560.7746,
+   "frame": 16823,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "尾声",
+   "bar": 6,
+   "beat": 2,
+   "time_s": 561.7746,
+   "frame": 16853,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 6,
+   "beat": 3,
+   "time_s": 562.7746,
+   "frame": 16883,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 6,
+   "beat": 4,
+   "time_s": 563.7746,
+   "frame": 16913,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 7,
+   "beat": 1,
+   "time_s": 564.7746,
+   "frame": 16943,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "尾声",
+   "bar": 7,
+   "beat": 2,
+   "time_s": 565.7746,
+   "frame": 16973,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 7,
+   "beat": 3,
+   "time_s": 566.7746,
+   "frame": 17003,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 7,
+   "beat": 4,
+   "time_s": 567.7746,
+   "frame": 17033,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 8,
+   "beat": 1,
+   "time_s": 568.7746,
+   "frame": 17063,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "尾声",
+   "bar": 8,
+   "beat": 2,
+   "time_s": 569.7746,
+   "frame": 17093,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 8,
+   "beat": 3,
+   "time_s": 570.7746,
+   "frame": 17123,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 8,
+   "beat": 4,
+   "time_s": 571.7746,
+   "frame": 17153,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 9,
+   "beat": 1,
+   "time_s": 572.7746,
+   "frame": 17183,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "尾声",
+   "bar": 9,
+   "beat": 2,
+   "time_s": 573.7746,
+   "frame": 17213,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 9,
+   "beat": 3,
+   "time_s": 574.7746,
+   "frame": 17243,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 9,
+   "beat": 4,
+   "time_s": 575.7746,
+   "frame": 17273,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 10,
+   "beat": 1,
+   "time_s": 576.7746,
+   "frame": 17303,
+   "bpm": 60,
+   "downbeat": true
+  },
+  {
+   "section": "尾声",
+   "bar": 10,
+   "beat": 2,
+   "time_s": 577.7746,
+   "frame": 17333,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 10,
+   "beat": 3,
+   "time_s": 578.7746,
+   "frame": 17363,
+   "bpm": 60,
+   "downbeat": false
+  },
+  {
+   "section": "尾声",
+   "bar": 10,
+   "beat": 4,
+   "time_s": 579.7746,
+   "frame": 17393,
+   "bpm": 60,
+   "downbeat": false
+  }
+ ]
+}
