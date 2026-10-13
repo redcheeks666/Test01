@@ -120,12 +120,16 @@ _FILM = None
 
 def _worker(args):
     """在独立进程（spawn）里加载全片并渲染一段帧，避免 fork 继承 OpenCV 线程池导致死锁。"""
-    key, f0, f1, part = args
+    key, f0, f1, part, rng = args
     cv2.setNumThreads(1)
     import sys
     sys.path.insert(0, str(ROOT / "edit"))
     from tianwen import load_film
-    ch = load_film().chapter(key)
+    film = load_film()
+    ch = film.chapter(key)
+    if film.frame_range(ch) != rng:
+        # 渲染途中改了别的章节的长度：主进程分的帧号和子进程读到的时间轴对不上，画面会整体错位
+        raise RuntimeError(f"{key}: 时间轴在渲染途中变了（主进程 {rng}，子进程 {film.frame_range(ch)}），请重新渲染")
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
            "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "fast", "-crf", "17", "-g", "60",
            "-pix_fmt", "yuv420p", str(part)]
@@ -160,7 +164,8 @@ def render_chapter(film, key, workers=4, frames=None):
         return paths
     n = f1 - f0
     bounds = np.linspace(f0, f1, workers + 1).astype(int)
-    parts = [(key, int(a), int(b), d / f"{key}_part{i}.mp4") for i, (a, b) in enumerate(zip(bounds, bounds[1:])) if b > a]
+    parts = [(key, int(a), int(b), d / f"{key}_part{i}.mp4", (f0, f1)) for i, (a, b) in enumerate(zip(bounds, bounds[1:]))
+             if b > a]
     with mp.get_context("spawn").Pool(len(parts)) as pool:
         pool.map(_worker, parts)
     lst = d / f"{key}_parts.txt"
