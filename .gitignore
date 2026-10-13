@@ -21,3 +21,4 @@ edit/ch3_demo/out/*.log
 edit/ch3_demo/out/*.wav
 __pycache__/
 /assets/PD/PD-10/PD-10_02_lilienthal_gliding_plate_1895_loc.tif
+edit/.cache/

@@ -412,22 +412,24 @@ def main():
     fade = int(0.012 * SR)
     mix[i52 - fade:i52] *= np.linspace(1, 0, fade)[:, None]
     mix[i52:] = 0
+    # 第 53 拍：下一章章节卡随重音落下——定音鼓 + 铜管大三和弦 + 低频冲击，弦乐长音收尾；第 55.2 拍盖印
     tail = np.zeros((N, 2))
-    add(tail, shortwave(DURATION - t(53)) * 0.25, t(53), 0.3)
-    sp = real("AU/AU-01/AU-01_01_sputnik_signal_nasa.mp3", DURATION - t(53) - 0.1, 0.02)
-    if sp is not None:
-        add(tail, sp, t(53), 0.55)
-    else:
-        b = 53.0
-        while t(b) < DURATION - 0.4:
-            add(tail, sputnik_beep(), t(b), 0.2)
-            b += 1.0
-    tail_keys = dry * 0
+    tail_music = np.zeros((N, 2))
+    b53 = t(53)
+    add(tail_music, timpani(38, 2.4, 1.3), b53, 0.9)
+    add(tail_music, brass_stab([62, 66, 69, 74, 50], 1.2), b53, 0.65)
+    add(tail_music, pad([50, 57, 62, 66, 69], DURATION - b53), b53, 0.3)
+    add(tail_music, cymbal(2.5), b53, 0.2)
+    lh = real("FX/FX-11/FX-11_02_cinematic_low_hit_pixabay.mp3")
+    if lh is not None:
+        add(tail, lh, b53, 0.6)
+    add(tail, stamp(), t(55.2), 0.7)
+    wet2 = np.stack([fftconvolve(tail_music[:, c], ir[:, c])[:N] for c in range(2)], axis=1)
+    tail += tail_music + wet2 * 0.25
+    n_end = int(DURATION * SR)
+    fade_len = int(1.2 * SR)
+    tail[n_end - fade_len:n_end] *= np.linspace(1, 0, fade_len)[:, None]
     mix = mix + tail
-    k = real("FX/FX-01/FX-01_01_mech_keyboard_click_pixabay.mp3", fade=0.005)
-    if k is not None:
-        for i in range(0, 10, 2):
-            add(mix, k, t(54) + i / 30, 0.12)
 
     mix = np.tanh(mix * 0.9) * 0.89
     mix = mix[: int(DURATION * SR)]

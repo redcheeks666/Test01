@@ -22,7 +22,7 @@ W, H = 1920, 1080
 rng = np.random.default_rng(3)
 
 INK = (0.16, 0.11, 0.07)
-CREAM = (0.95, 0.91, 0.82)
+CREAM = (0.99, 0.96, 0.89)
 DUO_DARK = np.array([0.09, 0.06, 0.04])
 DUO_LIGHT = np.array([0.94, 0.88, 0.76])
 SEAL_RED = (0.72, 0.13, 0.10)
@@ -188,9 +188,13 @@ def draw_text(frame, text, kind, size, color, x, y, alpha=1.0, scale=1.0, tracki
     sr = rgb[ya - y0:yb - y0, xa - x0:xb - x0]
     region = frame[ya:yb, xa:xb]
     if shadow:
-        sh = cv2.GaussianBlur(sa[..., 0], (0, 0), 6)[..., None]
         dark = sum(color) > 1.5
-        region = region * (1 - sh * (0.55 if dark else 0.25)) + (0 if dark else 1) * sh * (0 if dark else 0.0)
+        sh = cv2.GaussianBlur(sa[..., 0], (0, 0), 7)[..., None]
+        tight = cv2.GaussianBlur(sa[..., 0], (0, 0), 1.8)[..., None]
+        if dark:
+            region = region * (1 - np.clip(sh * 0.9 + tight * 1.2, 0, 0.92))
+        else:
+            region = region * (1 - sh * 0.25)
     frame[ya:yb, xa:xb] = region * (1 - sa) + sr * sa
     return frame
 
@@ -198,13 +202,15 @@ def draw_text(frame, text, kind, size, color, x, y, alpha=1.0, scale=1.0, tracki
 GRAD_L = np.clip(1 - xx / (W * 0.55), 0, 1)[..., None] ** 1.6
 
 
-def caption(frame, b, b_in, lines, color=CREAM, x=110, y=150, b_out=None, scrim=0.0):
+def caption(frame, b, b_in, lines, color=CREAM, x=110, y=150, b_out=None, scrim=None):
     """三级文字：lines = [(文字, 级别)]，级别 big / mid / small / date。大字在 b_in 冲入，其余依次延后半拍。
     scrim > 0 时在左侧压一层暗渐变，保证文字在复杂背景上可读。"""
+    if scrim is None:
+        scrim = 0.78 if sum(color) > 1.5 else 0.0
     if scrim and b >= b_in:
         k = min((t(b) - t(b_in)) * FPS / 6, 1)
         frame *= 1 - GRAD_L * scrim * k
-    spec = {"big": ("brush", 104, 0), "mid": ("serif", 40, 2), "small": ("serif", 27, 2), "date": ("mono", 30, 3)}
+    spec = {"big": ("brush", 132, 0), "mid": ("serif", 46, 2), "small": ("serif", 31, 2), "date": ("mono", 32, 3)}
     cy = y
     delay = 0.0
     for text, lvl in lines:
@@ -224,7 +230,7 @@ def caption(frame, b, b_in, lines, color=CREAM, x=110, y=150, b_out=None, scrim=
             else:
                 a = min(fr / 8, 1)
                 draw_text(frame, text, kind, size, color, x, cy + (1 - ease_out_expo(fr / 12)) * 22, a, 1.0, tr)
-        cy += {"big": 128, "mid": 62, "small": 44, "date": 48}[lvl]
+        cy += {"big": 158, "mid": 70, "small": 50, "date": 54}[lvl]
         delay += 0.5 if lvl in ("big", "date") else 0.35
     del k
     return frame
@@ -276,12 +282,18 @@ def flash_at(b, b_hit, frames=3):
 
 # ---------------- 素材 ----------------
 
-SRC = {k: load(v) for k, v in {
-    "balloon": "PD-08_01", "wright": "PD-11_01", "lilienthal": "PD-10_01",
-    "goddard": "NA-06_01", "v2": "NA-19_01", "x1": "NA-20_01"}.items()}
+sys.path.insert(0, str(ROOT / "edit"))
+from assets import load_image  # noqa: E402
+
+SRC = {k: load_image(v) for k, v in {
+    "balloon": "PD-08", "wright": "PD-11", "lilienthal": "PD-10",
+    "goddard": "NA-06", "v2": "NA-19", "x1": "NA-20"}.items()}
+# 镜头里的绝对缩放按预览图（长边 1280）设计，换原件后用 K 折算
+K = {k: 1280 / max(v.shape[:2]) for k, v in SRC.items()}
 DUO = {k: sharpen(duotone(v, gamma=1.08, contrast=1.25 if k != "v2" else 1.4)) for k, v in SRC.items()}
 DUO["x1"] = DUO["x1"][: int(SRC["x1"].shape[0] * 0.66)]
-DUO["lilienthal"] = DUO["lilienthal"][int(1050 * 0.08):int(1050 * 0.8), int(1280 * 0.07):int(1280 * 0.93)]
+_lh, _lw = DUO["lilienthal"].shape[:2]
+DUO["lilienthal"] = DUO["lilienthal"][int(_lh * 0.08):int(_lh * 0.8), int(_lw * 0.07):int(_lw * 0.93)]
 
 
 def smoke_layer(seed, h=H, w=W):
@@ -291,61 +303,29 @@ def smoke_layer(seed, h=H, w=W):
 SMOKE = [smoke_layer(s) for s in (21, 22)]
 
 
-def wanhu_drawing():
-    """万户：铜版画风格的线描——官帽、长袍、椅子、47 支火箭和汇聚的引信。"""
-    S = 2
-    im = Image.new("RGBA", (W * S, H * S), (0, 0, 0, 0))
-    d = ImageDraw.Draw(im)
-    ink = (42, 29, 18, 255)
-    cx, ground = 1180 * S, 900 * S
-    # 地面与排线
-    d.line([(560 * S, ground), (1800 * S, ground)], fill=ink, width=3 * S)
-    for i in range(0, 1240, 14):
-        x = 560 + i
-        d.line([(x * S, ground + 6 * S), ((x - 22) * S, ground + 34 * S)], fill=ink, width=1 * S)
-    # 椅子
-    seat_y = 700 * S
-    d.rectangle([cx - 150 * S, seat_y, cx + 150 * S, seat_y + 22 * S], outline=ink, width=3 * S)
-    for lx in (cx - 140 * S, cx + 130 * S):
-        d.line([(lx, seat_y + 22 * S), (lx, ground)], fill=ink, width=4 * S)
-        d.line([(lx + 10 * S, seat_y + 22 * S), (lx + 10 * S, ground)], fill=ink, width=2 * S)
-    d.rectangle([cx - 150 * S, 380 * S, cx + 150 * S, seat_y], outline=ink, width=3 * S)
-    # 47 支火箭：椅背后呈扇形排列
-    rockets, k = [], 0
-    rows = [(9, 330), (13, 410), (13, 490), (12, 570)]
-    for n, ry in rows:
-        for j in range(n):
-            ang = (j - (n - 1) / 2) * (0.11 if n > 9 else 0.13)
-            x0 = cx + (j - (n - 1) / 2) * 25 * S
-            y0 = ry * S
-            L = 150 * S
-            x1, y1 = x0 + np.sin(ang) * L, y0 - np.cos(ang) * L
-            d.line([(x0, y0), (x1, y1)], fill=ink, width=7 * S)
-            d.line([(x0 + 3 * S, y0), (x1 + 3 * S, y1)], fill=(235, 222, 195, 255), width=2 * S)
-            tip = (x1 + np.sin(ang) * 26 * S, y1 - np.cos(ang) * 26 * S)
-            d.polygon([(x1 - 6 * S, y1), (x1 + 6 * S, y1), tip], fill=ink)
-            rockets.append((x0 / S, y0 / S))
-            k += 1
-    # 人物：长袍 + 官帽
-    d.polygon([(cx - 90 * S, seat_y + 10 * S), (cx + 90 * S, seat_y + 10 * S), (cx + 60 * S, 520 * S), (cx - 60 * S, 520 * S)],
-              fill=(214, 196, 160, 255), outline=ink)
-    for i in range(-80, 90, 9):
-        d.line([(cx + i * S, seat_y + 8 * S), (cx + i * 0.7 * S, 530 * S)], fill=ink, width=1 * S)
-    d.ellipse([cx - 34 * S, 440 * S, cx + 34 * S, 515 * S], fill=(232, 214, 180, 255), outline=ink, width=3 * S)
-    d.rectangle([cx - 38 * S, 420 * S, cx + 38 * S, 448 * S], fill=ink)
-    d.rectangle([cx - 78 * S, 428 * S, cx + 78 * S, 436 * S], fill=ink)
-    # 引信：从左下汇聚到椅背
-    fuse_start = (640, 880)
-    hub = (cx / S - 160, 640)
-    d.line([(fuse_start[0] * S, fuse_start[1] * S), (hub[0] * S, hub[1] * S)], fill=ink, width=2 * S)
-    for rx, ry in rockets[::3]:
-        d.line([(hub[0] * S, hub[1] * S), (rx * S, ry * S)], fill=(42, 29, 18, 120), width=1 * S)
-    im = im.resize((W, H), Image.LANCZOS)
-    arr = np.asarray(im, np.float32) / 255.0
-    return arr[..., :3], arr[..., 3:], fuse_start, hub
+from wanhu import build as _wanhu_build  # noqa: E402
+
+WANHU = _wanhu_build()
 
 
-WANHU = wanhu_drawing()
+def _along(pts, p):
+    """折线 pts 上比例 p 处的点。"""
+    seg = [np.hypot(pts[k + 1][0] - pts[k][0], pts[k + 1][1] - pts[k][1]) for k in range(len(pts) - 1)]
+    dist = p * sum(seg)
+    for k, L in enumerate(seg):
+        if dist <= L or k == len(seg) - 1:
+            q = min(dist / L, 1)
+            return lerp(pts[k][0], pts[k + 1][0], q), lerp(pts[k][1], pts[k + 1][1], q)
+        dist -= L
+
+
+def spark(frame, x, y, fi, size=16, strength=1.4):
+    g = np.exp(-(((xx - x) ** 2 + (yy - y) ** 2) / (2 * size ** 2)))[..., None]
+    frame += g * np.array([1.0, 0.56, 0.18]) * strength * (0.8 + 0.2 * np.sin(fi * 2.7))
+    r = np.random.default_rng(fi * 13 + int(x))
+    for _ in range(7):
+        cv2.circle(frame, (int(x + r.normal(0, size * 1.3)), int(y + r.normal(-size * 0.5, size))), 2, (1.0, 0.82, 0.45), -1)
+    return frame
 
 
 def newspaper():
@@ -372,11 +352,12 @@ def newspaper():
     r = np.random.default_rng(4)
     cols = 5
     cw = (pw - 120) / cols
+    bx0, bx1 = 60 + 2 * cw - cw * 0.5, 60 + 3 * cw + cw * 0.5
     for c in range(cols):
         x0 = 60 + c * cw + 12
         y = 300
         while y < ph - 60:
-            if c == 2 and 300 <= y < 820:
+            if x0 + cw - 24 > bx0 - 10 and x0 < bx1 + 10 and 300 <= y < 820:
                 y = 820
                 continue
             lw = cw - 24 if r.random() > 0.12 else (cw - 24) * r.uniform(0.3, 0.8)
@@ -385,7 +366,6 @@ def newspaper():
         if c:
             d.line([(60 + c * cw, 290), (60 + c * cw, ph - 60)], fill=ink, width=1)
     # 社论标题框（第 3 栏上方，跨两栏）
-    bx0, bx1 = 60 + 2 * cw - cw * 0.5, 60 + 3 * cw + cw * 0.5
     d.rectangle([bx0, 310, bx1, 800], outline=ink, width=3)
     d.text(((bx0 + bx1) / 2, 380), "A SEVERE STRAIN", font=head, fill=ink, anchor="mm")
     d.text(((bx0 + bx1) / 2, 470), "ON CREDULITY", font=head, fill=ink, anchor="mm")
@@ -401,12 +381,13 @@ def newspaper():
 NEWS, NEWS_HEAD = newspaper()
 
 
-def seal(size=110, text="叁"):
+def seal(size=96, text="天问"):
     im = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     d.rounded_rectangle([4, 4, size - 4, size - 4], radius=10, fill=(184, 34, 26, 255))
-    f = font("brush", int(size * 0.62))
-    d.text((size / 2, size / 2 + 2), text, font=f, fill=(245, 228, 210, 0), anchor="mm")
+    f = font("brush", int(size * 0.4))
+    for k, ch in enumerate(text):  # 竖排两字
+        d.text((size / 2, size * (0.3 + 0.4 * k) + 2), ch, font=f, fill=(245, 228, 210, 0), anchor="mm")
     arr = np.asarray(im, np.float32) / 255.0
     # 印泥斑驳
     mott = (fbm(size, size, 4, 31) > 0.38).astype(np.float32)
@@ -419,63 +400,59 @@ SEAL = seal()
 
 # ---------------- 镜头 ----------------
 
-def shot_card(b, fi):
-    """3-01 章节卡（0—8 拍）。"""
+def chapter_card(b, fi, b0, name, exit_zoom=True):
+    """统一章节卡：纸本底纹，两字章节名（毛笔大字），第 6 拍盖印，最后半拍冲进墨迹。"""
     frame = PAPER.copy()
-    k = (b - 0.5) / 7
-    s = lerp(1.06, 1.0, ease_io(min(max(k, 0), 1)))
-    zoom = 1.0
-    blur = 0
-    if b > 7.5:  # 最后半拍冲进墨迹
-        z = ease_in((b - 7.5) / 0.5, 2)
-        zoom = lerp(1.0, 2.4, z)
-        blur = 40 * z
-    fr = (t(b) - t(0.5)) * FPS
+    lb = b - b0
+    s_ = lerp(1.06, 1.0, ease_io(min(max((lb - 0.5) / 7, 0), 1)))
+    fr = (t(b) - t(b0 + 0.3)) * FPS
     ink_a = np.clip(fr / 10, 0, 1)
-    draw_text(frame, "叁", "brush", int(330 * s), INK, W / 2, H / 2 - 70, ink_a, 1.0, anchor="c", shadow=False)
-    if b > 2:
-        fr2 = (t(b) - t(2)) * FPS
-        draw_text(frame, "先  驱", "serif", 54, INK, W / 2, H / 2 + 160, min(fr2 / 12, 1), 1.0, tracking=10, anchor="c", shadow=False)
-    if b >= 6:
-        fr3 = (t(b) - t(6)) * FPS
+    draw_text(frame, name, "brush", int(300 * s_), INK, W / 2, H / 2 - 20, ink_a, 1.0, tracking=30,
+              anchor="c", shadow=False)
+    if lb >= 2.5:
+        fr3 = (t(b) - t(b0 + 2.5)) * FPS
         ss = lerp(1.5, 1.0, ease_out_expo(fr3 / 5))
         rgb, a = SEAL
-        sz = int(110 * ss)
+        sz = int(96 * ss)
         rgb_s, a_s = cv2.resize(rgb, (sz, sz)), cv2.resize(a, (sz, sz))[..., None]
-        x0, y0 = int(W / 2 + 150 - sz / 2), int(H / 2 + 20 - sz / 2)
+        x0, y0 = int(W / 2 + 330 - sz / 2), int(H / 2 + 110 - sz / 2)
+        k = min(fr3 / 2, 1)
         reg = frame[y0:y0 + sz, x0:x0 + sz]
-        frame[y0:y0 + sz, x0:x0 + sz] = reg * (1 - a_s * min(fr3 / 2, 1)) + rgb_s * a_s * min(fr3 / 2, 1)
-    if zoom != 1.0:
-        frame, _ = place(frame, W / 2, H / 2 - 70, zoom)
-        frame = motion_blur(frame, blur, 90)
-    sh, _ = shake_at(b, 6, 6, 0.3)
+        frame[y0:y0 + sz, x0:x0 + sz] = reg * (1 - a_s * k) + rgb_s * a_s * k
+    if exit_zoom and lb > 7.5:
+        z = ease_in((lb - 7.5) / 0.5, 2)
+        frame, _ = place(frame, W / 2, H / 2 - 20, lerp(1.0, 2.4, z))
+        frame = motion_blur(frame, 40 * z, 90)
+    sh, _ = shake_at(b, b0 + 2.5, 6, 0.3)
     return post(frame, fi, shake=sh, grain=0.03)
 
 
+def shot_card(b, fi):
+    """3-01 章节卡（0—8 拍）。"""
+    return chapter_card(b, fi, 0, "先驱")
+
+
 def shot_wanhu(b, fi):
-    """3-02 万户（8—16 拍）：慢推，引信火花沿线前进，第 15.5 拍定格抽空。"""
-    rgb, a, fs, hub = WANHU
-    bg = PAPER.copy()
-    frame = bg * (1 - a) + rgb * a
+    """3-02 万户（8—16 拍）：月亮前的剪影慢推，引信火花沿线前进，最后分头烧向七组火箭；第 15.5 拍定格抽空。"""
+    frame = WANHU["sky"] * (1 - WANHU["a"]) + WANHU["rgb"] * WANHU["a"]
+    frame = frame.copy()
     bb = min(b, 15.5)
-    k = (bb - 8) / 8
-    zoom = lerp(1.0, 1.14, ease_io(k))
-    # 火花位置
-    p = np.clip((bb - 8.3) / 7.0, 0, 1)
-    sx, sy = lerp(fs[0], hub[0], p), lerp(fs[1], hub[1], p)
-    glow = np.exp(-(((xx - sx) ** 2 + (yy - sy) ** 2) / (2 * 18 ** 2)))[..., None]
-    flick = 0.8 + 0.2 * np.sin(fi * 2.7)
-    frame = frame + glow * np.array([1.0, 0.55, 0.15]) * 1.4 * flick
-    for i in range(6):
-        ox, oy = rng.normal(0, 22), rng.normal(-10, 18)
-        cv2.circle(frame, (int(sx + ox), int(sy + oy)), 2, (1.0, 0.8, 0.4), -1)
-    # 已燃过的引信变暗
-    frame, _ = place(frame, 1180, 600, zoom, 0, W / 2 + 120, H / 2 + 20)
-    frame = np.where(frame.sum(-1, keepdims=True) == 0, PAPER, frame)
+    p = np.clip((bb - 8.3) / 6.4, 0, 1)
+    if p < 1:
+        x, y = _along(WANHU["fuse"], p)
+        spark(frame, x, y, fi)
+    else:
+        q = np.clip((bb - 14.7) / 0.8, 0, 1)
+        hub = WANHU["fuse"][-1]
+        for bx, by in WANHU["branches"]:
+            spark(frame, lerp(hub[0], bx, q), lerp(hub[1], by, q), fi, 12, 1.1)
+    zoom = lerp(1.0, 1.12, ease_io((bb - 8) / 8))
+    frame, _ = place(frame, 1262, 600, zoom, 0, W / 2 + 300, H / 2 + 60)
+    frame = np.where(frame.sum(-1, keepdims=True) == 0, WANHU["sky"][-1:, :1], frame)
     caption(frame, b, 8.5, [("万户", "big"), ("47 支火箭，一把椅子", "mid"),
-                            ("明朝 · 传说", "small"), ("今天，月球背面有一座以他命名的环形山", "small")], INK)
-    if b >= 15.5:  # 抽空：画面压暗定格
-        frame = frame * 0.82
+                            ("明朝 · 传说", "small"), ("今天，月球背面有一座以他命名的环形山", "small")], scrim=0.5)
+    if b >= 15.5:
+        frame = frame * 0.8
     return post(frame, fi, grain=0.035)
 
 
@@ -484,7 +461,7 @@ def shot_balloon(b, fi):
     src = DUO["balloon"]
     h, w = src.shape[:2]
     k = ease_io((b - 16) / 8)
-    s0, s1 = 4.2, 0.80
+    s0, s1 = 4.2 * K["balloon"], 0.80 * K["balloon"]
     scale = s0 * (s1 / s0) ** k
     cx, cy = lerp(0.53 * w, 0.5 * w, k), lerp(0.35 * h, 0.47 * h, k)
     sx = lerp(W / 2, 1210, k)
@@ -554,7 +531,8 @@ def shot_1903(b, fi):
     src = DUO["wright"]
     h, w = src.shape[:2]
     # 左半屏：每 2 拍切一个局部，最后 4 拍是全图
-    crops = [(28, 0.57, 0.37, 2.6), (30, 0.86, 0.44, 3.0), (32, 0.55, 0.45, 1.25)]
+    pc = cover_scale(src, W // 2, H)
+    crops = [(28, 0.57, 0.37, 2.6 * K["wright"]), (30, 0.86, 0.44, 3.0 * K["wright"]), (32, 0.52, 0.45, pc * 1.08)]
     seg = [c for c in crops if b >= c[0]][-1]
     nxt = {28: 30, 30: 32, 32: 36}[seg[0]]
     k = (b - seg[0]) / (nxt - seg[0])
@@ -562,6 +540,7 @@ def shot_1903(b, fi):
     left = comp(PAPER_DARK[:, : W // 2].copy(), rgb, a)
     fl = flash_at(b, seg[0], 1) * 0.5 if seg[0] > 28 else 0
     left = left * (1 - fl) + fl
+    left *= 1 - np.clip((yy[:, : W // 2, None] - H * 0.72) / (H * 0.28), 0, 1) * 0.75
     frame[:, : W // 2] = left
     # 右半屏：方程逐笔写出
     right = PAPER[:, W // 2:].copy() * 0.95
@@ -574,17 +553,18 @@ def shot_1903(b, fi):
         draw_text(frame, "“地球是人类的摇篮，但人不能永远生活在摇篮里”", "serif", 25, INK, W * 0.75, H * 0.64,
                   min((b - 34) * 2, 1), anchor="c", shadow=False)
         draw_text(frame, "—— 1911 年书信", "serif", 22, INK, W * 0.75, H * 0.69, min((b - 34.3) * 2, 1), anchor="c", shadow=False)
+    frame[:, : W // 2] *= 1 - np.clip(1 - yy[:, : W // 2, None] / (H * 0.3), 0, 1) * 0.6
     # 中线从上到下画出
     fr = (t(b) - t(28)) * FPS
     ln = int(H * ease_out_expo(fr / 8))
     frame[:ln, W // 2 - 2:W // 2 + 2] = np.array([0.85, 0.75, 0.55])
     # 顶部标题
-    draw_text(frame, "1903，同一年", "brush", 86, CREAM, W * 0.25, 120, min(fr / 4, 1),
+    draw_text(frame, "1903，同一年", "brush", 110, CREAM, W * 0.25, 130, min(fr / 4, 1),
               lerp(1.25, 1, ease_out_expo(fr / 9)), anchor="c")
     if b > 28.5:
         a2 = min((b - 28.5) * 2, 1)
-        draw_text(frame, "莱特兄弟 · 人类第一次驾驶飞机，飞了 12 秒", "serif", 30, CREAM, W * 0.25, H - 120, a2, anchor="c")
-        draw_text(frame, "写下了飞出地球的公式", "serif", 30, INK, W * 0.75, H - 120, a2, anchor="c", shadow=False)
+        draw_text(frame, "莱特兄弟 · 人类第一次驾驶飞机，飞了 12 秒", "serif", 34, CREAM, W * 0.25, H - 110, a2, anchor="c")
+        draw_text(frame, "写下了飞出地球的公式", "serif", 34, INK, W * 0.75, H - 110, a2, anchor="c", shadow=False)
     sh, _ = shake_at(b, 28, 8, 0.3)
     return post(frame, fi, shake=sh)
 
@@ -600,13 +580,13 @@ def shot_nyt(b, fi):
     sx = W * 0.62
     if b >= 38:
         k2 = ease_out_expo((t(b) - t(38)) * FPS / 7)
-        scale = lerp(0.52, 1.25, k2) * lerp(1, 1.04, (b - 38) / 2)
+        scale = lerp(0.52, 1.05, k2) * lerp(1, 1.04, (b - 38) / 2)
         rot = lerp(-4, -1.5, k2)
         cx, cy = lerp(cx, NEWS_HEAD[0], k2), lerp(cy, NEWS_HEAD[1], k2)
-        sx = lerp(W * 0.62, W * 0.7, k2)
+        sx = lerp(W * 0.62, W * 0.74, k2)
     rgb, a = place(src, cx, cy, scale, rot, sx, H / 2 + 20)
     frame = comp(PAPER_DARK.copy(), rgb, a, shadow=0.7)
-    caption(frame, b, 36.3, [("1920.01.13", "date"), ("嘲笑", "big"), ("《纽约时报》社论：火箭不可能在真空中飞行", "mid"),
+    caption(frame, b, 36.3, [("1920.01.13", "date"), ("嘲笑", "big"), ("《纽约时报》社论：", "mid"), ("火箭不可能在真空中飞行", "mid"),
                              ("被嘲笑的人，叫戈达德", "small")], scrim=0.8)
     sh, e = shake_at(b, 38 if b >= 38 else 36, 14, 0.35)
     return post(frame, fi, flash=flash_at(b, 38, 1) * 0.6, shake=sh, chroma=4 * e)
@@ -674,18 +654,18 @@ def shot_x1(b, fi):
 
 
 def shot_black(b, fi):
-    """第 52 拍起：一拍完全黑场静音，然后在黑暗中响起斯普特尼克信号。"""
-    frame = np.zeros((H, W, 3), np.float32)
-    if b >= 54:
-        fr = (t(b) - t(54)) * FPS
-        draw_text(frame, "1957.10.04", "mono", 34, (0.75, 0.72, 0.65), W / 2, H / 2, 1.0, anchor="c",
-                  reveal=min(1, fr / 10), shadow=False)
-    return post(frame, fi, grain=0.02, vignette=False, weave=False)
+    """第 52 拍：一拍完全黑场静音。"""
+    return post(np.zeros((H, W, 3), np.float32), fi, grain=0.02, vignette=False, weave=False)
+
+
+def shot_next(b, fi):
+    """第 53 拍起：下一章"竞赛"的章节卡随重音落下（不冲出）。"""
+    return chapter_card(b, fi, 53 - 0.3, "竞赛", exit_zoom=False)
 
 
 SHOTS = [(0, 8, shot_card), (8, 16, shot_wanhu), (16, 24, shot_balloon), (24, 28, shot_lilienthal),
          (28, 36, shot_1903), (36, 40, shot_nyt), (40, 44, shot_goddard), (44, 48, shot_v2),
-         (48, 52, shot_x1), (52, 999, shot_black)]
+         (48, 52, shot_x1), (52, 53, shot_black), (53, 999, shot_next)]
 
 
 def render_frame(fi):

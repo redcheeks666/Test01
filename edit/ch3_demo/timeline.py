@@ -3,7 +3,7 @@ import numpy as np
 
 FPS = 30
 SR = 48000
-TOTAL_BEATS = 58
+TOTAL_BEATS = 60
 RAMP_BEATS = 40
 BPM0, BPM1 = 96.0, 112.0
 
