@@ -310,7 +310,7 @@ class Score:
         """压低（如"吸气"空拍）。"""
         self.gates.append((t0, t1, level))
 
-    def master(self, path, bgm_target_db=-1.6, sfx_ref_db=-3.0, ceiling_db=-1.0):
+    def master(self, path, bgm_target_db=-1.6, sfx_ref_db=-3.0, ceiling_db=-2.0):
         ir_len = int(2.4 * SR)
         xi = np.arange(ir_len) / SR
         r = np.random.default_rng(11)
@@ -359,8 +359,9 @@ def leveler(x, target_db=-1.6, floor_db=-42.0, max_gain=40.0):
     return x * g[:, None]
 
 
-def limiter(x, ceiling_db=-1.0, lookahead_ms=5.0, release_ms=120.0):
-    """前瞻峰值限幅：峰值到来前 5 毫秒开始平滑压低增益，释放 120 毫秒，不产生削波失真。"""
+def limiter(x, ceiling_db=-2.0, lookahead_ms=5.0, release_ms=120.0):
+    """前瞻峰值限幅：峰值到来前 5 毫秒开始平滑压低增益，释放 120 毫秒，不产生削波失真。
+    上限 -2 dBFS：样点间峰值约高 0.5 dB，真峰值留在 -1.5 dBTP 左右，平台转码后不爆音。"""
     ceil = 10 ** (ceiling_db / 20)
     blk = 48
     n = len(x) // blk + 1
