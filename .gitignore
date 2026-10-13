@@ -1,9 +1,4 @@
-# 原始素材不进仓库，只保留 assets_review/ 里的清单和预览
-assets/
-*.mov
-*.mxf
-*.tif
-*.tiff
-*.wav
-*.flac
+# 原始素材按 docs/CODEX_PROMPT_phase2.md 的规则入库到 assets/：
+# 不超过 95MB 的原件直接提交，更大的原件只提交 .partNN 分片，原文件本身不提交
 .DS_Store
+assets/**/_full_broadcast/
