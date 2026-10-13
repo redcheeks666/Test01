@@ -198,7 +198,7 @@ def s_pad_again(c):
 
 
 _IG2K = [(0, 1.0), (1.32, 1.0), (1.5, 0.3), (2.64, 0.3), (3.18, 1.5), (3.6, 1.5)]
-IGN2 = retime(_IG2K, start=(14.6 - 10.0) - retime(_IG2K)(1.5))
+IGN2 = retime(_IG2K, start=(15.0 - 10.0) - retime(_IG2K)(1.5))
 
 
 def s_ignite_again(c):
