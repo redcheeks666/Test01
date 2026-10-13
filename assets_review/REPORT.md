@@ -222,3 +222,43 @@
 - 分片恢复哈希、直接原件哈希、截取首包与直播包一致、首秒无解码错误、没有整段直播或>95MB单文件进入Git，均完成核对。
 - 按类别以小于1GB批次推送到 `claude/hello-nv3sez`。远端并发的Claude剪辑提交通过rebase保留，未force push、未改动其剪辑代码。
 - 本轮尚缺的素材已列在上表；未取得或未下载的原件不计作完成。
+
+## 阶段三：轨道器视角替换素材（2026-10-13）
+
+本阶段新增 **4 份原件，47,015,065 字节（47.015 MB）**，均小于95 MB，直接入库，未转码或重新压缩。每份原件独占manifest一行，来源、许可、署名、像素坐标与SHA-256已填写；预览在`assets_review/previews/`，校验证据在`PHASE3_VALIDATION.json`。本节是素材交接结果，未修改或重新渲染影片。
+
+| 编号/候选 | 文件 | 原尺寸 | 内容与定位 |
+|---|---|---:|---|
+| NA-32/01 | `NA/NA-32/NA-32_01_change6_lander_full_crop_lroc.png` | 1300×1300 | 2024-06-07嫦娥六号；着陆器中心约(651,649)，周围发动机扰动亮区可见。LROC全尺寸裁切原件；网站常见1100版尺寸较小。 |
+| NA-32/02 | `NA/NA-32/NA-32_02_change6_full_nac_pds.tif` | 5064×52224 | 同次观测完整NAC条带及周围环形山；第0层着陆器中心约(2500,32710)，北约向图右91.46°。 |
+| NA-33/01 | `NA/NA-33/NA-33_01_change4_yutu2_lroc.png` | 1100×1100 | 可选补充：2019-01-31嫦娥四号与玉兔二号；双箭头是官方原图标注，发布者已放大4倍。 |
+| NA-34/01 | `NA/NA-34/NA-34_01_zhurong_lander_rover_hirise.jpg` | 713×657 | 可选补充：2021-06-06祝融号平台与南侧火星车，HiRISE官方增强色细节裁切图。 |
+
+坐标均以实际入库图像左上角(0,0)为原点，x向右/y向下，为剪辑推近中心的近似位置。NAC条带坐标已用着陆器亮点、周围双小坑及扰动亮区与官方裁切图对照确认。1300图是官方投影后2倍放大，并非1300个独立光学采样；不能凭推近生成车体细节。
+
+许可依据逐文件列明：
+
+- **NA-32/01**：[LROC原图页](https://lroc.im-ldi.com/images/1374)、[NASA同题文章](https://www.nasa.gov/missions/lro/nasas-lro-spots-chinas-change-6-spacecraft-on-lunar-far-side/)、[LROC许可原文§1与§2](https://lroc.im-ldi.com/about/terms)。当前条款将Featured Images等加工图列为有版权，准许教育/新闻用途按要求署名，商业用途须先获许可。按已确认的非商业科普用途交接，**不标为公有领域**。署名：NASA/GSFC/Arizona State University。
+- **NA-32/02**：[PDS观测及下载页](https://data.lroc.im-ldi.com/lroc/view_lroc/LRO-L-LROC-3-CDR-V1.0/M1472410644LC)、[公有领域条款原文§1](https://lroc.im-ldi.com/about/terms)。条款明确PDS数据产品属公有领域；本文件直接来自PDS归档的EXTRAS/BROWSE，优先用于需要完全开放许可的替换。署名同上。
+- **NA-33/01**：[LROC原图及双箭头说明](https://lroc.im-ldi.com/images/1091)、[许可原文§1与§2](https://lroc.im-ldi.com/about/terms)。与NA-32/01相同，是准许署名教育使用的有版权加工图，**不是公有领域或CC许可**。署名同上。
+- **NA-34/01**：[HiRISE原图页的USAGE POLICY](https://www.uahirise.org/ESP_069665_2055)。原文：“All of the images produced by HiRISE and accessible on this site are within the public domain”。本图为公有领域，署名NASA/JPL-Caltech/University of Arizona（发布页使用等价简称UArizona）。
+
+NA-32/02是发布者的9层多分辨率TIFF，最高层完整解码通过。官方把该浏览产品注明为“multi-resolution, lossy compression”：有损压缩由原发布者完成，本次原样下载，未再编码；它不是科学EDR/CDR `.IMG`，[科学CDR下载入口](https://pds.lroc.im-ldi.com/data/LRO-L-LROC-3-CDR-V1.0/LROLRC_1059C/DATA/ESM5/2024159/NAC/M1472410644LC.IMG)仅作后续研究线索。FFmpeg默认像素安全上限会拒绝264,462,336像素整条带；实际尺寸和解码用Pillow核验，不把该警告误记成原图损坏。编辑时可从已核验坐标提取工作裁切，保留本原件。
+
+### 天宫查找结果
+
+**找到一张许可明确、能辨认空间站轮廓的真实望远镜照片，但原件下载被Wikimedia的IP级403拦截，未入库。** 不写成“未找到开放许可的真实照片”，以免掩盖已核实的候选；当前仓库仍没有阶段三合格天宫替换原件，可采用用户提出的Claude代码绘制备选。
+
+查过的文件页和结果：
+
+| 来源 | 核验结果 |
+|---|---|
+| [Barcatl：Estação Espacial Chinesa Sobrevoando Jundiaí](https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_Espacial_Chinesa_Sobrevoando_Jundia%C3%AD.png) | 2023-05-23、203mm望远镜+行星相机、自作照片940×788；文件许可框CC BY-SA 4.0，须注明“署名-相同方式共享”。原件158,254字节，Commons SHA-1 `37e89078e5e43821b79d8aff370e4f47670f00d3`；署名Barcatl。文件页可被检索读取，但本机Chrome与原件下载都显示“Requests from your IP have been blocked”；无原件就不计入manifest。 |
+| [原件直链](https://upload.wikimedia.org/wikipedia/commons/9/99/Esta%C3%A7%C3%A3o_Espacial_Chinesa_Sobrevoando_Jundia%C3%AD.png) | 正常原件链接及带文件页跟踪参数版本均403；没有修改网络设置或绕过访问限制。 |
+| [天宫地面观测分类](https://commons.wikimedia.org/wiki/Category:Tiangong_space_station_seen_from_Earth)；[BugWarp 2024照片](https://commons.wikimedia.org/wiki/File:Tiangong_space_station_as_seen_from_M.B_Gonnet_in_March_2024_-_BugWarp.jpg) | BugWarp文件页自作、CC BY 4.0，但为地面过境记录；未作为能辨认站体的替换入库。其余地面记录多为光点/光轨。 |
+| [Giuseppe Donatiello天鹅座过境照片](https://commons.wikimedia.org/wiki/File:The_Chinese_Tiangong_Space_Station_passes_through_the_Cygnus_constellation.jpg) | Commons列为CC0、5184×3456、20帧合成光轨；追查其Flickr原发布链接，现下载原件却是3264×2448城市云层照片，标题也不同。视觉审查确认不匹配，排除，未计入素材。 |
+| [Chinese Space Station - front](https://commons.wikimedia.org/wiki/File:Chinese_Space_Station_-_front.jpg)；[Planetary Society天宫图](https://www.planetary.org/space-images/chinas-tiangong-space-station) | Shujianyang图归于Illustrations，Planetary Society明确称rendering；虽为CC许可，属于渲染，不冒充真实照片。 |
+| [Rear view of Tiangong Space Station](https://commons.wikimedia.org/wiki/File:Rear_view_of_Tiangong_Space_Station.jpg) | CC BY 4.0，源为Wang Xiang等人的空间站介绍论文插图；不能由许可或上传者名字证明是真实照片，不收。 |
+| [Planetary Society天宫出舱图](https://www.planetary.org/space-images/tiangong-spacewalk)；中国新闻社开放视频检索 | 前者未识别官方用图许可，只推测可非商业转载；后者未找到同时证明真实站体影像与明确开放许可的候选。均不以转载/推测代替许可。 |
+
+原有CN-02载人航天办公室图片与CN-06新华社图片保留为历史采集记录；本阶段替换交接不赋予这些旧图新的许可，也不删除并行剪辑工程。嫦娥六号优先使用NA-32/02的PDS素材；NA-32/01与NA-33/01须遵守已记录的教育用途条款。

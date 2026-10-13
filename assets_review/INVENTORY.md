@@ -1,15 +1,15 @@
-# 《天问》阶段二素材清单
+# 《天问》阶段三素材清单
 
-实际本地原素材：**147 个文件，12.475 GB（十进制）**。预览与文档不计入原素材大小。
-仓库中原素材总大小：**4.450 GB（4,450,490,003 字节）**，直接文件与分片对应的原件按一个素材计数，SHA sidecar、预览和文档不计入。完整直播不进入仓库。
-入库情况：直接入库 132 个；分片入库 14 个；只在本地 1 个。
+实际本地原素材：**151 个文件，12.522 GB（十进制）**。预览与文档不计入原素材大小。
+仓库中原素材总大小：**4.498 GB（4,497,505,068 字节）**，直接文件与分片对应的原件按一个素材计数，SHA sidecar、预览和文档不计入。完整直播不进入仓库。
+入库情况：直接入库 136 个；分片入库 14 个；只在本地 1 个。
 
 ## 分类统计
 
 | 类别 | 文件数 | 大小（MB） |
 |---|---:|---:|
 | SX | 36 | 10715.520 |
-| NA | 47 | 918.851 |
+| NA | 51 | 965.866 |
 | SU | 0 | 0.000 |
 | CN | 15 | 40.418 |
 | IN | 0 | 0.000 |
@@ -73,6 +73,7 @@
 | FX/FX-17/FX-17_02_vhs_damaged_tape_freesound.wav | audio |  |  | 00:02:25 | pcm_f32le | 55.624 | 直接入库 |
 | SX/SX-03/SX-03_05_flight14_live_orbital_views_spacex.mp4 | video | 3840×2160 | 812500/27113 | 00:00:54 | h264 | 55.617 | 直接入库 |
 | SX/SX-03/SX-03_13_flight14_orbit_burn_cut03_spacex.mp4 | video | 3840×2160 | 536200/17891 | 00:01:30 | h264 | 51.742 | 直接入库 |
+| NA/NA-32/NA-32_02_change6_full_nac_pds.tif | image | 5064×52224 |  |  | tiff | 45.852 | 直接入库 |
 | SX/SX-05/SX-05_01_starship_flight5_spacex.mp4 | video | 1920×1080 | 37395000/1559683 | 00:03:28 | h264 | 43.970 | 直接入库 |
 | NA/NA-30/NA-30_01_webb_first_deep_field_smacs0723_esa.tif | image | 4537×4630 |  |  | tiff | 40.571 | 直接入库 |
 | SX/SX-01/SX-01_08_flight14_mission_recap_spacex.mp4 | video | 3840×2160 | 24000/1001 | 00:00:40 | h264 | 37.880 | 直接入库 |
@@ -162,8 +163,10 @@
 | FX/FX-07/FX-07_01_soft_wind_pixabay.mp3 | audio |  |  | 00:00:22 | mp3 | 0.706 | 直接入库 |
 | NA/NA-14/NA-14_01_pale_blue_dot_original_nasa.tif | image | 453×614 |  |  | tiff | 0.698 | 直接入库 |
 | SX/SX-02/SX-02_04_flight14_pad_sunrise4_spacex.jpg | image | 4096×2304 |  |  | mjpeg | 0.653 | 直接入库 |
+| NA/NA-34/NA-34_01_zhurong_lander_rover_hirise.jpg | image | 713×657 |  |  | mjpeg | 0.627 | 直接入库 |
 | SX/SX-04/SX-04_01_orbcomm2_launch_landing_arcs_spacex.jpg | image | 3000×2000 |  |  | mjpeg | 0.608 | 直接入库 |
 | NA/NA-11/NA-11_01_earthrise_nasa.jpg | image | 3000×3000 |  |  | mjpeg | 0.494 | 直接入库 |
+| NA/NA-32/NA-32_01_change6_lander_full_crop_lroc.png | image | 1300×1300 |  |  | png | 0.453 | 直接入库 |
 | FX/FX-15/FX-15_02_fighter_real_sonic_boom_freesound.flac | audio |  |  | 00:00:10 | flac | 0.433 | 直接入库 |
 | PD/PD-01/PD-01_01_sidereus_moon_woodcut_first_official.jpg | image | 1151×1909 |  |  | mjpeg | 0.429 | 直接入库 |
 | FX/FX-07/FX-07_02_harsh_wind_pixabay.mp3 | audio |  |  | 00:00:13 | mp3 | 0.429 | 直接入库 |
@@ -183,6 +186,7 @@
 | CN/CN-06/CN-06_01_change6_flag_cnsa.jpg | image | 1000×735 |  |  | mjpeg | 0.110 | 直接入库 |
 | FX/FX-08/FX-08_02_distant_explosion_pixabay.mp3 | audio |  |  | 00:00:05 | mp3 | 0.109 | 直接入库 |
 | NA/NA-31/NA-31_02_artemis1_sls_liftoff_nasa.jpg | image | 1041×1719 |  |  | mjpeg | 0.095 | 直接入库 |
+| NA/NA-33/NA-33_01_change4_yutu2_lroc.png | image | 1100×1100 |  |  | png | 0.083 | 直接入库 |
 | FX/FX-11/FX-11_02_cinematic_low_hit_pixabay.mp3 | audio |  |  | 00:00:02 | mp3 | 0.076 | 直接入库 |
 | AU/AU-01/AU-01_01_sputnik_signal_nasa.mp3 | audio |  |  | 00:00:04 | mp3 | 0.070 | 直接入库 |
 | NA/NA-19/NA-19_01_v2_first_earth_photo_1946_nasa.jpg | image | 985×779 |  |  | mjpeg | 0.066 | 直接入库 |

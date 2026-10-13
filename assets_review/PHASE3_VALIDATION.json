@@ -1,0 +1,58 @@
+{
+  "stage": 3,
+  "date": "2026-10-13",
+  "new_files": [
+    {
+      "file_path": "NA/NA-32/NA-32_01_change6_lander_full_crop_lroc.png",
+      "width": 1300,
+      "height": 1300,
+      "bytes": 452826,
+      "sha256": "b0dec539234bb6c793195ce22503df4f0d63d03bb5f5e5ea30800da1f802107b",
+      "full_decode": true,
+      "preview_bytes": 252976
+    },
+    {
+      "file_path": "NA/NA-32/NA-32_02_change6_full_nac_pds.tif",
+      "width": 5064,
+      "height": 52224,
+      "bytes": 45851991,
+      "sha256": "1612494c49b304c95b865d9e0754f1647f0efdbf1f1c39871d2b02d6ada042f3",
+      "full_decode": true,
+      "preview_bytes": 34792
+    },
+    {
+      "file_path": "NA/NA-33/NA-33_01_change4_yutu2_lroc.png",
+      "width": 1100,
+      "height": 1100,
+      "bytes": 83057,
+      "sha256": "a118237ac5cac1bd52f83d5908235cdee1ba8019849490aa09af5e7120267001",
+      "full_decode": true,
+      "preview_bytes": 101669
+    },
+    {
+      "file_path": "NA/NA-34/NA-34_01_zhurong_lander_rover_hirise.jpg",
+      "width": 713,
+      "height": 657,
+      "bytes": 627191,
+      "sha256": "58d020425de196a541d344b3c9d2cc1c2d83a6829938789e40c6832a99345b42",
+      "full_decode": true,
+      "preview_bytes": 89196
+    }
+  ],
+  "new_original_bytes": 47015065,
+  "new_files_count": 4,
+  "manifest_rows": 151,
+  "prior_manifest_rows_preserved": true,
+  "max_existing_tracked_blob_bytes": 94371840,
+  "all_new_files_under_95mb": true,
+  "all_previews_under_1mb": true,
+  "originals_untranscoded": true,
+  "tiangong": {
+    "status": "license_verified_original_download_blocked_403",
+    "author": "Barcatl",
+    "license": "CC BY-SA 4.0",
+    "commons_sha1": "37e89078e5e43821b79d8aff370e4f47670f00d3",
+    "in_manifest": false
+  },
+  "nac_dimension_method": "Pillow highest TIFF level, fully decoded; FFmpeg default pixel limit exceeded"
+}
